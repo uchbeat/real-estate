@@ -1,0 +1,1897 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PWAN Properties | Premium Real Estate & Land Investments in Nigeria</title>
+    <meta name="description" content="Discover premium luxury homes, apartments for rent, commercial land, and strategic real estate investments across Nigeria with PWAN Properties.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            800: '#152C4F',
+                            900: '#10233F',
+                            950: '#0B172B'
+                        },
+                        royal: {
+                            600: '#1E4E8C',
+                            700: '#173D70'
+                        },
+                        gold: {
+                            400: '#E5BD68',
+                            500: '#D4A64A',
+                            600: '#B88A32'
+                        },
+                        slate: {
+                            800: '#202B3C',
+                            900: '#121926'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Custom Custom Scrollbar and UI Enhancements */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F5F7FA;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #D4A64A;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #B88A32;
+        }
+
+        .glass-header {
+            background: rgba(16, 35, 63, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #F5D77F 0%, #D4A64A 50%, #B88A32 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gold-gradient-bg {
+            background: linear-gradient(135deg, #D4A64A 0%, #B88A32 100%);
+        }
+
+        .gold-gradient-bg:hover {
+            background: linear-gradient(135deg, #E5BD68 0%, #D4A64A 100%);
+        }
+
+        /* View Router Management */
+        .page-view {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .page-view.active {
+            display: block;
+            opacity: 1;
+        }
+
+        /* Skeleton loading pulse */
+        @keyframes pulse-bg {
+            0%, 100% { background-color: rgba(200, 200, 200, 0.2); }
+            50% { background-color: rgba(200, 200, 200, 0.4); }
+        }
+        .skeleton {
+            animation: pulse-bg 1.5s infinite ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-slate-800 antialiased flex flex-col min-h-screen">
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col gap-3 pointer-events-none"></div>
+
+    <!-- Announcement Bar -->
+    <div class="bg-navy-950 text-gray-300 text-xs py-2 px-4 border-b border-navy-800">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-6">
+                <span><i class="fa-solid fa-phone text-gold-500 mr-2"></i>+234 (0) 800 792 6776</span>
+                <span><i class="fa-solid fa-envelope text-gold-500 mr-2"></i>info@pwanproperties.ng</span>
+                <span class="hidden sm:inline"><i class="fa-solid fa-location-dot text-gold-500 mr-2"></i>Lekki Phase 1, Lagos, Nigeria</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <!-- Currency Switcher -->
+                <div class="flex items-center bg-navy-900 border border-navy-800 rounded px-2 py-0.5">
+                    <span class="text-gold-500 font-semibold mr-1.5">Currency:</span>
+                    <button id="curr-ngn" onclick="setCurrency('NGN')" class="px-1.5 py-0.5 rounded text-xs font-bold bg-gold-500 text-navy-900 transition">NGN (₦)</button>
+                    <button id="curr-usd" onclick="setCurrency('USD')" class="px-1.5 py-0.5 rounded text-xs font-medium text-gray-300 hover:text-white transition">USD ($)</button>
+                </div>
+                <div class="flex items-center space-x-3 text-sm">
+                    <a href="https://facebook.com" target="_blank" class="hover:text-gold-500 transition"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://instagram.com" target="_blank" class="hover:text-gold-500 transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://twitter.com" target="_blank" class="hover:text-gold-500 transition"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://linkedin.com" target="_blank" class="hover:text-gold-500 transition"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Header Navigation -->
+    <header class="sticky top-0 z-40 glass-header text-white border-b border-navy-800 shadow-xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-lg gold-gradient-bg flex items-center justify-center text-navy-900 shadow-lg group-hover:scale-105 transition transform">
+                    <i class="fa-solid fa-building-columns text-xl"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-serif font-bold text-xl tracking-wider text-white flex items-center gap-1">
+                        PWAN <span class="gold-gradient-text">PROPERTIES</span>
+                    </span>
+                    <span class="text-[9px] uppercase tracking-widest text-gray-400 font-medium">Excellence in Real Estate</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <nav class="hidden lg:flex items-center space-x-6 text-sm font-medium">
+                <a href="index.html" class="nav-link text-white hover:text-gold-500 transition py-1 border-b-2 border-transparent">Home</a>
+                <a href="properties.html" class="nav-link text-gray-300 hover:text-gold-500 transition py-1 border-b-2 border-transparent">Properties</a>
+                <a href="buy.html" class="nav-link text-gray-300 hover:text-gold-500 transition py-1 border-b-2 border-transparent">Buy</a>
+                <a href="rent.html" class="nav-link text-gray-300 hover:text-gold-500 transition py-1 border-b-2 border-transparent">Rent</a>
+                <a href="land-invest.html" class="nav-link text-gray-300 hover:text-gold-500 transition py-1 border-b-2 border-transparent">Land & Invest</a>
+                <a href="services.html" class="nav-link text-gray-300 hover:text-gold-500 transition py-1 border-b-2 border-transparent">Services</a>
+                <a href="about.html" class="nav-link text-gray-300 hover:text-gold-500 transition py-1 border-b-2 border-transparent">About Us</a>
+                <a href="contact.html" class="nav-link text-gray-300 hover:text-gold-500 transition py-1 border-b-2 border-transparent">Contact</a>
+            </nav>
+
+            <!-- Actions Right -->
+            <div class="hidden sm:flex items-center gap-4">
+                <!-- Favourites Button -->
+                <a href="favourites.html" class="relative text-gray-300 hover:text-gold-500 transition p-2">
+                    <i class="fa-solid fa-heart text-xl"></i>
+                    <span id="fav-count-badge" class="absolute -top-1 -right-1 bg-gold-500 text-navy-950 text-[10px] font-bold rounded-full h-4 w-4 flex items-center justify-center">0</span>
+                </a>
+                
+                <!-- CTA Button -->
+                <a href="list-property.html" class="gold-gradient-bg text-navy-950 font-semibold px-4 py-2.5 rounded-lg text-sm shadow-lg hover:shadow-gold-500/20 hover:-translate-y-0.5 transition transform flex items-center gap-2">
+                    <i class="fa-solid fa-plus-circle"></i> List Property
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="mobile-menu-btn" class="lg:hidden text-gray-300 hover:text-white focus:outline-none p-2" aria-label="Toggle menu">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="lg:hidden hidden bg-navy-900 border-b border-navy-800 px-4 pt-3 pb-6 space-y-3">
+            <a href="index.html" class="mobile-nav-link block text-gray-200 hover:text-gold-500 py-2 border-b border-navy-800 font-medium">Home</a>
+            <a href="properties.html" class="mobile-nav-link block text-gray-200 hover:text-gold-500 py-2 border-b border-navy-800 font-medium">Properties</a>
+            <a href="buy.html" class="mobile-nav-link block text-gray-200 hover:text-gold-500 py-2 border-b border-navy-800 font-medium">Buy</a>
+            <a href="rent.html" class="mobile-nav-link block text-gray-200 hover:text-gold-500 py-2 border-b border-navy-800 font-medium">Rent</a>
+            <a href="land-invest.html" class="mobile-nav-link block text-gray-200 hover:text-gold-500 py-2 border-b border-navy-800 font-medium">Land & Invest</a>
+            <a href="services.html" class="mobile-nav-link block text-gray-200 hover:text-gold-500 py-2 border-b border-navy-800 font-medium">Services</a>
+            <a href="about.html" class="mobile-nav-link block text-gray-200 hover:text-gold-500 py-2 border-b border-navy-800 font-medium">About Us</a>
+            <a href="contact.html" class="mobile-nav-link block text-gray-200 hover:text-gold-500 py-2 border-b border-navy-800 font-medium">Contact</a>
+            <a href="faq.html" class="mobile-nav-link block text-gray-200 hover:text-gold-500 py-2 border-b border-navy-800 font-medium">FAQs</a>
+            <a href="favourites.html" class="mobile-nav-link block text-gray-200 hover:text-gold-500 py-2 border-b border-navy-800 font-medium flex justify-between items-center">
+                <span>Saved Favourites</span>
+                <span id="mobile-fav-count" class="bg-gold-500 text-navy-950 text-xs px-2 py-0.5 rounded-full font-bold">0</span>
+            </a>
+            <div class="pt-2">
+                <a href="list-property.html" class="mobile-nav-link block w-full text-center gold-gradient-bg text-navy-950 font-bold py-3 rounded-lg shadow">
+                    + List A Property
+                </a>
+            </div>
+        </div>
+    </header>
+    <!-- MAIN DYNAMIC CONTENT CONTAINER -->
+    <main class="flex-grow">
+        
+        <!-- ==================== 1. HOME VIEW ==================== -->
+        <section id="view-home" class="page-view active">
+            <!-- Hero Section -->
+            <div class="relative bg-navy-950 text-white min-h-[620px] flex items-center overflow-hidden">
+                <!-- Background Image & Overlay -->
+                <div class="absolute inset-0 z-0">
+                    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1920&q=80" alt="Luxury Villa Background" class="w-full h-full object-cover object-center filter brightness-40">
+                    <div class="absolute inset-0 bg-gradient-to-r from-navy-950 via-navy-950/80 to-transparent"></div>
+                </div>
+
+                <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 w-full">
+                    <div class="max-w-2xl">
+                        <span class="inline-block px-3 py-1 rounded-full bg-gold-500/20 border border-gold-500/40 text-gold-400 text-xs font-semibold uppercase tracking-wider mb-4">
+                            Nigeria's Premier Real Estate Network
+                        </span>
+                        <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                            Find a Place to <span class="gold-gradient-text">Call Home</span> & Invest in Prosperity.
+                        </h1>
+                        <p class="text-gray-300 text-base sm:text-lg mb-8 leading-relaxed">
+                            Discover verified residential properties, strategic land investments, and luxury commercial estates across Lagos, Abuja, Port Harcourt, and beyond.
+                        </p>
+                    </div>
+
+                    <!-- Hero Search Box Filter -->
+                    <div class="bg-navy-900/90 border border-navy-800 backdrop-blur-md rounded-2xl p-4 sm:p-6 shadow-2xl max-w-5xl">
+                        <!-- Purpose Tabs -->
+                        <div class="flex space-x-2 border-b border-navy-800 pb-3 mb-4">
+                            <button id="hero-tab-all" onclick="setHeroPurpose('')" class="hero-tab active font-semibold text-xs sm:text-sm px-4 py-2 rounded-lg bg-gold-500 text-navy-950 transition">All Properties</button>
+                            <button id="hero-tab-sale" onclick="setHeroPurpose('For Sale')" class="hero-tab font-semibold text-xs sm:text-sm px-4 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-navy-800 transition">Buy</button>
+                            <button id="hero-tab-rent" onclick="setHeroPurpose('For Rent')" class="hero-tab font-semibold text-xs sm:text-sm px-4 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-navy-800 transition">Rent</button>
+                            <button id="hero-tab-land" onclick="setHeroPurpose('Land')" class="hero-tab font-semibold text-xs sm:text-sm px-4 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-navy-800 transition">Land Investment</button>
+                        </div>
+
+                        <!-- Form Inputs -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                            <!-- Location Filter -->
+                            <div>
+                                <label class="block text-xs font-medium text-gray-400 mb-1">Location</label>
+                                <div class="relative">
+                                    <i class="fa-solid fa-location-dot absolute left-3 top-3 text-gold-500"></i>
+                                    <select id="hero-location" class="w-full bg-navy-950 border border-navy-800 rounded-lg pl-9 pr-3 py-2.5 text-sm text-white focus:outline-none focus:border-gold-500">
+                                        <option value="">All Locations</option>
+                                        <option value="Lekki">Lekki, Lagos</option>
+                                        <option value="Victoria Island">Victoria Island, Lagos</option>
+                                        <option value="Ikeja">Ikeja, Lagos</option>
+                                        <option value="Maitama">Maitama, Abuja</option>
+                                        <option value="Gwarinpa">Gwarinpa, Abuja</option>
+                                        <option value="Port Harcourt">Port Harcourt, Rivers</option>
+                                        <option value="Ibadan">Ibadan, Oyo</option>
+                                        <option value="Uyo">Uyo, Akwa Ibom</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Property Type -->
+                            <div>
+                                <label class="block text-xs font-medium text-gray-400 mb-1">Property Type</label>
+                                <div class="relative">
+                                    <i class="fa-solid fa-house-chimney absolute left-3 top-3 text-gold-500"></i>
+                                    <select id="hero-type" class="w-full bg-navy-950 border border-navy-800 rounded-lg pl-9 pr-3 py-2.5 text-sm text-white focus:outline-none focus:border-gold-500">
+                                        <option value="">All Types</option>
+                                        <option value="Apartment">Apartment</option>
+                                        <option value="Duplex">Duplex</option>
+                                        <option value="Villa">Luxury Villa</option>
+                                        <option value="Residential Land">Residential Land</option>
+                                        <option value="Commercial Land">Commercial Land</option>
+                                        <option value="Commercial Property">Commercial Space</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Price Range -->
+                            <div>
+                                <label class="block text-xs font-medium text-gray-400 mb-1">Max Price</label>
+                                <div class="relative">
+                                    <i class="fa-solid fa-naira-sign absolute left-3 top-3 text-gold-500"></i>
+                                    <select id="hero-max-price" class="w-full bg-navy-950 border border-navy-800 rounded-lg pl-9 pr-3 py-2.5 text-sm text-white focus:outline-none focus:border-gold-500">
+                                        <option value="">No Limit</option>
+                                        <option value="2000000">₦2,000,000 / $2,500</option>
+                                        <option value="15000000">₦15,000,000 / $18,750</option>
+                                        <option value="50000000">₦50,000,000 / $62,500</option>
+                                        <option value="120000000">₦120,000,000 / $150,000</option>
+                                        <option value="300000000">₦300,000,000 / $375,000</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <div class="flex items-end">
+                                <button onclick="triggerHeroSearch()" class="w-full gold-gradient-bg text-navy-950 font-bold py-2.5 px-4 rounded-lg shadow hover:opacity-95 transition flex items-center justify-center gap-2 text-sm">
+                                    <i class="fa-solid fa-magnifying-glass"></i> Search Properties
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Featured Properties Grid -->
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-4">
+                    <div>
+                        <span class="text-gold-600 font-semibold text-xs tracking-widest uppercase">Handpicked Listings</span>
+                        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-navy-950">Featured Properties</h2>
+                    </div>
+                    <a href="#properties" class="inline-flex items-center gap-2 text-royal-600 font-semibold hover:text-gold-600 transition">
+                        View All Listings <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Featured Cards Layout -->
+                <div id="home-featured-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Dynamic rendering by JS -->
+                </div>
+            </div>
+
+            <!-- Property Categories Section -->
+            <div class="bg-navy-950 text-white py-16">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center max-w-2xl mx-auto mb-12">
+                        <span class="text-gold-500 font-semibold text-xs uppercase tracking-widest">Explore Options</span>
+                        <h2 class="font-serif text-3xl font-bold mt-1">Browse by Category</h2>
+                        <p class="text-gray-400 text-sm mt-2">Whether you are purchasing your first residential home or securing commercial plots, we have diverse real estate options.</p>
+                    </div>
+
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                        <button onclick="filterCategoryAndNavigate('Apartment')" class="group bg-navy-900 border border-navy-800 p-6 rounded-xl hover:border-gold-500 transition text-center flex flex-col items-center">
+                            <div class="w-14 h-14 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-500 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition">
+                                <i class="fa-solid fa-building"></i>
+                            </div>
+                            <h3 class="font-semibold text-lg text-white group-hover:text-gold-400">Apartments</h3>
+                            <span class="text-xs text-gray-400 mt-1">Modern Urban Units</span>
+                        </button>
+
+                        <button onclick="filterCategoryAndNavigate('Duplex')" class="group bg-navy-900 border border-navy-800 p-6 rounded-xl hover:border-gold-500 transition text-center flex flex-col items-center">
+                            <div class="w-14 h-14 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-500 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition">
+                                <i class="fa-solid fa-house"></i>
+                            </div>
+                            <h3 class="font-semibold text-lg text-white group-hover:text-gold-400">Duplexes</h3>
+                            <span class="text-xs text-gray-400 mt-1">Spacious Family Residences</span>
+                        </button>
+
+                        <button onclick="filterCategoryAndNavigate('Land')" class="group bg-navy-900 border border-navy-800 p-6 rounded-xl hover:border-gold-500 transition text-center flex flex-col items-center">
+                            <div class="w-14 h-14 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-500 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition">
+                                <i class="fa-solid fa-map-location-dot"></i>
+                            </div>
+                            <h3 class="font-semibold text-lg text-white group-hover:text-gold-400">Land & Plots</h3>
+                            <span class="text-xs text-gray-400 mt-1">Prime Verified Acres</span>
+                        </button>
+
+                        <button onclick="filterCategoryAndNavigate('Villa')" class="group bg-navy-900 border border-navy-800 p-6 rounded-xl hover:border-gold-500 transition text-center flex flex-col items-center">
+                            <div class="w-14 h-14 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-500 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition">
+                                <i class="fa-solid fa-crown"></i>
+                            </div>
+                            <h3 class="font-semibold text-lg text-white group-hover:text-gold-400">Luxury Estates</h3>
+                            <span class="text-xs text-gray-400 mt-1">Exclusive Prime Villas</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Why Choose Us Grid -->
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-gold-600 font-semibold text-xs uppercase tracking-widest">Our Value Proposition</span>
+                    <h2 class="font-serif text-3xl font-bold text-navy-950 mt-1">Why Partner With PWAN Properties?</h2>
+                    <p class="text-gray-600 text-sm mt-2">Delivering security, transparency, and high ROI to property buyers and real estate investors.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg transition">
+                        <div class="w-12 h-12 rounded-lg bg-navy-950 text-gold-500 flex items-center justify-center text-xl mb-6">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-navy-950 mb-2">100% Verified Titles</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">All land and housing units undergo thorough legal verification including C of O checks and Governor's Consent verification before listing.</p>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg transition">
+                        <div class="w-12 h-12 rounded-lg bg-navy-950 text-gold-500 flex items-center justify-center text-xl mb-6">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-navy-950 mb-2">High Capital Growth</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">Strategic land acquisitions in fast-developing corridors like Lekki-Epe Expressway and Ibeju-Lekki guaranteeing rapid value appreciation.</p>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg transition">
+                        <div class="w-12 h-12 rounded-lg bg-navy-950 text-gold-500 flex items-center justify-center text-xl mb-6">
+                            <i class="fa-solid fa-user-tie"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-navy-950 mb-2">Dedicated Consultants</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">Our experienced real estate advisors assist you through site inspections, legal documentation, flexible installment plans, and key handover.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Nigerian Popular Locations Highlights -->
+            <div class="bg-gray-100 py-16">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center max-w-2xl mx-auto mb-12">
+                        <span class="text-gold-600 font-semibold text-xs uppercase tracking-widest">Strategic Hotspots</span>
+                        <h2 class="font-serif text-3xl font-bold text-navy-950 mt-1">Key Nigerian Real Estate Markets</h2>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <!-- Lagos -->
+                        <div onclick="filterLocationAndNavigate('Lagos')" class="relative h-72 rounded-2xl overflow-hidden cursor-pointer group">
+                            <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=600&q=80" alt="Lagos Properties" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-navy-950/30 to-transparent"></div>
+                            <div class="absolute bottom-6 left-6 text-white">
+                                <h3 class="font-serif text-2xl font-bold">Lagos State</h3>
+                                <p class="text-xs text-gold-400 mt-1">Lekki, V.I, Ikeja & Epe</p>
+                            </div>
+                        </div>
+
+                        <!-- Abuja -->
+                        <div onclick="filterLocationAndNavigate('Abuja')" class="relative h-72 rounded-2xl overflow-hidden cursor-pointer group">
+                            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80" alt="Abuja Properties" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-navy-950/30 to-transparent"></div>
+                            <div class="absolute bottom-6 left-6 text-white">
+                                <h3 class="font-serif text-2xl font-bold">Abuja (FCT)</h3>
+                                <p class="text-xs text-gold-400 mt-1">Maitama & Gwarinpa</p>
+                            </div>
+                        </div>
+
+                        <!-- Port Harcourt -->
+                        <div onclick="filterLocationAndNavigate('Port Harcourt')" class="relative h-72 rounded-2xl overflow-hidden cursor-pointer group">
+                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80" alt="Port Harcourt" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-navy-950/30 to-transparent"></div>
+                            <div class="absolute bottom-6 left-6 text-white">
+                                <h3 class="font-serif text-2xl font-bold">Port Harcourt</h3>
+                                <p class="text-xs text-gold-400 mt-1">Rivers State Prime</p>
+                            </div>
+                        </div>
+
+                        <!-- Ibadan -->
+                        <div onclick="filterLocationAndNavigate('Ibadan')" class="relative h-72 rounded-2xl overflow-hidden cursor-pointer group">
+                            <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=600&q=80" alt="Ibadan Properties" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-navy-950/30 to-transparent"></div>
+                            <div class="absolute bottom-6 left-6 text-white">
+                                <h3 class="font-serif text-2xl font-bold">Ibadan</h3>
+                                <p class="text-xs text-gold-400 mt-1">Oyo State Growth Zone</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Demo Metrics & Statistics -->
+            <div class="bg-navy-900 text-white py-12 border-y border-navy-800">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center text-[10px] uppercase tracking-widest text-gold-500 mb-6 font-semibold">
+                        Demonstration Performance Metrics
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                        <div>
+                            <div class="font-serif text-3xl sm:text-4xl font-bold text-gold-400 mb-1">15,000+</div>
+                            <div class="text-xs text-gray-300">Plots & Homes Sold</div>
+                        </div>
+                        <div>
+                            <div class="font-serif text-3xl sm:text-4xl font-bold text-gold-400 mb-1">36+</div>
+                            <div class="text-xs text-gray-300">Estates Managed</div>
+                        </div>
+                        <div>
+                            <div class="font-serif text-3xl sm:text-4xl font-bold text-gold-400 mb-1">98%</div>
+                            <div class="text-xs text-gray-300">Client Satisfaction</div>
+                        </div>
+                        <div>
+                            <div class="font-serif text-3xl sm:text-4xl font-bold text-gold-400 mb-1">12+</div>
+                            <div class="text-xs text-gray-300">Major Nigerian Cities</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Callout -->
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                <div class="gold-gradient-bg rounded-3xl p-8 sm:p-12 text-navy-950 flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl">
+                    <div class="max-w-xl">
+                        <h2 class="font-serif text-3xl sm:text-4xl font-bold mb-3">Ready to Secure Your Next Land Plot or Luxury Villa?</h2>
+                        <p class="text-navy-900 text-sm leading-relaxed">Book a free site inspection with our real estate specialists today. Flexible payment structures available.</p>
+                    </div>
+                    <a href="#contact" class="bg-navy-950 text-white font-bold px-8 py-4 rounded-xl shadow-lg hover:bg-navy-900 transition shrink-0">
+                        Schedule Site Inspection
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 2. PROPERTIES VIEW ==================== -->
+        <section id="view-properties" class="page-view">
+            <!-- Header Banner -->
+            <div class="bg-navy-950 text-white py-12 border-b border-navy-800">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                        <div>
+                            <span class="text-xs text-gold-500 uppercase tracking-widest font-semibold">Real Estate Directory</span>
+                            <h1 class="font-serif text-3xl sm:text-4xl font-bold mt-1">Property Catalogue</h1>
+                        </div>
+                        <div class="text-xs text-gray-400">
+                            <a href="#home" class="hover:text-gold-500">Home</a> / <span class="text-white">Properties</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content Area -->
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+                <div class="flex flex-col lg:flex-row gap-8">
+                    
+                    <!-- Filters Sidebar -->
+                    <aside class="w-full lg:w-72 shrink-0">
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 sticky top-28 space-y-6">
+                            <div class="flex items-center justify-between border-b border-gray-100 pb-4">
+                                <h3 class="font-serif font-bold text-navy-950 flex items-center gap-2">
+                                    <i class="fa-solid fa-sliders text-gold-500"></i> Filter Properties
+                                </h3>
+                                <button onclick="resetFilters()" class="text-xs text-royal-600 font-semibold hover:underline">Reset</button>
+                            </div>
+
+                            <!-- Search Input -->
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-700 mb-2">Keyword Search</label>
+                                <input type="text" id="filter-keyword" oninput="applyFilters()" placeholder="e.g. Lekki, Villa, Plot..." class="w-full bg-gray-50 border border-gray-200 rounded-lg p-2.5 text-sm focus:outline-none focus:border-gold-500">
+                            </div>
+
+                            <!-- Purpose -->
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-700 mb-2">Property Purpose</label>
+                                <select id="filter-purpose" onchange="applyFilters()" class="w-full bg-gray-50 border border-gray-200 rounded-lg p-2.5 text-sm focus:outline-none focus:border-gold-500">
+                                    <option value="">All Purposes</option>
+                                    <option value="For Sale">For Sale</option>
+                                    <option value="For Rent">For Rent</option>
+                                    <option value="Land">Land / Investment</option>
+                                </select>
+                            </div>
+
+                            <!-- Location -->
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-700 mb-2">Location / State</label>
+                                <select id="filter-location" onchange="applyFilters()" class="w-full bg-gray-50 border border-gray-200 rounded-lg p-2.5 text-sm focus:outline-none focus:border-gold-500">
+                                    <option value="">All Locations</option>
+                                    <option value="Lagos">Lagos State</option>
+                                    <option value="Abuja">Abuja (FCT)</option>
+                                    <option value="Port Harcourt">Port Harcourt</option>
+                                    <option value="Ibadan">Ibadan</option>
+                                    <option value="Uyo">Uyo</option>
+                                </select>
+                            </div>
+
+                            <!-- Type -->
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-700 mb-2">Property Type</label>
+                                <select id="filter-type" onchange="applyFilters()" class="w-full bg-gray-50 border border-gray-200 rounded-lg p-2.5 text-sm focus:outline-none focus:border-gold-500">
+                                    <option value="">All Types</option>
+                                    <option value="Apartment">Apartment</option>
+                                    <option value="Duplex">Duplex</option>
+                                    <option value="Villa">Villa</option>
+                                    <option value="Residential Land">Residential Land</option>
+                                    <option value="Commercial Land">Commercial Land</option>
+                                    <option value="Commercial Property">Commercial Space</option>
+                                </select>
+                            </div>
+
+                            <!-- Bedrooms -->
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-700 mb-2">Bedrooms</label>
+                                <select id="filter-beds" onchange="applyFilters()" class="w-full bg-gray-50 border border-gray-200 rounded-lg p-2.5 text-sm focus:outline-none focus:border-gold-500">
+                                    <option value="">Any Bedrooms</option>
+                                    <option value="2">2+ Bedrooms</option>
+                                    <option value="3">3+ Bedrooms</option>
+                                    <option value="4">4+ Bedrooms</option>
+                                    <option value="5">5+ Bedrooms</option>
+                                </select>
+                            </div>
+
+                            <!-- Max Price Range -->
+                            <div>
+                                <div class="flex justify-between items-center mb-1">
+                                    <label class="text-xs font-semibold text-gray-700">Max Budget</label>
+                                    <span id="price-range-val" class="text-xs font-bold text-gold-600">No Limit</span>
+                                </div>
+                                <input type="range" id="filter-price" min="5000000" max="600000000" step="10000000" value="600000000" oninput="updatePriceSlider(this.value)" class="w-full accent-gold-500">
+                            </div>
+                        </div>
+                    </aside>
+
+                    <!-- Main Listing Stream -->
+                    <main class="flex-grow">
+                        <!-- Top Bar: Sort & View Modes -->
+                        <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 flex flex-col sm:flex-row justify-between items-center gap-4 mb-6">
+                            <div class="text-xs text-gray-600">
+                                Showing <span id="property-count" class="font-bold text-navy-950">0</span> Properties
+                            </div>
+
+                            <div class="flex items-center gap-4 w-full sm:w-auto justify-between sm:justify-end">
+                                <!-- Sort Dropdown -->
+                                <div class="flex items-center gap-2">
+                                    <span class="text-xs font-medium text-gray-500">Sort:</span>
+                                    <select id="filter-sort" onchange="applyFilters()" class="bg-gray-50 border border-gray-200 rounded-lg py-1.5 px-3 text-xs focus:outline-none focus:border-gold-500">
+                                        <option value="newest">Newest Listed</option>
+                                        <option value="price-asc">Price: Low to High</option>
+                                        <option value="price-desc">Price: High to Low</option>
+                                    </select>
+                                </div>
+
+                                <!-- View Toggle -->
+                                <div class="flex items-center bg-gray-100 rounded-lg p-1 border border-gray-200">
+                                    <button id="view-btn-grid" onclick="setLayoutMode('grid')" class="p-1.5 rounded text-navy-950 bg-white shadow-xs"><i class="fa-solid fa-border-all"></i></button>
+                                    <button id="view-btn-list" onclick="setLayoutMode('list')" class="p-1.5 rounded text-gray-500 hover:text-navy-950"><i class="fa-solid fa-list"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Grid Output -->
+                        <div id="properties-list-container" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <!-- Dynamic Cards -->
+                        </div>
+
+                        <!-- Empty State -->
+                        <div id="properties-empty" class="hidden bg-white p-12 text-center rounded-2xl border border-gray-100 my-6">
+                            <i class="fa-solid fa-house-circle-xmark text-5xl text-gray-300 mb-4"></i>
+                            <h3 class="font-serif text-xl font-bold text-navy-950 mb-2">No Properties Match Your Search</h3>
+                            <p class="text-gray-500 text-sm max-w-md mx-auto mb-6">Try adjusting your budget, changing the location filter, or resetting the search parameters.</p>
+                            <button onclick="resetFilters()" class="gold-gradient-bg text-navy-950 font-bold px-6 py-2.5 rounded-lg text-sm">Reset All Filters</button>
+                        </div>
+                    </main>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 3. PROPERTY DETAILS VIEW ==================== -->
+        <section id="view-property-details" class="page-view">
+            <div id="property-detail-wrapper" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+                <!-- Dynamic loaded JS content -->
+            </div>
+        </section>
+
+        <!-- ==================== 4. BUY PAGE VIEW ==================== -->
+        <section id="view-buy" class="page-view">
+            <div class="bg-navy-950 text-white py-16">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
+                    <span class="text-xs text-gold-500 font-semibold uppercase tracking-widest">Home Ownership Made Seamless</span>
+                    <h1 class="font-serif text-4xl sm:text-5xl font-bold mt-2">Buy Residential & Commercial Real Estate</h1>
+                    <p class="text-gray-300 text-sm sm:text-base mt-4">Discover luxury duplexes, modern apartments, and verified family homes across Nigeria's fastest growing economic zones.</p>
+                </div>
+            </div>
+
+            <!-- Buyer's Guide & Grid -->
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                <div class="mb-12 bg-white p-8 rounded-2xl border border-gray-100 shadow-sm">
+                    <h2 class="font-serif text-2xl font-bold text-navy-950 mb-6">4 Steps to Purchasing Property with PWAN</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div class="p-4 bg-gray-50 rounded-xl border border-gray-100">
+                            <span class="text-gold-500 font-bold text-xl">01</span>
+                            <h3 class="font-bold text-navy-950 mt-2">Search Listings</h3>
+                            <p class="text-xs text-gray-500 mt-1">Browse our verified inventory for sale with full title disclosures.</p>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-xl border border-gray-100">
+                            <span class="text-gold-500 font-bold text-xl">02</span>
+                            <h3 class="font-bold text-navy-950 mt-2">Book Inspection</h3>
+                            <p class="text-xs text-gray-500 mt-1">Schedule an in-person or virtual walkthrough with a dedicated agent.</p>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-xl border border-gray-100">
+                            <span class="text-gold-500 font-bold text-xl">03</span>
+                            <h3 class="font-bold text-navy-950 mt-2">Documentation</h3>
+                            <p class="text-xs text-gray-500 mt-1">Review Contract of Sale and deed verification with your legal counsel.</p>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-xl border border-gray-100">
+                            <span class="text-gold-500 font-bold text-xl">04</span>
+                            <h3 class="font-bold text-navy-950 mt-2">Key Handover</h3>
+                            <p class="text-xs text-gray-500 mt-1">Complete payment terms and receive your keys and property title.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="font-serif text-2xl font-bold text-navy-950 mb-6">Featured Properties For Sale</h2>
+                <div id="buy-featured-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6"></div>
+            </div>
+        </section>
+
+        <!-- ==================== 5. RENT PAGE VIEW ==================== -->
+        <section id="view-rent" class="page-view">
+            <div class="bg-navy-950 text-white py-16">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
+                    <span class="text-xs text-gold-500 font-semibold uppercase tracking-widest">Premium Living Spaces</span>
+                    <h1 class="font-serif text-4xl sm:text-5xl font-bold mt-2">Rent Homes & Executive Apartments</h1>
+                    <p class="text-gray-300 text-sm sm:text-base mt-4">Explore high-spec luxury apartments, penthouses, and executive family rentals in Lekki, V.I., and Abuja.</p>
+                </div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                <div id="rent-featured-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6"></div>
+            </div>
+        </section>
+
+        <!-- ==================== 6. LAND & INVESTMENT VIEW ==================== -->
+        <section id="view-land" class="page-view">
+            <div class="bg-navy-950 text-white py-16">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
+                    <span class="text-xs text-gold-500 font-semibold uppercase tracking-widest">Wealth Creation Through Real Estate</span>
+                    <h1 class="font-serif text-4xl sm:text-5xl font-bold mt-2">Strategic Land Investments</h1>
+                    <p class="text-gray-300 text-sm sm:text-base mt-4">High-yield land opportunities with clean title documentation (C of O, Gazette, Governor's Consent).</p>
+                </div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                <!-- Notice Disclaimer -->
+                <div class="bg-amber-50 border-l-4 border-gold-500 p-4 mb-8 rounded-r-lg">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-triangle-exclamation text-gold-600 text-xl"></i>
+                        <p class="text-xs text-amber-900 leading-relaxed">
+                            <strong>Investment Notice:</strong> All land plot sizes, development forecasts, and historical appreciation stats displayed are sample demonstration data. Legal documentation titles must be independently verified during formal property acquisition.
+                        </p>
+                    </div>
+                </div>
+
+                <div id="land-featured-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6"></div>
+            </div>
+        </section>
+
+        <!-- ==================== 7. SERVICES VIEW ==================== -->
+        <section id="view-services" class="page-view">
+            <div class="bg-navy-950 text-white py-16">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
+                    <span class="text-xs text-gold-500 font-semibold uppercase tracking-widest">Our Expertise</span>
+                    <h1 class="font-serif text-4xl sm:text-5xl font-bold mt-2">Comprehensive Real Estate Services</h1>
+                </div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Service Card 1 -->
+                    <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition">
+                        <div class="w-14 h-14 rounded-xl bg-navy-950 text-gold-500 flex items-center justify-center text-2xl mb-6">
+                            <i class="fa-solid fa-building-user"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-navy-950 mb-3">Property Sales & Acquisition</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-6">Assisting buyers and corporate clients in finding and purchasing premium residential homes and commercial developments across Nigeria.</p>
+                        <a href="#contact" class="text-xs font-bold text-royal-600 hover:text-gold-600 transition inline-flex items-center gap-2">Inquire Now <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+
+                    <!-- Service Card 2 -->
+                    <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition">
+                        <div class="w-14 h-14 rounded-xl bg-navy-950 text-gold-500 flex items-center justify-center text-2xl mb-6">
+                            <i class="fa-solid fa-map"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-navy-950 mb-3">Land Banking & Investments</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-6">Acquiring acreage in strategic economic corridors for institutional investors looking for capital growth and land appreciation.</p>
+                        <a href="#contact" class="text-xs font-bold text-royal-600 hover:text-gold-600 transition inline-flex items-center gap-2">Inquire Now <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+
+                    <!-- Service Card 3 -->
+                    <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition">
+                        <div class="w-14 h-14 rounded-xl bg-navy-950 text-gold-500 flex items-center justify-center text-2xl mb-6">
+                            <i class="fa-solid fa-screwdriver-wrench"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-navy-950 mb-3">Estate Development & Management</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-6">End-to-end estate master-planning, infrastructure development, security installation, and ongoing facility management services.</p>
+                        <a href="#contact" class="text-xs font-bold text-royal-600 hover:text-gold-600 transition inline-flex items-center gap-2">Inquire Now <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 8. ABOUT US VIEW ==================== -->
+        <section id="view-about" class="page-view">
+            <div class="bg-navy-950 text-white py-16">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
+                    <span class="text-xs text-gold-500 font-semibold uppercase tracking-widest">Our Legacy</span>
+                    <h1 class="font-serif text-4xl sm:text-5xl font-bold mt-2">About PWAN Properties</h1>
+                </div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+                    <div>
+                        <span class="text-gold-600 text-xs uppercase font-bold tracking-widest">Empowering Homeownership</span>
+                        <h2 class="font-serif text-3xl font-bold text-navy-950 mt-1 mb-4">Making Property Ownership a Reality for Everyone</h2>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            PWAN Properties is one of Nigeria's foremost real estate network organizations. We specialize in making homeownership convenient, accessible, and secure for Nigerians home and abroad.
+                        </p>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Through innovative property solutions, transparent documentation, and accessible installment payment plans, we have empowered thousands of families and investors to acquire genuine landed properties.
+                        </p>
+                    </div>
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80" alt="PWAN Office Building" class="rounded-2xl shadow-xl w-full h-96 object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 9. CONTACT VIEW ==================== -->
+        <section id="view-contact" class="page-view">
+            <div class="bg-navy-950 text-white py-16">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
+                    <span class="text-xs text-gold-500 font-semibold uppercase tracking-widest">Get In Touch</span>
+                    <h1 class="font-serif text-4xl font-bold mt-2">Contact Our Real Estate Specialists</h1>
+                </div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                    
+                    <!-- Contact Cards -->
+                    <div class="space-y-6">
+                        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-navy-950 text-gold-500 flex items-center justify-center shrink-0 text-xl">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-navy-950">Head Office</h3>
+                                <p class="text-xs text-gray-600 mt-1">Lekki Phase 1, Admiralty Way, Lagos State, Nigeria.</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-navy-950 text-gold-500 flex items-center justify-center shrink-0 text-xl">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-navy-950">Phone Numbers</h3>
+                                <p class="text-xs text-gray-600 mt-1">+234 (0) 800 792 6776<br>+234 (0) 812 345 6789</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-navy-950 text-gold-500 flex items-center justify-center shrink-0 text-xl">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-navy-950">Email Address</h3>
+                                <p class="text-xs text-gray-600 mt-1">info@pwanproperties.ng<br>sales@pwanproperties.ng</p>
+                            </div>
+                        </div>
+
+                        <!-- Direct WhatsApp Button -->
+                        <a href="https://wa.me/2348007926776?text=Hello%20PWAN%20Properties,%20I%20am%20interested%20in%20a%20property%20inspection." target="_blank" class="block w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 px-6 rounded-xl text-center shadow-md transition flex items-center justify-center gap-2 text-sm">
+                            <i class="fa-brands fa-whatsapp text-xl"></i> Chat on WhatsApp Now
+                        </a>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="lg:col-span-2 bg-white p-8 rounded-2xl border border-gray-100 shadow-sm">
+                        <h2 class="font-serif text-2xl font-bold text-navy-950 mb-2">Send Us a Direct Message</h2>
+                        <p class="text-gray-500 text-xs mb-6">Fill in your information below and an agent will contact you within 24 business hours.</p>
+
+                        <form id="contact-form" onsubmit="handleContactSubmit(event)" class="space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-700 mb-1">Full Name *</label>
+                                    <input type="text" required class="w-full bg-gray-50 border border-gray-200 rounded-lg p-2.5 text-sm focus:outline-none focus:border-gold-500">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-700 mb-1">Email Address *</label>
+                                    <input type="email" required class="w-full bg-gray-50 border border-gray-200 rounded-lg p-2.5 text-sm focus:outline-none focus:border-gold-500">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-700 mb-1">Phone Number *</label>
+                                    <input type="tel" required class="w-full bg-gray-50 border border-gray-200 rounded-lg p-2.5 text-sm focus:outline-none focus:border-gold-500">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-700 mb-1">Inquiry Purpose</label>
+                                    <select class="w-full bg-gray-50 border border-gray-200 rounded-lg p-2.5 text-sm focus:outline-none focus:border-gold-500">
+                                        <option>Buying Property</option>
+                                        <option>Renting Property</option>
+                                        <option>Land Investment</option>
+                                        <option>Schedule Site Inspection</option>
+                                        <option>General Support</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-700 mb-1">Your Message *</label>
+                                <textarea rows="4" required class="w-full bg-gray-50 border border-gray-200 rounded-lg p-2.5 text-sm focus:outline-none focus:border-gold-500"></textarea>
+                            </div>
+
+                            <button type="submit" class="gold-gradient-bg text-navy-950 font-bold px-8 py-3 rounded-lg text-sm shadow hover:opacity-95 transition">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 10. LIST A PROPERTY VIEW ==================== -->
+        <section id="view-list-property" class="page-view">
+            <div class="bg-navy-950 text-white py-16">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
+                    <span class="text-xs text-gold-500 font-semibold uppercase tracking-widest">For Owners & Developers</span>
+                    <h1 class="font-serif text-4xl font-bold mt-2">List Your Property With PWAN</h1>
+                </div>
+            </div>
+
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm">
+                    <form id="list-prop-form" onsubmit="handleListPropertySubmit(event)" class="space-y-6">
+                        <h2 class="font-serif text-xl font-bold text-navy-950 border-b pb-3">Property Information</h2>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-700 mb-1">Property Title *</label>
+                                <input type="text" required placeholder="e.g. 4 Bedroom Detached Duplex" class="w-full bg-gray-50 border border-gray-200 rounded-lg p-2.5 text-sm focus:outline-none focus:border-gold-500">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-700 mb-1">Listing Purpose *</label>
+                                <select required class="w-full bg-gray-50 border border-gray-200 rounded-lg p-2.5 text-sm focus:outline-none focus:border-gold-500">
+                                    <option value="For Sale">For Sale</option>
+                                    <option value="For Rent">For Rent</option>
+                                    <option value="Land">Land Plot</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-700 mb-1">State / City *</label>
+                                <input type="text" required placeholder="Lagos, Abuja, etc." class="w-full bg-gray-50 border border-gray-200 rounded-lg p-2.5 text-sm focus:outline-none focus:border-gold-500">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-700 mb-1">Price (NGN ₦) *</label>
+                                <input type="number" required placeholder="e.g. 85000000" class="w-full bg-gray-50 border border-gray-200 rounded-lg p-2.5 text-sm focus:outline-none focus:border-gold-500">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-700 mb-1">Property Type</label>
+                                <select class="w-full bg-gray-50 border border-gray-200 rounded-lg p-2.5 text-sm focus:outline-none focus:border-gold-500">
+                                    <option>Apartment</option>
+                                    <option>Duplex</option>
+                                    <option>Villa</option>
+                                    <option>Land Plot</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-700 mb-1">Image Upload Preview</label>
+                            <input type="file" accept="image/*" onchange="previewUploadImage(event)" class="w-full text-xs text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-navy-950 file:text-white hover:file:bg-navy-900">
+                            <div id="image-preview-box" class="mt-3 hidden">
+                                <img id="preview-img" src="" alt="Uploaded Image Preview" class="h-40 rounded-lg object-cover border">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="w-full gold-gradient-bg text-navy-950 font-bold py-3 rounded-lg shadow transition">
+                            Submit Property Listing Preview
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 11. FAVOURITES VIEW ==================== -->
+        <section id="view-favourites" class="page-view">
+            <div class="bg-navy-950 text-white py-16">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
+                    <span class="text-xs text-gold-500 font-semibold uppercase tracking-widest">Saved Items</span>
+                    <h1 class="font-serif text-4xl font-bold mt-2">Your Saved Properties</h1>
+                </div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                <div id="favs-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6"></div>
+
+                <div id="favs-empty" class="hidden bg-white p-12 text-center rounded-2xl border border-gray-100">
+                    <i class="fa-solid fa-heart-crack text-5xl text-gray-300 mb-4"></i>
+                    <h3 class="font-serif text-xl font-bold text-navy-950 mb-2">No Saved Properties</h3>
+                    <p class="text-gray-500 text-sm max-w-md mx-auto mb-6">Click the heart icon on any property listing to save it to your local favorites list.</p>
+                    <a href="#properties" class="gold-gradient-bg text-navy-950 font-bold px-6 py-2.5 rounded-lg text-sm inline-block">Explore Properties</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 12. FAQ VIEW ==================== -->
+        <section id="view-faq" class="page-view">
+            <div class="bg-navy-950 text-white py-16">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
+                    <span class="text-xs text-gold-500 font-semibold uppercase tracking-widest">Help & Guidance</span>
+                    <h1 class="font-serif text-4xl font-bold mt-2">Frequently Asked Questions</h1>
+                </div>
+            </div>
+
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                <div class="space-y-4" id="faq-accordion">
+                    <!-- Item 1 -->
+                    <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+                        <button onclick="toggleFaq(this)" class="w-full text-left p-5 font-bold text-navy-950 flex justify-between items-center gap-4">
+                            <span>How do I verify the land titles before purchase?</span>
+                            <i class="fa-solid fa-chevron-down text-gold-500 transition-transform"></i>
+                        </button>
+                        <div class="hidden p-5 border-t text-sm text-gray-600 leading-relaxed bg-gray-50">
+                            PWAN Properties conducts pre-listing due diligence on all plots. Buyers receive legal documentation (Deed of Assignment, Contract of Sale, Survey Plan) and are encouraged to verify titles directly with the State Ministry of Lands.
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+                        <button onclick="toggleFaq(this)" class="w-full text-left p-5 font-bold text-navy-950 flex justify-between items-center gap-4">
+                            <span>Are installment payment plans available?</span>
+                            <i class="fa-solid fa-chevron-down text-gold-500 transition-transform"></i>
+                        </button>
+                        <div class="hidden p-5 border-t text-sm text-gray-600 leading-relaxed bg-gray-50">
+                            Yes, most PWAN estates feature flexible payment structures ranging from outright purchase to 6-month and 12-month installment schedules.
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+                        <button onclick="toggleFaq(this)" class="w-full text-left p-5 font-bold text-navy-950 flex justify-between items-center gap-4">
+                            <span>Can I inspect a property if I am currently in the Diaspora?</span>
+                            <i class="fa-solid fa-chevron-down text-gold-500 transition-transform"></i>
+                        </button>
+                        <div class="hidden p-5 border-t text-sm text-gray-600 leading-relaxed bg-gray-50">
+                            We provide live video virtual tours and can accommodate authorized representatives or family members for physical inspections on your behalf.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 13. PRIVACY & TERMS VIEWS ==================== -->
+        <section id="view-privacy" class="page-view">
+            <div class="max-w-4xl mx-auto px-4 py-16 text-gray-700 space-y-4">
+                <h1 class="font-serif text-3xl font-bold text-navy-950">Privacy Policy (Sample Placeholder)</h1>
+                <p>This privacy notice is a frontend placeholder policy for PWAN Properties web demonstration platform.</p>
+            </div>
+        </section>
+
+        <section id="view-terms" class="page-view">
+            <div class="max-w-4xl mx-auto px-4 py-16 text-gray-700 space-y-4">
+                <h1 class="font-serif text-3xl font-bold text-navy-950">Terms of Service (Sample Placeholder)</h1>
+                <p>Terms of service placeholder document for PWAN Properties demonstration environment.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-navy-950 text-gray-400 border-t border-navy-800 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+                <!-- Col 1 -->
+                <div>
+                    <a href="#home" class="flex items-center gap-3 mb-4">
+                        <div class="w-8 h-8 rounded gold-gradient-bg flex items-center justify-center text-navy-900">
+                            <i class="fa-solid fa-building-columns"></i>
+                        </div>
+                        <span class="font-serif font-bold text-lg text-white">PWAN PROPERTIES</span>
+                    </a>
+                    <p class="text-xs text-gray-400 leading-relaxed mb-6">
+                        Empowering Nigerians nationwide with safe, legal, and high-yield real estate investments and luxury housing.
+                    </p>
+                    <div class="flex space-x-3 text-gray-300">
+                        <a href="#" class="w-8 h-8 rounded-full bg-navy-900 flex items-center justify-center hover:bg-gold-500 hover:text-navy-950 transition"><i class="fa-brands fa-facebook-f text-xs"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-navy-900 flex items-center justify-center hover:bg-gold-500 hover:text-navy-950 transition"><i class="fa-brands fa-instagram text-xs"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-navy-900 flex items-center justify-center hover:bg-gold-500 hover:text-navy-950 transition"><i class="fa-brands fa-x-twitter text-xs"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2 -->
+                <div>
+                    <h4 class="font-serif text-white font-bold mb-4">Quick Navigation</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#properties" class="hover:text-gold-500 transition">All Properties</a></li>
+                        <li><a href="#buy" class="hover:text-gold-500 transition">Homes for Sale</a></li>
+                        <li><a href="#rent" class="hover:text-gold-500 transition">Rentals & Apartments</a></li>
+                        <li><a href="#land" class="hover:text-gold-500 transition">Land Investments</a></li>
+                        <li><a href="#services" class="hover:text-gold-500 transition">Our Services</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3 -->
+                <div>
+                    <h4 class="font-serif text-white font-bold mb-4">Locations</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#properties" onclick="filterLocationAndNavigate('Lagos')" class="hover:text-gold-500 transition">Lagos State</a></li>
+                        <li><a href="#properties" onclick="filterLocationAndNavigate('Abuja')" class="hover:text-gold-500 transition">Abuja (FCT)</a></li>
+                        <li><a href="#properties" onclick="filterLocationAndNavigate('Port Harcourt')" class="hover:text-gold-500 transition">Port Harcourt</a></li>
+                        <li><a href="#properties" onclick="filterLocationAndNavigate('Ibadan')" class="hover:text-gold-500 transition">Ibadan</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Newsletter -->
+                <div>
+                    <h4 class="font-serif text-white font-bold mb-4">Newsletter</h4>
+                    <p class="text-xs mb-4">Subscribe for exclusive land investment alerts and price drops.</p>
+                    <form onsubmit="handleNewsletterSubmit(event)" class="space-y-2">
+                        <input type="email" required placeholder="Enter email address" class="w-full bg-navy-900 border border-navy-800 rounded p-2 text-xs text-white focus:outline-none focus:border-gold-500">
+                        <button type="submit" class="w-full gold-gradient-bg text-navy-950 font-bold py-2 rounded text-xs">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="border-t border-navy-900 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 gap-4">
+                <p>&copy; 2026 PWAN Properties Nigeria. All rights reserved. (Demonstration Frontend Website)</p>
+                <div class="flex space-x-4">
+                    <a href="#privacy" class="hover:text-gray-300">Privacy Policy</a>
+                    <a href="#terms" class="hover:text-gray-300">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal for Image Gallery View -->
+    <div id="image-lightbox" class="fixed inset-0 bg-black/90 z-50 hidden flex items-center justify-center p-4">
+        <button onclick="closeLightbox()" class="absolute top-6 right-6 text-white text-3xl hover:text-gold-500"><i class="fa-solid fa-xmark"></i></button>
+        <img id="lightbox-img" src="" alt="Enlarged view" class="max-w-full max-h-[85vh] rounded-lg object-contain">
+    </div>
+
+    <!-- MAIN JAVASCRIPT ENGINE -->
+    <script>
+        /* ==================== 1. SAMPLE NIGERIAN REAL ESTATE DATASET ==================== */
+        const propertiesData = [
+            {
+                id: "pwan-001",
+                title: "4 Bedroom Luxury Detached Duplex",
+                location: "Lekki Phase 1",
+                state: "Lagos",
+                price: 185000000,
+                purpose: "For Sale",
+                type: "Duplex",
+                beds: 4,
+                baths: 5,
+                parking: 3,
+                area: 450,
+                featured: true,
+                image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80",
+                gallery: [
+                    "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80",
+                    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
+                    "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=800&q=80"
+                ],
+                description: "Exquisite newly built 4-bedroom contemporary duplex featuring fully fitted kitchen, swimming pool, automated gate system, heat extractor, and 24/7 security in a prime Lekki neighborhood.",
+                amenities: ["Swimming Pool", "24/7 Power", "Fitted Kitchen", "CCTV Security", "BQ Included", "Smart Home"],
+                agent: { name: "Adewale Adebayo", phone: "+2348007926776", photo: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=200&q=80" }
+            },
+            {
+                id: "pwan-002",
+                title: "Prime Commercial Plot (Governor's Consent)",
+                location: "Ibeju-Lekki",
+                state: "Lagos",
+                price: 35000000,
+                purpose: "Land",
+                type: "Commercial Land",
+                beds: 0,
+                baths: 0,
+                parking: 0,
+                area: 600,
+                featured: true,
+                image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80",
+                gallery: [
+                    "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80",
+                    "https://images.unsplash.com/photo-1592595896616-c37162298647?auto=format&fit=crop&w=800&q=80"
+                ],
+                description: "Dry 600sqm commercial land situated along the active expansion corridor near the Lekki Deep Sea Port. Excellent capital appreciation forecast.",
+                amenities: ["Dry Land", "Governor's Consent", "Perimeter Fenced", "Paved Access Road"],
+                agent: { name: "Nkechi Okonkwo", phone: "+2348123456789", photo: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80" }
+            },
+            {
+                id: "pwan-003",
+                title: "3 Bedroom Serviced Apartment",
+                location: "Victoria Island",
+                state: "Lagos",
+                price: 7500000, // Annual Rent
+                purpose: "For Rent",
+                type: "Apartment",
+                beds: 3,
+                baths: 3,
+                parking: 2,
+                area: 210,
+                featured: true,
+                image: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80",
+                gallery: [
+                    "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80",
+                    "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80"
+                ],
+                description: "Luxuriously furnished 3-bedroom high-rise apartment in Victoria Island offering scenic waterfront views, gym, generator power backup, and dedicated concierge.",
+                amenities: ["Waterfront View", "Gymnasium", "24/7 Power", "Elevator", "Security"],
+                agent: { name: "Adewale Adebayo", phone: "+2348007926776", photo: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=200&q=80" }
+            },
+            {
+                id: "pwan-004",
+                title: "5 Bedroom Mansion with Penthouse",
+                location: "Maitama",
+                state: "Abuja",
+                price: 520000000,
+                purpose: "For Sale",
+                type: "Villa",
+                beds: 5,
+                baths: 6,
+                parking: 5,
+                area: 900,
+                featured: true,
+                image: "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=800&q=80",
+                gallery: [
+                    "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=800&q=80"
+                ],
+                description: "Palatial 5-bedroom mansion located in Maitama diplomat enclave. Offers private elevator, infinity pool, 2 room BQ, and bulletproof doors.",
+                amenities: ["Infinity Pool", "Elevator", "CofO Title", "Smart Security", "Green Lawn"],
+                agent: { name: "Ibrahim Bello", phone: "+2348099887766", photo: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80" }
+            },
+            {
+                id: "pwan-005",
+                title: "2 Bedroom Modern Flat",
+                location: "Gwarinpa",
+                state: "Abuja",
+                price: 32000000,
+                purpose: "For Sale",
+                type: "Apartment",
+                beds: 2,
+                baths: 2,
+                parking: 2,
+                area: 140,
+                featured: false,
+                image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=800&q=80",
+                gallery: ["https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=800&q=80"],
+                description: "Cozy 2 bedroom flat in a gated estate in Gwarinpa. Ideal for young professionals or investment rental income.",
+                amenities: ["Gated Security", "Prepaid Meter", "Paved Estate", "Water Treatment"],
+                agent: { name: "Ibrahim Bello", phone: "+2348099887766", photo: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80" }
+            },
+            {
+                id: "pwan-006",
+                title: "Residential Plot in Golf Estate",
+                location: "Port Harcourt",
+                state: "Port Harcourt",
+                price: 28000000,
+                purpose: "Land",
+                type: "Residential Land",
+                beds: 0,
+                baths: 0,
+                parking: 0,
+                area: 500,
+                featured: false,
+                image: "https://images.unsplash.com/photo-1592595896616-c37162298647?auto=format&fit=crop&w=800&q=80",
+                gallery: ["https://images.unsplash.com/photo-1592595896616-c37162298647?auto=format&fit=crop&w=800&q=80"],
+                description: "Ready-to-build residential plot within an exclusive estate in Port Harcourt. Clean C of O title available.",
+                amenities: ["CofO Title", "Drainage System", "Electric Infrastructure"],
+                agent: { name: "Nkechi Okonkwo", phone: "+2348123456789", photo: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80" }
+            },
+            {
+                id: "pwan-007",
+                title: "4 Bedroom Terrace House",
+                location: "Ikeja GRA",
+                state: "Lagos",
+                price: 135000000,
+                purpose: "For Sale",
+                type: "Duplex",
+                beds: 4,
+                baths: 4,
+                parking: 2,
+                area: 320,
+                featured: true,
+                image: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=800&q=80",
+                gallery: ["https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=800&q=80"],
+                description: "Sophisticated terrace home in peaceful Ikeja GRA with manicured lawn, modern fittings, and swimming pool access.",
+                amenities: ["Swimming Pool", "Playground", "24/7 Security", "Solar Backup"],
+                agent: { name: "Adewale Adebayo", phone: "+2348007926776", photo: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=200&q=80" }
+            },
+            {
+                id: "pwan-008",
+                title: "Investment Acres Near Moniya Train Station",
+                location: "Ibadan",
+                state: "Ibadan",
+                price: 12000000,
+                purpose: "Land",
+                type: "Commercial Land",
+                beds: 0,
+                baths: 0,
+                parking: 0,
+                area: 1200,
+                featured: false,
+                image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80",
+                gallery: ["https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80"],
+                description: "2 Plots of commercial land close to Ibadan railway station hub. Ideal for logistics, warehousing, or estate banking.",
+                amenities: ["Registered Survey", "Flat Terrain", "Good Access"],
+                agent: { name: "Nkechi Okonkwo", phone: "+2348123456789", photo: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80" }
+            }
+        ];
+
+        /* ==================== 2. APPLICATION STATE ==================== */
+        let state = {
+            currency: 'NGN', // 'NGN' or 'USD'
+            exchangeRate: 1600, // 1 USD = 1600 NGN
+            favourites: JSON.parse(localStorage.getItem('pwan_favs')) || [],
+            layoutMode: 'grid', // 'grid' or 'list'
+            heroPurposeFilter: '',
+            activeFilters: {
+                keyword: '',
+                purpose: '',
+                location: '',
+                type: '',
+                beds: '',
+                maxPrice: 600000000,
+                sort: 'newest'
+            }
+        };
+
+        /* ==================== 3. ROUTER & VIEW ENGINE ==================== */
+        window.addEventListener('hashchange', handleRoute);
+        window.addEventListener('load', () => {
+            handleRoute();
+            updateFavBadgeCounter();
+            renderFeaturedHomeGrid();
+            renderCategoryGrid('buy-featured-grid', 'For Sale');
+            renderCategoryGrid('rent-featured-grid', 'For Rent');
+            renderCategoryGrid('land-featured-grid', 'Land');
+        });
+
+        function handleRoute() {
+            const hash = window.location.hash || '#home';
+            const [page, queryString] = hash.split('?');
+
+            // Hide all pages
+            document.querySelectorAll('.page-view').forEach(view => view.classList.remove('active'));
+            
+            // Highlight nav links
+            document.querySelectorAll('.nav-link').forEach(link => {
+                if(link.getAttribute('href') === page) {
+                    link.classList.add('text-gold-500', 'border-gold-500');
+                    link.classList.remove('text-gray-300');
+                } else {
+                    link.classList.remove('text-gold-500', 'border-gold-500');
+                    link.classList.add('text-gray-300');
+                }
+            });
+
+            // Route execution
+            if (page === '#property-details') {
+                const urlParams = new URLSearchParams(queryString);
+                const propId = urlParams.get('id');
+                renderPropertyDetailsPage(propId);
+                const detailsView = document.getElementById('view-property-details');
+                if(detailsView) detailsView.classList.add('active');
+            } else {
+                const targetViewId = `view-${page.replace('#', '')}`;
+                const targetView = document.getElementById(targetViewId);
+                if (targetView) {
+                    targetView.classList.add('active');
+                } else {
+                    document.getElementById('view-home').classList.add('active');
+                }
+            }
+
+            // Special view initializations
+            if (page === '#properties') applyFilters();
+            if (page === '#favourites') renderFavouritesView();
+
+            // Mobile menu auto close
+            document.getElementById('mobile-menu').classList.add('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        /* ==================== 4. CURRENCY & FORMATTING HELPERS ==================== */
+        function setCurrency(curr) {
+            state.currency = curr;
+            document.getElementById('curr-ngn').className = curr === 'NGN' ? 'px-1.5 py-0.5 rounded text-xs font-bold bg-gold-500 text-navy-900 transition' : 'px-1.5 py-0.5 rounded text-xs font-medium text-gray-300 hover:text-white transition';
+            document.getElementById('curr-usd').className = curr === 'USD' ? 'px-1.5 py-0.5 rounded text-xs font-bold bg-gold-500 text-navy-900 transition' : 'px-1.5 py-0.5 rounded text-xs font-medium text-gray-300 hover:text-white transition';
+
+            // Refresh views
+            renderFeaturedHomeGrid();
+            applyFilters();
+            renderFavouritesView();
+            handleRoute(); // Refresh details if open
+            showToast(`Currency set to ${curr}`);
+        }
+
+        function formatPrice(amountNgn) {
+            if (state.currency === 'USD') {
+                const usd = Math.round(amountNgn / state.exchangeRate);
+                return `$${new Intl.NumberFormat('en-US').format(usd)}`;
+            }
+            return `₦${new Intl.NumberFormat('en-NG').format(amountNgn)}`;
+        }
+
+        /* ==================== 5. UI TOAST SYSTEM ==================== */
+        function showToast(message, type = 'success') {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = `pointer-events-auto flex items-center gap-3 px-4 py-3 rounded-xl shadow-2xl text-white text-sm font-medium transition duration-300 transform translate-y-2 opacity-0 ${type === 'error' ? 'bg-rose-600' : 'bg-navy-950 border border-gold-500/40'}`;
+            toast.innerHTML = `
+                <i class="${type === 'error' ? 'fa-solid fa-circle-exclamation text-rose-300' : 'fa-solid fa-circle-check text-gold-500'}"></i>
+                <span>${message}</span>
+            `;
+            container.appendChild(toast);
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-2', 'opacity-0');
+            }, 10);
+
+            setTimeout(() => {
+                toast.classList.add('opacity-0');
+                setTimeout(() => toast.remove(), 300);
+            }, 3500);
+        }
+
+        /* ==================== 6. FAVORITES LOGIC ==================== */
+        function toggleFavorite(id, event) {
+            if (event) event.stopPropagation();
+            const index = state.favourites.indexOf(id);
+            if (index > -1) {
+                state.favourites.splice(index, 1);
+                showToast("Property removed from saved favorites.");
+            } else {
+                state.favourites.push(id);
+                showToast("Property saved to favorites!");
+            }
+            localStorage.setItem('pwan_favs', JSON.stringify(state.favourites));
+            updateFavBadgeCounter();
+            renderFeaturedHomeGrid();
+            if (window.location.hash === '#properties') applyFilters();
+            if (window.location.hash === '#favourites') renderFavouritesView();
+        }
+
+        function updateFavBadgeCounter() {
+            const count = state.favourites.length;
+            document.getElementById('fav-count-badge').innerText = count;
+            document.getElementById('mobile-fav-count').innerText = count;
+        }
+
+        /* ==================== 7. RENDER PROPERTY CARD HTML ==================== */
+        function createPropertyCardHTML(item, isListView = false) {
+            const isFav = state.favourites.includes(item.id);
+            const isRent = item.purpose === 'For Rent';
+
+            if (isListView) {
+                return `
+                <div class="bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg transition overflow-hidden flex flex-col md:flex-row group">
+                    <div class="relative md:w-2/5 h-64 md:h-auto overflow-hidden">
+                        <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-3 left-3 bg-navy-950/90 backdrop-blur-sm text-gold-400 text-[10px] font-bold px-3 py-1 rounded-full uppercase">
+                            ${item.purpose}
+                        </span>
+                        <button onclick="toggleFavorite('${item.id}', event)" class="absolute top-3 right-3 w-9 h-9 rounded-full bg-white/90 text-navy-950 flex items-center justify-center hover:text-rose-500 transition shadow">
+                            <i class="${isFav ? 'fa-solid fa-heart text-rose-500' : 'fa-regular fa-heart'}"></i>
+                        </button>
+                    </div>
+                    <div class="p-6 md:w-3/5 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start">
+                                <span class="text-xs font-semibold text-royal-600">${item.type}</span>
+                                <span class="font-serif font-bold text-xl text-navy-950">${formatPrice(item.price)} ${isRent ? '<span class="text-xs font-normal text-gray-500">/yr</span>' : ''}</span>
+                            </div>
+                            <h3 class="font-serif text-lg font-bold text-navy-950 mt-1 hover:text-gold-600 transition">
+                                <a href="#property-details?id=${item.id}">${item.title}</a>
+                            </h3>
+                            <p class="text-xs text-gray-500 flex items-center gap-1 mt-2">
+                                <i class="fa-solid fa-location-dot text-gold-500"></i> ${item.location}, ${item.state}
+                            </p>
+                            <p class="text-xs text-gray-600 mt-3 line-clamp-2">${item.description}</p>
+                        </div>
+                        <div class="pt-4 border-t border-gray-100 mt-4 flex items-center justify-between text-xs text-gray-600">
+                            <div class="flex gap-4">
+                                ${item.beds ? `<span><i class="fa-solid fa-bed text-gold-500 mr-1"></i>${item.beds} Beds</span>` : ''}
+                                ${item.baths ? `<span><i class="fa-solid fa-bath text-gold-500 mr-1"></i>${item.baths} Baths</span>` : ''}
+                                <span><i class="fa-solid fa-vector-square text-gold-500 mr-1"></i>${item.area} sqm</span>
+                            </div>
+                            <a href="#property-details?id=${item.id}" class="gold-gradient-bg text-navy-950 font-bold px-4 py-2 rounded-lg">Details</a>
+                        </div>
+                    </div>
+                </div>`;
+            }
+
+            return `
+            <div class="bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl transition duration-300 overflow-hidden flex flex-col justify-between group">
+                <div class="relative h-60 overflow-hidden">
+                    <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                    <span class="absolute top-3 left-3 bg-navy-950/90 text-gold-400 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                        ${item.purpose}
+                    </span>
+                    <button onclick="toggleFavorite('${item.id}', event)" class="absolute top-3 right-3 w-9 h-9 rounded-full bg-white/90 text-navy-950 flex items-center justify-center hover:text-rose-500 transition shadow">
+                        <i class="${isFav ? 'fa-solid fa-heart text-rose-500' : 'fa-regular fa-heart'}"></i>
+                    </button>
+                    <div class="absolute bottom-3 left-3 text-white">
+                        <span class="font-serif font-bold text-xl">${formatPrice(item.price)} ${isRent ? '<span class="text-xs font-normal">/yr</span>' : ''}</span>
+                    </div>
+                </div>
+
+                <div class="p-5 flex-grow flex flex-col justify-between">
+                    <div>
+                        <span class="text-[11px] font-semibold text-royal-600 uppercase tracking-wider">${item.type}</span>
+                        <h3 class="font-serif font-bold text-navy-950 text-base mt-1 line-clamp-1 hover:text-gold-600 transition">
+                            <a href="#property-details?id=${item.id}">${item.title}</a>
+                        </h3>
+                        <p class="text-xs text-gray-500 flex items-center gap-1 mt-1">
+                            <i class="fa-solid fa-location-dot text-gold-500"></i> ${item.location}, ${item.state}
+                        </p>
+                    </div>
+
+                    <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500">
+                        ${item.beds ? `<span><i class="fa-solid fa-bed text-gold-500 mr-1"></i>${item.beds}</span>` : '<span>-</span>'}
+                        ${item.baths ? `<span><i class="fa-solid fa-bath text-gold-500 mr-1"></i>${item.baths}</span>` : '<span>-</span>'}
+                        <span><i class="fa-solid fa-vector-square text-gold-500 mr-1"></i>${item.area}m²</span>
+                        <a href="#property-details?id=${item.id}" class="text-xs font-bold text-royal-600 hover:text-gold-600">View <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+            </div>`;
+        }
+
+        /* ==================== 8. VIEW SPECIFIC RENDERERS ==================== */
+        function renderFeaturedHomeGrid() {
+            const container = document.getElementById('home-featured-grid');
+            if (!container) return;
+            const featured = propertiesData.filter(p => p.featured).slice(0, 3);
+            container.innerHTML = featured.map(p => createPropertyCardHTML(p)).join('');
+        }
+
+        function renderCategoryGrid(containerId, purpose) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+            const items = propertiesData.filter(p => p.purpose === purpose).slice(0, 3);
+            container.innerHTML = items.map(p => createPropertyCardHTML(p)).join('');
+        }
+
+        function applyFilters() {
+            const container = document.getElementById('properties-list-container');
+            if (!container) return;
+
+            const kw = document.getElementById('filter-keyword').value.toLowerCase();
+            const purp = document.getElementById('filter-purpose').value;
+            const loc = document.getElementById('filter-location').value;
+            const typ = document.getElementById('filter-type').value;
+            const beds = document.getElementById('filter-beds').value;
+            const maxP = parseInt(document.getElementById('filter-price').value);
+            const sort = document.getElementById('filter-sort').value;
+
+            let filtered = propertiesData.filter(item => {
+                const matchesKw = item.title.toLowerCase().includes(kw) || item.location.toLowerCase().includes(kw);
+                const matchesPurp = !purp || item.purpose === purp;
+                const matchesLoc = !loc || item.state === loc || item.location.includes(loc);
+                const matchesTyp = !typ || item.type === typ;
+                const matchesBeds = !beds || item.beds >= parseInt(beds);
+                const matchesPrice = item.price <= maxP;
+
+                return matchesKw && matchesPurp && matchesLoc && matchesTyp && matchesBeds && matchesPrice;
+            });
+
+            // Sorting
+            if (sort === 'price-asc') filtered.sort((a,b) => a.price - b.price);
+            if (sort === 'price-desc') filtered.sort((a,b) => b.price - a.price);
+
+            document.getElementById('property-count').innerText = filtered.length;
+            const emptyBox = document.getElementById('properties-empty');
+
+            if (filtered.length === 0) {
+                container.innerHTML = '';
+                emptyBox.classList.remove('hidden');
+            } else {
+                emptyBox.classList.add('hidden');
+                container.className = state.layoutMode === 'list' ? 'flex flex-col gap-6' : 'grid grid-cols-1 md:grid-cols-2 gap-6';
+                container.innerHTML = filtered.map(item => createPropertyCardHTML(item, state.layoutMode === 'list')).join('');
+            }
+        }
+
+        function resetFilters() {
+            document.getElementById('filter-keyword').value = '';
+            document.getElementById('filter-purpose').value = '';
+            document.getElementById('filter-location').value = '';
+            document.getElementById('filter-type').value = '';
+            document.getElementById('filter-beds').value = '';
+            document.getElementById('filter-price').value = 600000000;
+            document.getElementById('price-range-val').innerText = 'No Limit';
+            applyFilters();
+        }
+
+        function updatePriceSlider(val) {
+            document.getElementById('price-range-val').innerText = formatPrice(parseInt(val));
+            applyFilters();
+        }
+
+        function setLayoutMode(mode) {
+            state.layoutMode = mode;
+            document.getElementById('view-btn-grid').className = mode === 'grid' ? 'p-1.5 rounded text-navy-950 bg-white shadow-xs' : 'p-1.5 rounded text-gray-500 hover:text-navy-950';
+            document.getElementById('view-btn-list').className = mode === 'list' ? 'p-1.5 rounded text-navy-950 bg-white shadow-xs' : 'p-1.5 rounded text-gray-500 hover:text-navy-950';
+            applyFilters();
+        }
+
+        /* Hero Quick Navigation Integration */
+        function setHeroPurpose(purp) {
+            state.heroPurposeFilter = purp;
+            document.querySelectorAll('.hero-tab').forEach(b => {
+                b.className = 'hero-tab font-semibold text-xs sm:text-sm px-4 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-navy-800 transition';
+            });
+            const activeTabId = purp === '' ? 'hero-tab-all' : (purp === 'For Sale' ? 'hero-tab-sale' : (purp === 'For Rent' ? 'hero-tab-rent' : 'hero-tab-land'));
+            document.getElementById(activeTabId).className = 'hero-tab active font-semibold text-xs sm:text-sm px-4 py-2 rounded-lg bg-gold-500 text-navy-950 transition';
+        }
+
+        function triggerHeroSearch() {
+            const loc = document.getElementById('hero-location').value;
+            const typ = document.getElementById('hero-type').value;
+            const maxP = document.getElementById('hero-max-price').value;
+
+            window.location.hash = '#properties';
+            setTimeout(() => {
+                document.getElementById('filter-purpose').value = state.heroPurposeFilter;
+                document.getElementById('filter-location').value = loc;
+                document.getElementById('filter-type').value = typ;
+                if(maxP) {
+                    document.getElementById('filter-price').value = maxP;
+                    document.getElementById('price-range-val').innerText = formatPrice(parseInt(maxP));
+                }
+                applyFilters();
+            }, 50);
+        }
+
+        function filterLocationAndNavigate(loc) {
+            window.location.hash = '#properties';
+            setTimeout(() => {
+                resetFilters();
+                document.getElementById('filter-location').value = loc;
+                applyFilters();
+            }, 50);
+        }
+
+        function filterCategoryAndNavigate(type) {
+            window.location.hash = '#properties';
+            setTimeout(() => {
+                resetFilters();
+                document.getElementById('filter-type').value = type;
+                applyFilters();
+            }, 50);
+        }
+
+        /* ==================== 9. PROPERTY DETAILS RENDERER ==================== */
+        function renderPropertyDetailsPage(id) {
+            const container = document.getElementById('property-detail-wrapper');
+            const item = propertiesData.find(p => p.id === id) || propertiesData[0];
+            const isFav = state.favourites.includes(item.id);
+
+            container.innerHTML = `
+            <div class="space-y-8">
+                <!-- Breadcrumbs & Header -->
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 border-b border-gray-200 pb-6">
+                    <div>
+                        <div class="text-xs text-gray-500 mb-2">
+                            <a href="#properties" class="hover:text-gold-600">Properties</a> / <span class="text-navy-950 font-semibold">${item.title}</span>
+                        </div>
+                        <h1 class="font-serif text-3xl sm:text-4xl font-bold text-navy-950">${item.title}</h1>
+                        <p class="text-sm text-gray-500 flex items-center gap-1 mt-2">
+                            <i class="fa-solid fa-location-dot text-gold-500"></i> ${item.location}, ${item.state}, Nigeria
+                        </p>
+                    </div>
+
+                    <div class="flex items-center gap-4">
+                        <div class="text-right">
+                            <span class="text-xs font-semibold text-royal-600 block">${item.purpose}</span>
+                            <span class="font-serif text-3xl font-bold text-navy-950">${formatPrice(item.price)}</span>
+                        </div>
+                        <button onclick="toggleFavorite('${item.id}', event)" class="w-12 h-12 rounded-xl bg-gray-100 text-navy-950 flex items-center justify-center hover:bg-rose-50 hover:text-rose-500 transition border">
+                            <i class="${isFav ? 'fa-solid fa-heart text-rose-500 text-xl' : 'fa-regular fa-heart text-xl'}"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Gallery Grid -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+                    <div class="lg:col-span-2 h-[420px] rounded-2xl overflow-hidden shadow-sm border relative">
+                        <img id="main-detail-img" src="${item.image}" alt="${item.title}" class="w-full h-full object-cover cursor-pointer" onclick="openLightbox(this.src)">
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        ${(item.gallery || [item.image]).slice(0, 2).map(img => `
+                            <div class="h-[200px] rounded-2xl overflow-hidden shadow-sm border">
+                                <img src="${img}" class="w-full h-full object-cover cursor-pointer hover:opacity-90 transition" onclick="switchDetailImage('${img}')">
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+
+                <!-- Spec Badges -->
+                <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
+                    <div>
+                        <span class="text-xs text-gray-400 uppercase tracking-widest block mb-1">Bedrooms</span>
+                        <span class="font-serif font-bold text-xl text-navy-950 flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-bed text-gold-500"></i> ${item.beds || 'N/A'}
+                        </span>
+                    </div>
+                    <div>
+                        <span class="text-xs text-gray-400 uppercase tracking-widest block mb-1">Bathrooms</span>
+                        <span class="font-serif font-bold text-xl text-navy-950 flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-bath text-gold-500"></i> ${item.baths || 'N/A'}
+                        </span>
+                    </div>
+                    <div>
+                        <span class="text-xs text-gray-400 uppercase tracking-widest block mb-1">Parking</span>
+                        <span class="font-serif font-bold text-xl text-navy-950 flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-car text-gold-500"></i> ${item.parking || 'N/A'}
+                        </span>
+                    </div>
+                    <div>
+                        <span class="text-xs text-gray-400 uppercase tracking-widest block mb-1">Area</span>
+                        <span class="font-serif font-bold text-xl text-navy-950 flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-vector-square text-gold-500"></i> ${item.area} sqm
+                        </span>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Left Column: Specs, Desc, Amenities, Mortgage Calc -->
+                    <div class="lg:col-span-2 space-y-8">
+                        <!-- Description -->
+                        <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm">
+                            <h3 class="font-serif text-xl font-bold text-navy-950 mb-4">Property Description</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">${item.description}</p>
+                        </div>
+
+                        <!-- Amenities -->
+                        <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm">
+                            <h3 class="font-serif text-xl font-bold text-navy-950 mb-4">Features & Amenities</h3>
+                            <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                                ${item.amenities.map(a => `
+                                    <div class="flex items-center gap-2 text-xs font-medium text-gray-700 bg-gray-50 p-3 rounded-xl border border-gray-100">
+                                        <i class="fa-solid fa-check text-gold-500"></i> ${a}
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+
+                        <!-- Mortgage Calculator -->
+                        <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm space-y-4">
+                            <h3 class="font-serif text-xl font-bold text-navy-950">Affordability & Financing Estimator</h3>
+                            <p class="text-xs text-gray-500">Estimate your monthly mortgage payments for this property (Sample Estimate).</p>
+                            
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-700 mb-1">Down Payment (20%)</label>
+                                    <input type="text" readonly value="${formatPrice(item.price * 0.2)}" class="w-full bg-gray-100 border rounded-lg p-2.5 text-xs font-bold text-navy-950">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-700 mb-1">Loan Tenure</label>
+                                    <select id="calc-tenure" onchange="calculateMortgage(${item.price})" class="w-full border rounded-lg p-2.5 text-xs bg-gray-50">
+                                        <option value="10">10 Years</option>
+                                        <option value="15" selected>15 Years</option>
+                                        <option value="20">20 Years</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-700 mb-1">Interest Rate</label>
+                                    <input type="text" readonly value="16% p.a." class="w-full bg-gray-100 border rounded-lg p-2.5 text-xs text-navy-950 font-bold">
+                                </div>
+                            </div>
+
+                            <div class="bg-navy-950 text-white p-4 rounded-xl flex items-center justify-between mt-4">
+                                <span class="text-xs text-gray-300">Estimated Monthly Repayment:</span>
+                                <span id="calc-result" class="font-serif text-xl font-bold text-gold-400">${formatPrice((item.price * 0.8 * 0.16) / 12)}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Agent Card & Enquiry -->
+                    <div class="space-y-6">
+                        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm sticky top-28 space-y-6">
+                            <h3 class="font-serif text-lg font-bold text-navy-950 border-b pb-3">Listed By Representative</h3>
+                            
+                            <div class="flex items-center gap-4">
+                                <img src="${item.agent.photo}" alt="${item.agent.name}" class="w-14 h-14 rounded-full object-cover border-2 border-gold-500">
+                                <div>
+                                    <h4 class="font-bold text-navy-950 text-sm">${item.agent.name}</h4>
+                                    <span class="text-xs text-gold-600 font-semibold">Verified PWAN Agent</span>
+                                </div>
+                            </div>
+
+                            <a href="https://wa.me/${item.agent.phone.replace('+','')}" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-xl text-xs shadow flex items-center justify-center gap-2 transition">
+                                <i class="fa-brands fa-whatsapp text-base"></i> Chat on WhatsApp
+                            </a>
+
+                            <hr class="border-gray-100">
+
+                            <!-- Direct Enquiry Form -->
+                            <form onsubmit="handleInspectionFormSubmit(event)" class="space-y-3">
+                                <h4 class="font-bold text-xs text-navy-950 uppercase">Schedule Inspection</h4>
+                                <input type="text" placeholder="Your Full Name" required class="w-full bg-gray-50 border rounded-lg p-2.5 text-xs">
+                                <input type="email" placeholder="Email Address" required class="w-full bg-gray-50 border rounded-lg p-2.5 text-xs">
+                                <input type="tel" placeholder="Phone Number" required class="w-full bg-gray-50 border rounded-lg p-2.5 text-xs">
+                                <input type="date" required class="w-full bg-gray-50 border rounded-lg p-2.5 text-xs">
+                                <button type="submit" class="w-full gold-gradient-bg text-navy-950 font-bold py-2.5 rounded-lg text-xs shadow">Request Inspection</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>`;
+        }
+
+        function switchDetailImage(src) {
+            const mainImg = document.getElementById('main-detail-img');
+            if (mainImg) mainImg.src = src;
+        }
+
+        function calculateMortgage(price) {
+            const tenure = parseInt(document.getElementById('calc-tenure').value);
+            const loanAmount = price * 0.8;
+            const monthlyRate = 0.16 / 12;
+            const totalMonths = tenure * 12;
+            const monthlyPayment = (loanAmount * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -totalMonths));
+            document.getElementById('calc-result').innerText = formatPrice(Math.round(monthlyPayment));
+        }
+
+        /* ==================== 10. FAVOURITES PAGE RENDERER ==================== */
+        function renderFavouritesView() {
+            const container = document.getElementById('favs-grid');
+            const emptyBox = document.getElementById('favs-empty');
+            if (!container) return;
+
+            const favItems = propertiesData.filter(p => state.favourites.includes(p.id));
+
+            if (favItems.length === 0) {
+                container.innerHTML = '';
+                emptyBox.classList.remove('hidden');
+            } else {
+                emptyBox.classList.add('hidden');
+                container.innerHTML = favItems.map(p => createPropertyCardHTML(p)).join('');
+            }
+        }
+
+        /* ==================== 11. LIGHTBOX MODAL ==================== */
+        function openLightbox(src) {
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('image-lightbox').classList.remove('hidden');
+        }
+
+        function closeLightbox() {
+            document.getElementById('image-lightbox').classList.add('hidden');
+        }
+
+        /* ==================== 12. FAQ ACCORDION ==================== */
+        function toggleFaq(btn) {
+            const content = btn.nextElementSibling;
+            const icon = btn.querySelector('i');
+            content.classList.toggle('hidden');
+            icon.classList.toggle('rotate-180');
+        }
+
+        /* ==================== 13. FORM SUBMISSIONS ==================== */
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            showToast("Thank you! Your message has been sent to PWAN Properties.");
+            e.target.reset();
+        }
+
+        function handleListPropertySubmit(e) {
+            e.preventDefault();
+            showToast("Property listing submitted for frontend preview!");
+            e.target.reset();
+            document.getElementById('image-preview-box').classList.add('hidden');
+        }
+
+        function handleInspectionFormSubmit(e) {
+            e.preventDefault();
+            showToast("Inspection request registered! Our representative will call you.");
+            e.target.reset();
+        }
+
+        function handleNewsletterSubmit(e) {
+            e.preventDefault();
+            showToast("Subscribed successfully to PWAN real estate alerts!");
+            e.target.reset();
+        }
+
+        function previewUploadImage(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('preview-img').src = e.target.result;
+                    document.getElementById('image-preview-box').classList.remove('hidden');
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        /* Mobile drawer toggle listener */
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

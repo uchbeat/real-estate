@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore real estate listings for sale, rent, and land investment in Lagos, Abuja, Port Harcourt, and Ibadan with PWAN Properties. Filter by location, price, type, and bedrooms.">
+  <title>Properties Directory | PWAN Properties Nigeria</title>
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* ==========================================================================
+       DESIGN SYSTEM & VARIABLES
+       ========================================================================== */
+    :root {
+      --primary-navy: #10233F;
+      --royal-blue: #1E4E8C;
+      --gold-accent: #D4A64A;
+      --gold-hover: #b88d35;
+      --bg-light: #F5F7FA;
+      --bg-white: #FFFFFF;
+      --text-dark: #202B3C;
+      --text-muted: #697586;
+      --border-color: #E2E8F0;
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+      --shadow-md: 0 8px 24px rgba(0,0,0,0.08);
+      --shadow-lg: 0 16px 32px rgba(0,0,0,0.12);
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --radius-sm: 6px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+    }
+
+    /* Reset & Base Styles */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Playfair Display', Georgia, serif;
+      color: var(--primary-navy);
+      line-height: 1.25;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: var(--transition);
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* ==========================================================================
+       TOP ANNOUNCEMENT BAR & NAVIGATION
+       ========================================================================== */
+    .top-bar {
+      background-color: var(--primary-navy);
+      color: #D1D5DB;
+      font-size: 0.85rem;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .top-bar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .top-bar-info span {
+      margin-right: 1.25rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .top-bar-info i {
+      color: var(--gold-accent);
+    }
+
+    .header-main {
+      background-color: var(--bg-white);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.1rem 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      font-family: 'Playfair Display', serif;
+    }
+
+    .logo-icon {
+      background: linear-gradient(135deg, var(--royal-blue), var(--primary-navy));
+      color: var(--gold-accent);
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius-sm);
+      font-size: 1.1rem;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+      list-style: none;
+    }
+
+    .nav-link {
+      font-weight: 500;
+      color: var(--text-dark);
+      font-size: 0.95rem;
+      position: relative;
+      padding: 0.25rem 0;
+    }
+
+    .nav-link:hover, .nav-link.active {
+      color: var(--royal-blue);
+    }
+
+    .nav-link.active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: var(--gold-accent);
+      border-radius: 2px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: var(--transition);
+      border: none;
+    }
+
+    .btn-gold {
+      background-color: var(--gold-accent);
+      color: var(--primary-navy);
+    }
+
+    .btn-gold:hover {
+      background-color: var(--gold-hover);
+      transform: translateY(-2px);
+    }
+
+    .btn-navy {
+      background-color: var(--primary-navy);
+      color: var(--bg-white);
+    }
+
+    .btn-navy:hover {
+      background-color: var(--royal-blue);
+      transform: translateY(-2px);
+    }
+
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--primary-navy);
+      cursor: pointer;
+    }
+
+    /* ==========================================================================
+       PAGE HEADER / HERO
+       ========================================================================== */
+    .page-header {
+      background: linear-gradient(135deg, rgba(16, 35, 63, 0.92), rgba(30, 78, 140, 0.88)), url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      color: var(--bg-white);
+      padding: 4.5rem 0 3.5rem;
+      text-align: center;
+    }
+
+    .page-header h1 {
+      color: var(--bg-white);
+      font-size: 2.8rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .breadcrumb {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    .breadcrumb a {
+      color: var(--gold-accent);
+    }
+
+    /* Demo Notice Disclaimer */
+    .demo-notice {
+      background-color: #FEF3C7;
+      border-left: 4px solid #D97706;
+      color: #92400E;
+      padding: 0.85rem 1.25rem;
+      font-size: 0.88rem;
+      margin: 1.5rem auto 0;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      max-width: 1280px;
+    }
+
+    /* ==========================================================================
+       MAIN PROPERTIES SECTION WITH FILTER SIDEBAR & GRID
+       ========================================================================== */
+    .properties-section {
+      padding: 3rem 0 5rem;
+    }
+
+    .properties-layout {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    /* Sidebar Filter Panel */
+    .filter-panel {
+      background: var(--bg-white);
+      padding: 1.75rem;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-color);
+      position: sticky;
+      top: 90px;
+    }
+
+    .filter-title {
+      font-size: 1.2rem;
+      margin-bottom: 1.25rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 0.75rem;
+    }
+
+    .btn-reset {
+      background: none;
+      border: none;
+      color: var(--royal-blue);
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .btn-reset:hover {
+      color: var(--gold-accent);
+    }
+
+    .filter-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .filter-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--primary-navy);
+      margin-bottom: 0.4rem;
+    }
+
+    .filter-control {
+      width: 100%;
+      padding: 0.65rem 0.85rem;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-size: 0.9rem;
+      color: var(--text-dark);
+      background-color: var(--bg-light);
+      transition: var(--transition);
+    }
+
+    .filter-control:focus {
+      outline: none;
+      border-color: var(--royal-blue);
+      background-color: var(--bg-white);
+    }
+
+    .price-range-output {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 0.4rem;
+      font-weight: 600;
+    }
+
+    /* Content Area Controls Header */
+    .listings-header {
+      background: var(--bg-white);
+      padding: 1.25rem 1.5rem;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .results-count {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .results-count span {
+      font-weight: 700;
+      color: var(--primary-navy);
+    }
+
+    .listings-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .sort-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    .view-toggle {
+      display: flex;
+      gap: 0.3rem;
+
+    }
+
+    .view-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-color);
+      background: var(--bg-light);
+      color: var(--text-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .view-btn.active, .view-btn:hover {
+      background: var(--primary-navy);
+      color: var(--gold-accent);
+      border-color: var(--primary-navy);
+    }
+
+    /* Property Cards Grid */
+    .properties-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .properties-grid.list-view {
+      grid-template-columns: 1fr;
+    }
+
+    .property-card {
+      background: var(--bg-white);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-color);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .properties-grid.list-view .property-card {
+      flex-direction: row;
+      height: 240px;
+    }
+
+    .property-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(212, 166, 74, 0.4);
+    }
+
+    .card-thumb-wrapper {
+      position: relative;
+      height: 220px;
+      overflow: hidden;
+    }
+
+    .properties-grid.list-view .card-thumb-wrapper {
+      width: 36%;
+      height: 100%;
+      flex-shrink: 0;
+    }
+
+    .card-thumb {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .property-card:hover .card-thumb {
+      transform: scale(1.05);
+    }
+
+    .badge-group {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      display: flex;
+      gap: 0.4rem;
+      z-index: 2;
+    }
+
+    .badge {
+      padding: 0.3rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .badge-sale { background: #10B981; color: #FFF; }
+    .badge-rent { background: #3B82F6; color: #FFF; }
+    .badge-land { background: #8B5CF6; color: #FFF; }
+    .badge-featured { background: var(--gold-accent); color: var(--primary-navy); }
+
+    .fav-btn {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(4px);
+      border: none;
+      color: var(--text-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: var(--transition);
+      z-index: 2;
+    }
+
+    .fav-btn:hover, .fav-btn.active {
+      background: #EF4444;
+      color: #FFF;
+    }
+
+    .card-content {
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex-grow: 1;
+    }
+
+    .card-price {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--royal-blue);
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 0.4rem;
+    }
+
+    .card-title {
+      font-size: 1.1rem;
+      margin-bottom: 0.4rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .card-location {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .card-specs {
+      display: flex;
+      gap: 1rem;
+      border-top: 1px solid var(--border-color);
+      padding-top: 0.8rem;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .spec-item {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .spec-item i {
+      color: var(--gold-accent);
+    }
+
+    /* Empty State */
+    .empty-state {
+      text-align: center;
+      padding: 4rem 2rem;
+      background: var(--bg-white);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+      grid-column: 1 / -1;
+    }
+
+    .empty-icon {
+      font-size: 3rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    .empty-state h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* ==========================================================================
+       FOOTER
+       ========================================================================== */
+    .footer {
+      background-color: var(--primary-navy);
+      color: #D1D5DB;
+      padding: 4rem 0 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 2.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-col h4 {
+      color: var(--bg-white);
+      font-size: 1.1rem;
+      margin-bottom: 1.25rem;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+
+    .footer-col h4::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 35px;
+      height: 2px;
+      background-color: var(--gold-accent);
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.6rem;
+    }
+
+    .footer-links a {
+      color: #9CA3AF;
+      font-size: 0.9rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold-accent);
+      padding-left: 4px;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.85rem;
+      color: #9CA3AF;
+    }
+
+    /* Toast Notification */
+    .toast-notification {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: var(--primary-navy);
+      color: var(--bg-white);
+      padding: 1rem 1.5rem;
+      border-radius: var(--radius-md);
+      border-left: 5px solid var(--gold-accent);
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      z-index: 2000;
+      transform: translateY(120%);
+      transition: transform 0.4s ease-out;
+    }
+
+    .toast-notification.show {
+      transform: translateY(0);
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 992px) {
+      .properties-layout {
+        grid-template-columns: 1fr;
+      }
+      .filter-panel {
+        position: static;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background-color: var(--bg-white);
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 2.5rem 1.5rem;
+        transition: 0.3s ease;
+        box-shadow: var(--shadow-md);
+      }
+
+      .nav-menu.active {
+        left: 0;
+      }
+
+      .mobile-toggle {
+        display: block;
+      }
+
+      .properties-grid.list-view .property-card {
+        flex-direction: column;
+        height: auto;
+      }
+
+      .properties-grid.list-view .card-thumb-wrapper {
+        width: 100%;
+        height: 200px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-info">
+        <span><i class="fa-solid fa-phone"></i> +234 (0) 800 792 6777</span>
+        <span><i class="fa-solid fa-envelope"></i> info@pwanproperties.ng</span>
+        <span><i class="fa-solid fa-location-dot"></i> Lekki Phase 1, Lagos, Nigeria</span>
+      </div>
+      <div>
+        <span><i class="fa-regular fa-clock"></i> Mon - Sat: 8:00 AM - 6:00 PM</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <header class="header-main">
+    <div class="container">
+      <nav class="navbar">
+        <a href="index.html" class="logo">
+          <div class="logo-icon"><i class="fa-solid fa-building"></i></div>
+          <span>PWAN PROPERTIES</span>
+        </a>
+
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="properties.html" class="nav-link active">Properties</a></li>
+          <li><a href="buy.html" class="nav-link">Buy</a></li>
+          <li><a href="rent.html" class="nav-link">Rent</a></li>
+          <li><a href="land.html" class="nav-link">Land</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="about.html" class="nav-link">About Us</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <li><a href="favourites.html" class="nav-link"><i class="fa-regular fa-heart"></i> Saved</a></li>
+          <li><a href="list-property.html" class="btn btn-gold">List a Property</a></li>
+        </ul>
+
+        <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Demo Disclaimer -->
+  <div class="container">
+    <div class="demo-notice">
+      <i class="fa-solid fa-circle-info"></i>
+      <div>
+        <strong>Demonstration Directory Notice:</strong> All listings, pricing, locations, and specs displayed in this property catalog are fictional sample dataset entries for frontend demonstration purposes.
+      </div>
+    </div>
+  </div>
+
+  <!-- Page Header / Hero -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Property Directory</h1>
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <i class="fa-solid fa-chevron-right" style="font-size: 0.75rem;"></i>
+        <span>Properties</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content Layout -->
+  <section class="properties-section">
+    <div class="container">
+      <div class="properties-layout">
+
+        <!-- Filter Panel -->
+        <aside class="filter-panel">
+          <div class="filter-title">
+            <span><i class="fa-solid fa-sliders" style="color: var(--gold-accent);"></i> Filter Search</span>
+            <button class="btn-reset" onclick="resetFilters()">Reset All</button>
+          </div>
+
+          <div class="filter-group">
+            <label for="filterKeyword">Search Keyword</label>
+            <input type="text" id="filterKeyword" class="filter-control" placeholder="e.g. Duplex, Lekki, Villa" oninput="applyFilters()">
+          </div>
+
+          <div class="filter-group">
+            <label for="filterLocation">Location / State</label>
+            <select id="filterLocation" class="filter-control" onchange="applyFilters()">
+              <option value="all">All Locations</option>
+              <option value="Lagos">Lagos State</option>
+              <option value="Abuja">Abuja FCT</option>
+              <option value="Port Harcourt">Port Harcourt, Rivers</option>
+              <option value="Ibadan">Ibadan, Oyo</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label for="filterPurpose">Transaction Purpose</label>
+            <select id="filterPurpose" class="filter-control" onchange="applyFilters()">
+              <option value="all">All Purposes</option>
+              <option value="sale">For Sale</option>
+              <option value="rent">For Rent</option>
+              <option value="land">Land Investment</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label for="filterType">Property Type</label>
+            <select id="filterType" class="filter-control" onchange="applyFilters()">
+              <option value="all">All Property Types</option>
+              <option value="Apartment">Apartment</option>
+              <option value="Duplex">Duplex</option>
+              <option value="Villa">Villa</option>
+              <option value="Land">Land / Plot</option>
+              <option value="Commercial">Commercial</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label for="filterBedrooms">Min Bedrooms</label>
+            <select id="filterBedrooms" class="filter-control" onchange="applyFilters()">
+              <option value="all">Any Bedrooms</option>
+              <option value="1">1+ Bedrooms</option>
+              <option value="2">2+ Bedrooms</option>
+              <option value="3">3+ Bedrooms</option>
+              <option value="4">4+ Bedrooms</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label for="filterPrice">Max Price Range</label>
+            <input type="range" id="filterPrice" class="filter-control" min="500000" max="600000000" step="5000000" value="600000000" oninput="updatePriceLabel(); applyFilters();">
+            <div class="price-range-output">
+              <span>Up to:</span>
+              <span id="priceLabel" style="color: var(--royal-blue);">₦600,000,000</span>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Listings Content Area -->
+        <main>
+          <div class="listings-header">
+            <div class="results-count">
+              Showing <span id="displayedCount">0</span> of <span id="totalCount">0</span> listings
+            </div>
+
+            <div class="listings-actions">
+              <div class="sort-wrapper">
+                <span>Sort by:</span>
+                <select id="sortOption" class="filter-control" style="padding: 0.4rem 0.6rem;" onchange="applyFilters()">
+                  <option value="default">Featured First</option>
+                  <option value="price-asc">Price: Low to High</option>
+                  <option value="price-desc">Price: High to Low</option>
+                  <option value="newest">Newest First</option>
+                </select>
+              </div>
+
+              <div class="view-toggle">
+                <button class="view-btn active" id="gridViewBtn" onclick="setViewMode('grid')" title="Grid View"><i class="fa-solid fa-border-all"></i></button>
+                <button class="view-btn" id="listViewBtn" onclick="setViewMode('list')" title="List View"><i class="fa-solid fa-list"></i></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cards Container -->
+          <div class="properties-grid" id="propertiesContainer">
+            <!-- Dynamic Javascript Injected Content -->
+          </div>
+        </main>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="logo" style="color: var(--bg-white); margin-bottom: 1rem; display: inline-flex;">
+            <div class="logo-icon"><i class="fa-solid fa-building"></i></div>
+            <span>PWAN PROPERTIES</span>
+          </a>
+          <p style="font-size: 0.9rem; line-height: 1.6; color: #9CA3AF; margin-bottom: 1.25rem;">
+            PWAN Properties is a premier Nigerian real estate firm dedicated to making land and home ownership smooth, accessible, and secure across primary urban growth centers.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="properties.html">All Properties</a></li>
+            <li><a href="buy.html">Buy Homes</a></li>
+            <li><a href="rent.html">Rent Apartments</a></li>
+            <li><a href="land.html">Land Investment</a></li>
+            <li><a href="services.html">Our Services</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company & Legal</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="faq.html">FAQs</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="list-property.html">List Your Property</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Newsletter</h4>
+          <p style="font-size: 0.88rem; color: #9CA3AF; margin-bottom: 1rem;">Subscribe to get market updates and new land releases.</p>
+          <form onsubmit="handleNewsletter(event)" style="display: flex; gap: 0.5rem;">
+            <input type="email" placeholder="Your email address" required style="padding: 0.6rem; border-radius: var(--radius-sm); border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: #FFF; width: 100%; font-size: 0.88rem;">
+            <button type="submit" class="btn btn-gold" style="padding: 0.6rem 1rem;"><i class="fa-solid fa-paper-plane"></i></button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 PWAN Properties Nigeria. All rights reserved. (Demonstration Frontend Website)</p>
+        <div>
+          <a href="privacy.html" style="margin-right: 1rem;">Privacy Policy</a>
+          <a href="terms.html">Terms & Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Container -->
+  <div class="toast-notification" id="toastNotification">
+    <div class="toast-icon"><i class="fa-solid fa-circle-check" style="color: var(--gold-accent);"></i></div>
+    <div>
+      <h5 id="toastTitle" style="color: var(--bg-white); font-size: 0.95rem;">Notification</h5>
+      <p id="toastMessage" style="font-size: 0.82rem; color: #D1D5DB;"></p>
+    </div>
+  </div>
+
+  <!-- JavaScript logic & Data -->
+  <script>
+    // Sample Nigerian Property Data Set
+    const propertyDataset = [
+      {
+        id: 'prop-101',
+        title: 'Luxury 4-Bedroom Fully Detached Duplex',
+        location: 'Lekki Phase 1, Lagos',
+        state: 'Lagos',
+        price: 250000000,
+        purpose: 'sale',
+        type: 'Duplex',
+        bedrooms: 4,
+        bathrooms: 5,
+        area: 450,
+        featured: true,
+        image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80'
+      },
+      {
+        id: 'prop-102',
+        title: 'Modern 3-Bedroom Serviced Apartment',
+        location: 'Victoria Island, Lagos',
+        state: 'Lagos',
+        price: 8500000,
+        purpose: 'rent',
+        type: 'Apartment',
+        bedrooms: 3,
+        bathrooms: 3,
+        area: 220,
+        featured: true,
+        image: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80'
+      },
+      {
+        id: 'prop-103',
+        title: 'Prime 600 SQM Residential Land Plot',
+        location: 'Gwarinpa Estate, Abuja',
+        state: 'Abuja',
+        price: 45000000,
+        purpose: 'land',
+        type: 'Land',
+        bedrooms: 0,
+        bathrooms: 0,
+        area: 600,
+        featured: false,
+        image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80'
+      },
+      {
+        id: 'prop-104',
+        title: 'Contemporary 5-Bedroom Waterfront Villa',
+        location: 'Maitama District, Abuja',
+        state: 'Abuja',
+        price: 550000000,
+        purpose: 'sale',
+        type: 'Villa',
+        bedrooms: 5,
+        bathrooms: 6,
+        area: 850,
+        featured: true,
+        image: 'https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=800&q=80'
+      },
+      {
+        id: 'prop-105',
+        title: '2-Bedroom Cozy Apartment with City View',
+        location: 'Ikeja GRA, Lagos',
+        state: 'Lagos',
+        price: 4500000,
+        purpose: 'rent',
+        type: 'Apartment',
+        bedrooms: 2,
+        bathrooms: 2,
+        area: 140,
+        featured: false,
+        image: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80'
+      },
+      {
+        id: 'prop-106',
+        title: 'Commercial Office Space & Retail Hub',
+        location: 'GRA Phase 2, Port Harcourt',
+        state: 'Port Harcourt',
+        price: 180000000,
+        purpose: 'sale',
+        type: 'Commercial',
+        bedrooms: 0,
+        bathrooms: 4,
+        area: 500,
+        featured: false,
+        image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80'
+      },
+      {
+        id: 'prop-107',
+        title: 'Dry Investment Land in Growth Corridor',
+        location: 'Moniya Axis, Ibadan',
+        state: 'Ibadan',
+        price: 3500000,
+        purpose: 'land',
+        type: 'Land',
+        bedrooms: 0,
+        bathrooms: 0,
+        area: 500,
+        featured: true,
+        image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80'
+      },
+      {
+        id: 'prop-108',
+        title: 'Executive 4-Bedroom Terrace Home',
+        location: 'Wuse 2, Abuja',
+        state: 'Abuja',
+        price: 160000000,
+        purpose: 'sale',
+        type: 'Duplex',
+        bedrooms: 4,
+        bathrooms: 4,
+        area: 320,
+        featured: false,
+        image: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=800&q=80'
+      }
+    ];
+
+    // Local Storage Favorites Helper
+    let savedFavorites = JSON.parse(localStorage.getItem('pwan_favorites')) || [];
+
+    // Currency Formatter
+    const formatNaira = (amount) => {
+      return new Intl.NumberFormat('en-NG', { style: 'currency', currency: 'NGN', maximumFractionDigits: 0 }).format(amount);
+    };
+
+    // Mobile Navigation Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navMenu = document.getElementById('navMenu');
+    mobileMenuBtn.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+
+    // Initial Load & URL Parameter Reading
+    window.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const purposeParam = urlParams.get('purpose');
+      const locationParam = urlParams.get('location');
+
+      if (purposeParam) document.getElementById('filterPurpose').value = purposeParam;
+      if (locationParam) document.getElementById('filterLocation').value = locationParam;
+
+      applyFilters();
+    });
+
+    // Filter Logic
+    function applyFilters() {
+      const keyword = document.getElementById('filterKeyword').value.toLowerCase();
+      const location = document.getElementById('filterLocation').value;
+      const purpose = document.getElementById('filterPurpose').value;
+      const type = document.getElementById('filterType').value;
+      const bedrooms = document.getElementById('filterBedrooms').value;
+      const maxPrice = parseFloat(document.getElementById('filterPrice').value);
+      const sortOption = document.getElementById('sortOption').value;
+
+      let filtered = propertyDataset.filter(item => {
+        const matchesKeyword = item.title.toLowerCase().includes(keyword) || item.location.toLowerCase().includes(keyword);
+        const matchesLocation = location === 'all' || item.state.toLowerCase() === location.toLowerCase();
+        const matchesPurpose = purpose === 'all' || item.purpose === purpose;
+        const matchesType = type === 'all' || item.type === type;
+        const matchesBedrooms = bedrooms === 'all' || item.bedrooms >= parseInt(bedrooms);
+        const matchesPrice = item.price <= maxPrice;
+
+        return matchesKeyword && matchesLocation && matchesPurpose && matchesType && matchesBedrooms && matchesPrice;
+      });
+
+      // Sorting
+      if (sortOption === 'price-asc') {
+        filtered.sort((a, b) => a.price - b.price);
+      } else if (sortOption === 'price-desc') {
+        filtered.sort((a, b) => b.price - a.price);
+      } else if (sortOption === 'newest') {
+        filtered.reverse();
+      }
+
+      renderProperties(filtered);
+    }
+
+    // Render Cards Grid
+    function renderProperties(items) {
+      const container = document.getElementById('propertiesContainer');
+      document.getElementById('displayedCount').textContent = items.length;
+      document.getElementById('totalCount').textContent = propertyDataset.length;
+
+      if (items.length === 0) {
+        container.innerHTML = `
+          <div class="empty-state">
+            <div class="empty-icon"><i class="fa-solid fa-house-circle-xmark"></i></div>
+            <h3>No Properties Found</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">We couldn't find any listings matching your search criteria.</p>
+            <button class="btn btn-navy" style="margin-top: 1rem;" onclick="resetFilters()">Reset All Filters</button>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = items.map(prop => {
+        const isFav = savedFavorites.includes(prop.id);
+        const badgeClass = prop.purpose === 'sale' ? 'badge-sale' : (prop.purpose === 'rent' ? 'badge-rent' : 'badge-land');
+        const badgeText = prop.purpose === 'sale' ? 'For Sale' : (prop.purpose === 'rent' ? 'For Rent' : 'Land');
+        const priceSuffix = prop.purpose === 'rent' ? '/yr' : '';
+
+        return `
+          <div class="property-card">
+            <div class="card-thumb-wrapper">
+              <div class="badge-group">
+                <span class="badge ${badgeClass}">${badgeText}</span>
+                ${prop.featured ? '<span class="badge badge-featured">Featured</span>' : ''}
+              </div>
+              <button class="fav-btn ${isFav ? 'active' : ''}" onclick="toggleFavorite('${prop.id}', this)" title="Save Property">
+                <i class="${isFav ? 'fa-solid' : 'fa-regular'} fa-heart"></i>
+              </button>
+              <img src="${prop.image}" alt="${prop.title}" class="card-thumb">
+            </div>
+
+            <div class="card-content">
+              <div>
+                <div class="card-price">${formatNaira(prop.price)}${priceSuffix}</div>
+                <h3 class="card-title"><a href="property-details.html?id=${prop.id}">${prop.title}</a></h3>
+                <div class="card-location"><i class="fa-solid fa-location-dot" style="color: var(--gold-accent);"></i> ${prop.location}</div>
+              </div>
+
+              <div class="card-specs">
+                ${prop.bedrooms > 0 ? `<div class="spec-item"><i class="fa-solid fa-bed"></i> ${prop.bedrooms} Beds</div>` : ''}
+                ${prop.bathrooms > 0 ? `<div class="spec-item"><i class="fa-solid fa-bath"></i> ${prop.bathrooms} Baths</div>` : ''}
+                <div class="spec-item"><i class="fa-solid fa-ruler-combined"></i> ${prop.area} SQM</div>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // Favorite Storage Toggle
+    function toggleFavorite(id, btn) {
+      if (savedFavorites.includes(id)) {
+        savedFavorites = savedFavorites.filter(item => item !== id);
+        btn.classList.remove('active');
+        btn.querySelector('i').className = 'fa-regular fa-heart';
+        triggerToast('Removed', 'Property removed from saved list.');
+      } else {
+        savedFavorites.push(id);
+        btn.classList.add('active');
+        btn.querySelector('i').className = 'fa-solid fa-heart';
+        triggerToast('Saved!', 'Property added to your saved favorites.');
+      }
+      localStorage.setItem('pwan_favorites', JSON.stringify(savedFavorites));
+    }
+
+    // Layout Toggle Switcher
+    function setViewMode(mode) {
+      const container = document.getElementById('propertiesContainer');
+      const gridBtn = document.getElementById('gridViewBtn');
+      const listBtn = document.getElementById('listViewBtn');
+
+      if (mode === 'list') {
+        container.classList.add('list-view');
+        listBtn.classList.add('active');
+        gridBtn.classList.remove('active');
+      } else {
+        container.classList.remove('list-view');
+        gridBtn.classList.add('active');
+        listBtn.classList.remove('active');
+      }
+    }
+
+    // Reset Filters
+    function resetFilters() {
+      document.getElementById('filterKeyword').value = '';
+      document.getElementById('filterLocation').value = 'all';
+      document.getElementById('filterPurpose').value = 'all';
+      document.getElementById('filterType').value = 'all';
+      document.getElementById('filterBedrooms').value = 'all';
+      document.getElementById('filterPrice').value = '600000000';
+      document.getElementById('sortOption').value = 'default';
+      updatePriceLabel();
+      applyFilters();
+    }
+
+    function updatePriceLabel() {
+      const val = parseFloat(document.getElementById('filterPrice').value);
+      document.getElementById('priceLabel').textContent = formatNaira(val);
+    }
+
+    // Newsletter Handler
+    function handleNewsletter(e) {
+      e.preventDefault();
+      triggerToast('Subscribed!', 'Thank you for subscribing to PWAN Properties.');
+      e.target.reset();
+    }
+
+    // Toast Notification helper
+    function triggerToast(title, msg) {
+      const toast = document.getElementById('toastNotification');
+      document.getElementById('toastTitle').textContent = title;
+      document.getElementById('toastMessage').textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 3500);
+    }
+  </script>
+</body>
+</html>

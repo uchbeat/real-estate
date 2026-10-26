@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Privacy Policy for PWAN Properties Nigeria. Learn how we collect, protect, and handle your personal information and property enquiry data.">
+  <title>Privacy Policy | PWAN Properties Nigeria</title>
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* ==========================================================================
+       DESIGN SYSTEM & VARIABLES
+       ========================================================================== */
+    :root {
+      --primary-navy: #10233F;
+      --royal-blue: #1E4E8C;
+      --gold-accent: #D4A64A;
+      --gold-hover: #b88d35;
+      --bg-light: #F5F7FA;
+      --bg-white: #FFFFFF;
+      --text-dark: #202B3C;
+      --text-muted: #697586;
+      --border-color: #E2E8F0;
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+      --shadow-md: 0 8px 24px rgba(0,0,0,0.08);
+      --shadow-lg: 0 16px 32px rgba(0,0,0,0.12);
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --radius-sm: 6px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+    }
+
+    /* Reset & Base Styles */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Playfair Display', Georgia, serif;
+      color: var(--primary-navy);
+      line-height: 1.25;
+    }
+
+    a {
+      text-decoration: none;
+      color: var(--royal-blue);
+      transition: var(--transition);
+    }
+
+    a:hover {
+      color: var(--gold-accent);
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .container-wide {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* ==========================================================================
+       TOP ANNOUNCEMENT BAR & NAVIGATION
+       ========================================================================== */
+    .top-bar {
+      background-color: var(--primary-navy);
+      color: #D1D5DB;
+      font-size: 0.85rem;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .top-bar .container-wide {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .top-bar-info span {
+      margin-right: 1.25rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .top-bar-info i {
+      color: var(--gold-accent);
+    }
+
+    .header-main {
+      background-color: var(--bg-white);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.1rem 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      font-family: 'Playfair Display', serif;
+    }
+
+    .logo-icon {
+      background: linear-gradient(135deg, var(--royal-blue), var(--primary-navy));
+      color: var(--gold-accent);
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius-sm);
+      font-size: 1.1rem;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+      list-style: none;
+    }
+
+    .nav-link {
+      font-weight: 500;
+      color: var(--text-dark);
+      font-size: 0.95rem;
+      position: relative;
+      padding: 0.25rem 0;
+    }
+
+    .nav-link:hover, .nav-link.active {
+      color: var(--royal-blue);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: var(--transition);
+      border: none;
+    }
+
+    .btn-gold {
+      background-color: var(--gold-accent);
+      color: var(--primary-navy);
+    }
+
+    .btn-gold:hover {
+      background-color: var(--gold-hover);
+      transform: translateY(-2px);
+    }
+
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--primary-navy);
+      cursor: pointer;
+    }
+
+    /* ==========================================================================
+       PAGE HEADER / HERO
+       ========================================================================== */
+    .page-header {
+      background: linear-gradient(135deg, rgba(16, 35, 63, 0.92), rgba(30, 78, 140, 0.88)), url('https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      color: var(--bg-white);
+      padding: 4.5rem 0 3.5rem;
+      text-align: center;
+    }
+
+    .page-header h1 {
+      color: var(--bg-white);
+      font-size: 2.8rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .breadcrumb {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    .breadcrumb a {
+      color: var(--gold-accent);
+    }
+
+    /* Demo Notice */
+    .demo-notice {
+      background-color: #FEF3C7;
+      border-left: 4px solid #D97706;
+      color: #92400E;
+      padding: 0.85rem 1.25rem;
+      font-size: 0.88rem;
+      margin: 1.5rem auto 0;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      max-width: 1000px;
+    }
+
+    /* ==========================================================================
+       LEGAL POLICY CONTENT SECTION
+       ========================================================================== */
+    .policy-section {
+      padding: 3.5rem 0 5rem;
+    }
+
+    .policy-card {
+      background: var(--bg-white);
+      padding: 3rem;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-color);
+    }
+
+    .policy-card h2 {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      color: var(--primary-navy);
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 0.5rem;
+    }
+
+    .policy-card h2:first-of-type {
+      margin-top: 0;
+    }
+
+    .policy-card p {
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      font-size: 0.98rem;
+    }
+
+    .policy-card ul {
+      margin-bottom: 1.25rem;
+      padding-left: 1.5rem;
+      color: var(--text-muted);
+    }
+
+    .policy-card ul li {
+      margin-bottom: 0.4rem;
+      font-size: 0.95rem;
+    }
+
+    .last-updated {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-style: italic;
+      margin-bottom: 2rem;
+    }
+
+    /* ==========================================================================
+       FOOTER
+       ========================================================================== */
+    .footer {
+      background-color: var(--primary-navy);
+      color: #D1D5DB;
+      padding: 4rem 0 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 2.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-col h4 {
+      color: var(--bg-white);
+      font-size: 1.1rem;
+      margin-bottom: 1.25rem;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+
+    .footer-col h4::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 35px;
+      height: 2px;
+      background-color: var(--gold-accent);
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.6rem;
+    }
+
+    .footer-links a {
+      color: #9CA3AF;
+      font-size: 0.9rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold-accent);
+      padding-left: 4px;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.85rem;
+      color: #9CA3AF;
+    }
+
+    /* Toast Notification */
+    .toast-notification {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: var(--primary-navy);
+      color: var(--bg-white);
+      padding: 1rem 1.5rem;
+      border-radius: var(--radius-md);
+      border-left: 5px solid var(--gold-accent);
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      z-index: 2000;
+      transform: translateY(120%);
+      transition: transform 0.4s ease-out;
+    }
+
+    .toast-notification.show {
+      transform: translateY(0);
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background-color: var(--bg-white);
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 2.5rem 1.5rem;
+        transition: 0.3s ease;
+        box-shadow: var(--shadow-md);
+      }
+
+      .nav-menu.active {
+        left: 0;
+      }
+
+      .mobile-toggle {
+        display: block;
+      }
+
+      .policy-card {
+        padding: 1.5rem;
+      }
+
+      .page-header h1 {
+        font-size: 2.1rem;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <div class="container-wide">
+      <div class="top-bar-info">
+        <span><i class="fa-solid fa-phone"></i> +234 (0) 800 792 6777</span>
+        <span><i class="fa-solid fa-envelope"></i> info@pwanproperties.ng</span>
+        <span><i class="fa-solid fa-location-dot"></i> Lekki Phase 1, Lagos, Nigeria</span>
+      </div>
+      <div>
+        <span><i class="fa-regular fa-clock"></i> Mon - Sat: 8:00 AM - 6:00 PM</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <header class="header-main">
+    <div class="container-wide">
+      <nav class="navbar">
+        <a href="index.html" class="logo">
+          <div class="logo-icon"><i class="fa-solid fa-building"></i></div>
+          <span>PWAN PROPERTIES</span>
+        </a>
+
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="properties.html" class="nav-link">Properties</a></li>
+          <li><a href="buy.html" class="nav-link">Buy</a></li>
+          <li><a href="rent.html" class="nav-link">Rent</a></li>
+          <li><a href="land.html" class="nav-link">Land</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="about.html" class="nav-link">About Us</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <li><a href="favourites.html" class="nav-link"><i class="fa-regular fa-heart"></i> Saved</a></li>
+          <li><a href="list-property.html" class="btn btn-gold">List a Property</a></li>
+        </ul>
+
+        <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Demo Notice -->
+  <div class="container">
+    <div class="demo-notice">
+      <i class="fa-solid fa-triangle-exclamation"></i>
+      <div>
+        <strong>Legal Disclaimer Notice:</strong> This privacy policy is an editable sample template for PWAN Properties frontend demonstration purposes and must be reviewed and customized by legal counsel before formal commercial publication.
+      </div>
+    </div>
+  </div>
+
+  <!-- Page Header / Hero -->
+  <section class="page-header">
+    <div class="container-wide">
+      <h1>Privacy Policy</h1>
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <i class="fa-solid fa-chevron-right" style="font-size: 0.75rem;"></i>
+        <span>Privacy Policy</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Policy Content -->
+  <section class="policy-section">
+    <div class="container">
+      <div class="policy-card">
+        <div class="last-updated">Last Updated: January 2026</div>
+
+        <p>At PWAN Properties Nigeria ("PWAN Properties", "we", "our", or "us"), we respect your privacy and are committed to protecting the personal information you share with us. This Privacy Policy outlines how we collect, use, disclose, and safeguard your data when you visit our website, submit property enquiries, or interact with our regional offices.</p>
+
+        <h2>1. Information We Collect</h2>
+        <p>We may collect personal identification and property preference data from you when you interact with our platform, including:</p>
+        <ul>
+          <li><strong>Contact Information:</strong> Full name, email address, telephone number, and residential address.</li>
+          <li><strong>Enquiry Details:</strong> Preferred locations, property types (duplex, apartment, land), budget ranges, and site inspection booking dates.</li>
+          <li><strong>Technical Data:</strong> Browser type, IP address, device information, and saved property favorites stored locally via browser storage (`localStorage`).</li>
+        </ul>
+
+        <h2>2. How We Use Your Information</h2>
+        <p>The information we collect is utilized strictly for professional real estate and customer service operations, including:</p>
+        <ul>
+          <li>Processing property purchase, rental, or land investment enquiries.</li>
+          <li>Scheduling physical site inspections and virtual tours.</li>
+          <li>Sending requested estate brochures, market updates, and property catalog responses.</li>
+          <li>Improving website performance, navigation experience, and responsive layouts.</li>
+        </ul>
+
+        <h2>3. Data Sharing & Disclosure</h2>
+        <p>We do not sell, trade, or rent your personal identification data to third parties. Information is only shared with authorized internal real estate consultants and legal teams when necessary to fulfill property allocation or inspection requests, or when required by Nigerian regulatory authorities.</p>
+
+        <h2>4. Security of Your Information</h2>
+        <p>We implement appropriate technical, administrative, and physical security measures to protect your personal data against unauthorized access, alteration, disclosure, or destruction. However, no data transmission over the internet can be guaranteed 100% secure.</p>
+
+        <h2>5. Your Data Protection Rights</h2>
+        <p>You have the right to request access to, correction of, or deletion of any personal data you have provided through our contact or property submission forms. You may also clear saved property favorites stored in your browser at any time.</p>
+
+        <h2>6. Contact Us</h2>
+        <p>If you have any questions, concerns, or requests regarding this Privacy Policy, please contact our Data Protection Officer at:</p>
+        <p>
+          <strong>PWAN Properties Nigeria</strong><br>
+          PWAN Towers, Admiralty Way, Lekki Phase 1, Lagos State, Nigeria<br>
+          Email: <a href="mailto:privacy@pwanproperties.ng">privacy@pwanproperties.ng</a><br>
+          Phone: +234 (0) 800 792 6777
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container-wide">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="logo" style="color: var(--bg-white); margin-bottom: 1rem; display: inline-flex;">
+            <div class="logo-icon"><i class="fa-solid fa-building"></i></div>
+            <span>PWAN PROPERTIES</span>
+          </a>
+          <p style="font-size: 0.9rem; line-height: 1.6; color: #9CA3AF; margin-bottom: 1.25rem;">
+            PWAN Properties is a premier Nigerian real estate firm dedicated to making land and home ownership smooth, accessible, and secure across primary urban growth centers.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="properties.html">All Properties</a></li>
+            <li><a href="buy.html">Buy Homes</a></li>
+            <li><a href="rent.html">Rent Apartments</a></li>
+            <li><a href="land.html">Land Investment</a></li>
+            <li><a href="services.html">Our Services</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company & Legal</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="faq.html">FAQs</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="list-property.html">List Your Property</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Newsletter</h4>
+          <p style="font-size: 0.88rem; color: #9CA3AF; margin-bottom: 1rem;">Subscribe to get market updates and new land releases.</p>
+          <form onsubmit="handleNewsletter(event)" style="display: flex; gap: 0.5rem;">
+            <input type="email" placeholder="Your email address" required style="padding: 0.6rem; border-radius: var(--radius-sm); border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: #FFF; width: 100%; font-size: 0.88rem;">
+            <button type="submit" class="btn btn-gold" style="padding: 0.6rem 1rem;"><i class="fa-solid fa-paper-plane"></i></button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 PWAN Properties Nigeria. All rights reserved. (Demonstration Frontend Website)</p>
+        <div>
+          <a href="privacy.html" style="margin-right: 1rem;">Privacy Policy</a>
+          <a href="terms.html">Terms & Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-notification" id="toastNotification">
+    <div class="toast-icon"><i class="fa-solid fa-circle-check" style="color: var(--gold-accent);"></i></div>
+    <div>
+      <h5 id="toastTitle" style="color: var(--bg-white); font-size: 0.95rem;">Subscribed</h5>
+      <p id="toastMessage" style="font-size: 0.82rem; color: #D1D5DB;">Thank you for subscribing to PWAN Properties updates.</p>
+    </div>
+  </div>
+
+  <script>
+    // Mobile Navigation Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navMenu = document.getElementById('navMenu');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      const icon = mobileMenuBtn.querySelector('i');
+      if (navMenu.classList.contains('active')) {
+        icon.className = 'fa-solid fa-xmark';
+      } else {
+        icon.className = 'fa-solid fa-bars';
+      }
+    });
+
+    // Newsletter Handler
+    function handleNewsletter(e) {
+      e.preventDefault();
+      const toast = document.getElementById('toastNotification');
+      toast.classList.add('show');
+      e.target.reset();
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 4000);
+    }
+  </script>
+</body>
+</html>

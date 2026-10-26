@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Frequently Asked Questions about buying land, renting apartments, property titles, payment plans, and site inspections with PWAN Properties Nigeria.">
+  <title>Frequently Asked Questions | PWAN Properties Nigeria</title>
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* ==========================================================================
+       DESIGN SYSTEM & VARIABLES
+       ========================================================================== */
+    :root {
+      --primary-navy: #10233F;
+      --royal-blue: #1E4E8C;
+      --gold-accent: #D4A64A;
+      --gold-hover: #b88d35;
+      --bg-light: #F5F7FA;
+      --bg-white: #FFFFFF;
+      --text-dark: #202B3C;
+      --text-muted: #697586;
+      --border-color: #E2E8F0;
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+      --shadow-md: 0 8px 24px rgba(0,0,0,0.08);
+      --shadow-lg: 0 16px 32px rgba(0,0,0,0.12);
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --radius-sm: 6px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+    }
+
+    /* Reset & Base Styles */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Playfair Display', Georgia, serif;
+      color: var(--primary-navy);
+      line-height: 1.25;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: var(--transition);
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* ==========================================================================
+       TOP ANNOUNCEMENT BAR & NAVIGATION
+       ========================================================================== */
+    .top-bar {
+      background-color: var(--primary-navy);
+      color: #D1D5DB;
+      font-size: 0.85rem;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .top-bar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .top-bar-info span {
+      margin-right: 1.25rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .top-bar-info i {
+      color: var(--gold-accent);
+    }
+
+    .header-main {
+      background-color: var(--bg-white);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.1rem 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      font-family: 'Playfair Display', serif;
+    }
+
+    .logo-icon {
+      background: linear-gradient(135deg, var(--royal-blue), var(--primary-navy));
+      color: var(--gold-accent);
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius-sm);
+      font-size: 1.1rem;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+      list-style: none;
+    }
+
+    .nav-link {
+      font-weight: 500;
+      color: var(--text-dark);
+      font-size: 0.95rem;
+      position: relative;
+      padding: 0.25rem 0;
+    }
+
+    .nav-link:hover, .nav-link.active {
+      color: var(--royal-blue);
+    }
+
+    .nav-link.active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: var(--gold-accent);
+      border-radius: 2px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: var(--transition);
+      border: none;
+    }
+
+    .btn-gold {
+      background-color: var(--gold-accent);
+      color: var(--primary-navy);
+    }
+
+    .btn-gold:hover {
+      background-color: var(--gold-hover);
+      transform: translateY(-2px);
+    }
+
+    .btn-navy {
+      background-color: var(--primary-navy);
+      color: var(--bg-white);
+    }
+
+    .btn-navy:hover {
+      background-color: var(--royal-blue);
+      transform: translateY(-2px);
+    }
+
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--primary-navy);
+      cursor: pointer;
+    }
+
+    /* ==========================================================================
+       PAGE HEADER / HERO
+       ========================================================================== */
+    .page-header {
+      background: linear-gradient(135deg, rgba(16, 35, 63, 0.92), rgba(30, 78, 140, 0.88)), url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      color: var(--bg-white);
+      padding: 4.5rem 0 3.5rem;
+      text-align: center;
+    }
+
+    .page-header h1 {
+      color: var(--bg-white);
+      font-size: 2.8rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .breadcrumb {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    .breadcrumb a {
+      color: var(--gold-accent);
+    }
+
+    /* Demo Notice Disclaimer */
+    .demo-notice {
+      background-color: #FEF3C7;
+      border-left: 4px solid #D97706;
+      color: #92400E;
+      padding: 0.85rem 1.25rem;
+      font-size: 0.88rem;
+      margin: 1.5rem auto 0;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      max-width: 1280px;
+    }
+
+    /* ==========================================================================
+       FAQ SEARCH & CATEGORY FILTERING
+       ========================================================================== */
+    .faq-search-section {
+      padding: 3rem 0 1.5rem;
+    }
+
+    .faq-search-box {
+      max-width: 650px;
+      margin: 0 auto 2rem;
+      position: relative;
+    }
+
+    .faq-search-input {
+      width: 100%;
+      padding: 1rem 1.25rem 1rem 3.25rem;
+      border-radius: 30px;
+      border: 1px solid var(--border-color);
+      font-size: 1rem;
+      box-shadow: var(--shadow-sm);
+      outline: none;
+      transition: var(--transition);
+      font-family: inherit;
+    }
+
+    .faq-search-input:focus {
+      border-color: var(--royal-blue);
+      box-shadow: var(--shadow-md);
+    }
+
+    .faq-search-icon {
+      position: absolute;
+      left: 1.25rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      font-size: 1.1rem;
+    }
+
+    .category-pills {
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+
+    .pill-btn {
+      padding: 0.6rem 1.3rem;
+      border-radius: 30px;
+      border: 1px solid var(--border-color);
+      background: var(--bg-white);
+      color: var(--text-dark);
+      font-weight: 600;
+      font-size: 0.88rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .pill-btn.active, .pill-btn:hover {
+      background: var(--primary-navy);
+      color: var(--gold-accent);
+      border-color: var(--primary-navy);
+    }
+
+    /* ==========================================================================
+       ACCORDION SECTION
+       ========================================================================== */
+    .faq-container-section {
+      padding: 1rem 0 5rem;
+    }
+
+    .faq-accordion {
+      max-width: 850px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .accordion-item {
+      background: var(--bg-white);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .accordion-item:hover {
+      border-color: rgba(212, 166, 74, 0.4);
+    }
+
+    .accordion-header {
+      width: 100%;
+      padding: 1.35rem 1.5rem;
+      background: transparent;
+      border: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: left;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: var(--primary-navy);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .accordion-header:hover {
+      color: var(--royal-blue);
+    }
+
+    .accordion-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--bg-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      color: var(--primary-navy);
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
+      margin-left: 1rem;
+    }
+
+    .accordion-item.active .accordion-icon {
+      transform: rotate(180deg);
+      background: var(--gold-accent);
+      color: var(--primary-navy);
+    }
+
+    .accordion-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease-out, padding 0.35s ease-out;
+      padding: 0 1.5rem;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.65;
+    }
+
+    .accordion-item.active .accordion-body {
+      padding: 0 1.5rem 1.5rem;
+    }
+
+    .faq-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      background: var(--bg-light);
+      color: var(--royal-blue);
+      margin-bottom: 0.4rem;
+    }
+
+    /* Empty state search */
+    .empty-faq {
+      text-align: center;
+      padding: 3rem;
+      background: var(--bg-white);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+      display: none;
+    }
+
+    /* ==========================================================================
+       STILL HAVE QUESTIONS BANNER
+       ========================================================================== */
+    .support-cta-section {
+      padding: 4rem 0;
+      background: linear-gradient(135deg, var(--primary-navy) 0%, var(--royal-blue) 100%);
+      color: var(--bg-white);
+      text-align: center;
+    }
+
+    .support-cta-section h2 {
+      color: var(--bg-white);
+      font-size: 2.2rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .support-cta-section p {
+      color: #D1D5DB;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      font-size: 1rem;
+    }
+
+    .support-btns {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* ==========================================================================
+       FOOTER
+       ========================================================================== */
+    .footer {
+      background-color: var(--primary-navy);
+      color: #D1D5DB;
+      padding: 4rem 0 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 2.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-col h4 {
+      color: var(--bg-white);
+      font-size: 1.1rem;
+      margin-bottom: 1.25rem;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+
+    .footer-col h4::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 35px;
+      height: 2px;
+      background-color: var(--gold-accent);
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.6rem;
+    }
+
+    .footer-links a {
+      color: #9CA3AF;
+      font-size: 0.9rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold-accent);
+      padding-left: 4px;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.85rem;
+      color: #9CA3AF;
+    }
+
+    /* Toast Notification Container */
+    .toast-notification {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: var(--primary-navy);
+      color: var(--bg-white);
+      padding: 1rem 1.5rem;
+      border-radius: var(--radius-md);
+      border-left: 5px solid var(--gold-accent);
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      z-index: 2000;
+      transform: translateY(120%);
+      transition: transform 0.4s ease-out;
+    }
+
+    .toast-notification.show {
+      transform: translateY(0);
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background-color: var(--bg-white);
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 2.5rem 1.5rem;
+        transition: 0.3s ease;
+        box-shadow: var(--shadow-md);
+      }
+
+      .nav-menu.active {
+        left: 0;
+      }
+
+      .mobile-toggle {
+        display: block;
+      }
+
+      .page-header h1 {
+        font-size: 2.1rem;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-info">
+        <span><i class="fa-solid fa-phone"></i> +234 (0) 800 792 6777</span>
+        <span><i class="fa-solid fa-envelope"></i> info@pwanproperties.ng</span>
+        <span><i class="fa-solid fa-location-dot"></i> Lekki Phase 1, Lagos, Nigeria</span>
+      </div>
+      <div>
+        <span><i class="fa-regular fa-clock"></i> Mon - Sat: 8:00 AM - 6:00 PM</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <header class="header-main">
+    <div class="container">
+      <nav class="navbar">
+        <a href="index.html" class="logo">
+          <div class="logo-icon"><i class="fa-solid fa-building"></i></div>
+          <span>PWAN PROPERTIES</span>
+        </a>
+
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="properties.html" class="nav-link">Properties</a></li>
+          <li><a href="buy.html" class="nav-link">Buy</a></li>
+          <li><a href="rent.html" class="nav-link">Rent</a></li>
+          <li><a href="land.html" class="nav-link">Land</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="about.html" class="nav-link">About Us</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <li><a href="favourites.html" class="nav-link"><i class="fa-regular fa-heart"></i> Saved</a></li>
+          <li><a href="list-property.html" class="btn btn-gold">List a Property</a></li>
+        </ul>
+
+        <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Demo Notice -->
+  <div class="container">
+    <div class="demo-notice">
+      <i class="fa-solid fa-circle-info"></i>
+      <div>
+        <strong>Demonstration Notice:</strong> These frequently asked questions provide sample information regarding real estate acquisition, legal titles, and payment procedures in Nigeria.
+      </div>
+    </div>
+  </div>
+
+  <!-- Page Header / Hero -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Frequently Asked Questions</h1>
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <i class="fa-solid fa-chevron-right" style="font-size: 0.75rem;"></i>
+        <span>FAQs</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Search & Filter Section -->
+  <section class="faq-search-section">
+    <div class="container">
+      <div class="faq-search-box">
+        <i class="fa-solid fa-magnifying-glass faq-search-icon"></i>
+        <input type="text" id="faqSearchInput" class="faq-search-input" placeholder="Search questions (e.g., C of O, payment plan, inspection...)" oninput="filterFaqs()">
+      </div>
+
+      <div class="category-pills">
+        <button class="pill-btn active" onclick="filterCategory('all', this)">All Questions</button>
+        <button class="pill-btn" onclick="filterCategory('buying', this)">Buying Property</button>
+        <button class="pill-btn" onclick="filterCategory('land', this)">Land & Banking</button>
+        <button class="pill-btn" onclick="filterCategory('renting', this)">Renting</button>
+        <button class="pill-btn" onclick="filterCategory('documentation', this)">Titles & Legal</button>
+        <button class="pill-btn" onclick="filterCategory('payments', this)">Payment Plans</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Accordion Section -->
+  <section class="faq-container-section">
+    <div class="container">
+      <div class="faq-accordion" id="faqAccordion">
+
+        <!-- Item 1 -->
+        <div class="accordion-item" data-category="buying">
+          <button class="accordion-header" onclick="toggleAccordion(this)">
+            <div>
+              <span class="faq-tag">Buying</span><br>
+              What is the step-by-step process of purchasing a home through PWAN Properties?
+            </div>
+            <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+          </button>
+          <div class="accordion-body">
+            <p>Purchasing a property with PWAN Properties involves four simple steps: 1) Select your desired listing online or consult with an advisor, 2) Book and conduct a site inspection, 3) Complete our offer/application form and submit legal ID verification, 4) Complete your payment schedule and receive your legal title documents and deed of assignment.</p>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="accordion-item" data-category="documentation">
+          <button class="accordion-header" onclick="toggleAccordion(this)">
+            <div>
+              <span class="faq-tag">Titles & Legal</span><br>
+              What legal land title documents accompany PWAN land estates?
+            </div>
+            <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+          </button>
+          <div class="accordion-body">
+            <p>Our land estates come with verified legal documentations depending on the location, including Certificate of Ownership (C of O), Governor’s Consent, Excision, Gazette, or Registered Survey titles. All documents are vetted by our in-house legal team before public release.</p>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="accordion-item" data-category="payments">
+          <button class="accordion-header" onclick="toggleAccordion(this)">
+            <div>
+              <span class="faq-tag">Payment Plans</span><br>
+              Do you offer installment payment options for buyers and investors?
+            </div>
+            <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+          </button>
+          <div class="accordion-body">
+            <p>Yes, we offer flexible payment structures ranging from 3 to 12 months for selected residential houses and land estates. An initial deposit locks in your plot allocation, while the remaining balance is spread across agreed monthly intervals.</p>
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="accordion-item" data-category="land">
+          <button class="accordion-header" onclick="toggleAccordion(this)">
+            <div>
+              <span class="faq-tag">Land & Banking</span><br>
+              How quickly can I take physical allocation after buying land?
+            </div>
+            <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+          </button>
+          <div class="accordion-body">
+            <p>Physical allocation dates are scheduled immediately upon completion of 100% full payment or upon reaching agreed threshold deposits for specified estates. Surveyors issue beacon numbers and physical coordinates during official allocation batches.</p>
+          </div>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="accordion-item" data-category="renting">
+          <button class="accordion-header" onclick="toggleAccordion(this)">
+            <div>
+              <span class="faq-tag">Renting</span><br>
+              What fees are required when renting an apartment through PWAN Properties?
+            </div>
+            <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+          </button>
+          <div class="accordion-body">
+            <p>Standard rental payments in Nigeria typically include the Annual Basic Rent, Caution Deposit (refundable), Legal Agreement Fee (usually 10%), Agency Fee (10%), and Estate Service Charges for maintenance where applicable. All charges are itemized prior to signing lease contracts.</p>
+          </div>
+        </div>
+
+        <!-- Item 6 -->
+        <div class="accordion-item" data-category="buying">
+          <button class="accordion-header" onclick="toggleAccordion(this)">
+            <div>
+              <span class="faq-tag">Buying</span><br>
+              Can Nigerians in the diaspora inspect and buy properties remotely?
+            </div>
+            <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+          </button>
+          <div class="accordion-body">
+            <p>Absolutely. We specialize in diaspora real estate acquisitions. We provide live virtual video tours, digital document signing, verified bank transfer channels, and allow designated local representatives to conduct physical inspections on your behalf.</p>
+          </div>
+        </div>
+
+        <!-- Item 7 -->
+        <div class="accordion-item" data-category="documentation">
+          <button class="accordion-header" onclick="toggleAccordion(this)">
+            <div>
+              <span class="faq-tag">Titles & Legal</span><br>
+              What is the difference between Certificate of Occupancy (C of O) and Governor's Consent?
+            </div>
+            <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+          </button>
+          <div class="accordion-body">
+            <p>A Certificate of Occupancy (C of O) is the first legal document issued by the State Government confirming 99-year lease ownership of virgin land. A Governor's Consent is required whenever a land plot with an existing C of O or legal title is subsequently sold or transferred to a new buyer.</p>
+          </div>
+        </div>
+
+        <!-- Item 8 -->
+        <div class="accordion-item" data-category="land">
+          <button class="accordion-header" onclick="toggleAccordion(this)">
+            <div>
+              <span class="faq-tag">Land & Banking</span><br>
+              Are your site inspection tours free of charge?
+            </div>
+            <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+          </button>
+          <div class="accordion-body">
+            <p>Yes, all scheduled group site inspection tours to PWAN Properties estate locations are completely free. We provide complimentary pickup from designated branch offices in Lagos, Abuja, Port Harcourt, and Ibadan.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Empty Search Result State -->
+      <div class="empty-faq" id="emptyFaq">
+        <i class="fa-solid fa-circle-question" style="font-size: 2.5rem; color: var(--text-muted); margin-bottom: 0.75rem;"></i>
+        <h3>No Matching Questions Found</h3>
+        <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 0.3rem;">Try searching with different keywords or select another question category.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Still Have Questions Banner -->
+  <section class="support-cta-section">
+    <div class="container">
+      <h2>Have a Question Not Listed Here?</h2>
+      <p>Our dedicated customer support advisors are available to provide immediate clarity on property listings, payment options, and legal inquiries.</p>
+      <div class="support-btns">
+        <a href="contact.html" class="btn btn-gold"><i class="fa-solid fa-envelope"></i> Send Us a Message</a>
+        <a href="https://wa.me/2348007926777" target="_blank" class="btn btn-navy" style="background: rgba(255,255,255,0.15); border: 1px solid var(--gold-accent);"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="logo" style="color: var(--bg-white); margin-bottom: 1rem; display: inline-flex;">
+            <div class="logo-icon"><i class="fa-solid fa-building"></i></div>
+            <span>PWAN PROPERTIES</span>
+          </a>
+          <p style="font-size: 0.9rem; line-height: 1.6; color: #9CA3AF; margin-bottom: 1.25rem;">
+            PWAN Properties is a premier Nigerian real estate firm dedicated to making land and home ownership smooth, accessible, and secure across primary urban growth centers.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="properties.html">All Properties</a></li>
+            <li><a href="buy.html">Buy Homes</a></li>
+            <li><a href="rent.html">Rent Apartments</a></li>
+            <li><a href="land.html">Land Investment</a></li>
+            <li><a href="services.html">Our Services</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company & Legal</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="faq.html">FAQs</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="list-property.html">List Your Property</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Newsletter</h4>
+          <p style="font-size: 0.88rem; color: #9CA3AF; margin-bottom: 1rem;">Subscribe to get market updates and new land releases.</p>
+          <form onsubmit="handleNewsletter(event)" style="display: flex; gap: 0.5rem;">
+            <input type="email" placeholder="Your email address" required style="padding: 0.6rem; border-radius: var(--radius-sm); border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: #FFF; width: 100%; font-size: 0.88rem;">
+            <button type="submit" class="btn btn-gold" style="padding: 0.6rem 1rem;"><i class="fa-solid fa-paper-plane"></i></button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 PWAN Properties Nigeria. All rights reserved. (Demonstration Frontend Website)</p>
+        <div>
+          <a href="privacy.html" style="margin-right: 1rem;">Privacy Policy</a>
+          <a href="terms.html">Terms & Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-notification" id="toastNotification">
+    <div class="toast-icon"><i class="fa-solid fa-circle-check" style="color: var(--gold-accent);"></i></div>
+    <div>
+      <h5 id="toastTitle" style="color: var(--bg-white); font-size: 0.95rem;">Subscribed</h5>
+      <p id="toastMessage" style="font-size: 0.82rem; color: #D1D5DB;">Thank you for subscribing to PWAN Properties updates.</p>
+    </div>
+  </div>
+
+  <script>
+    let activeCategory = 'all';
+
+    // Mobile Navigation Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navMenu = document.getElementById('navMenu');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      const icon = mobileMenuBtn.querySelector('i');
+      if (navMenu.classList.contains('active')) {
+        icon.className = 'fa-solid fa-xmark';
+      } else {
+        icon.className = 'fa-solid fa-bars';
+      }
+    });
+
+    // Accordion Toggle Logic
+    function toggleAccordion(headerBtn) {
+      const item = headerBtn.parentElement;
+      const body = item.querySelector('.accordion-body');
+      const isOpen = item.classList.contains('active');
+
+      // Close all active items
+      document.querySelectorAll('.accordion-item').forEach(el => {
+        el.classList.remove('active');
+        el.querySelector('.accordion-body').style.maxHeight = null;
+      });
+
+      // If clicked item wasn't open, open it
+      if (!isOpen) {
+        item.classList.add('active');
+        body.style.maxHeight = body.scrollHeight + 30 + 'px';
+      }
+    }
+
+    // Category Filter Buttons
+    function filterCategory(cat, btn) {
+      activeCategory = cat;
+      document.querySelectorAll('.pill-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      filterFaqs();
+    }
+
+    // Search and Category Combined Filtering
+    function filterFaqs() {
+      const query = document.getElementById('faqSearchInput').value.toLowerCase().trim();
+      const items = document.querySelectorAll('.accordion-item');
+      let visibleCount = 0;
+
+      items.forEach(item => {
+        const itemCat = item.getAttribute('data-category');
+        const text = item.textContent.toLowerCase();
+
+        const matchesCat = (activeCategory === 'all' || itemCat === activeCategory);
+        const matchesQuery = (query === '' || text.includes(query));
+
+        if (matchesCat && matchesQuery) {
+          item.style.display = 'block';
+          visibleCount++;
+        } else {
+          item.style.display = 'none';
+        }
+      });
+
+      const emptyBox = document.getElementById('emptyFaq');
+      if (visibleCount === 0) {
+        emptyBox.style.display = 'block';
+      } else {
+        emptyBox.style.display = 'none';
+      }
+    }
+
+    // Newsletter Handler
+    function handleNewsletter(e) {
+      e.preventDefault();
+      const toast = document.getElementById('toastNotification');
+      toast.classList.add('show');
+      e.target.reset();
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 4000);
+    }
+  </script>
+</body>
+</html>

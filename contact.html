@@ -1,0 +1,1321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Get in touch with PWAN Properties. Reach our real estate advisors in Lagos, Abuja, Port Harcourt, and Ibadan for property enquiries, site inspections, and investments.">
+  <title>Contact Us | PWAN Properties Nigeria</title>
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* ==========================================================================
+       DESIGN SYSTEM & VARIABLES
+       ========================================================================== */
+    :root {
+      --primary-navy: #10233F;
+      --royal-blue: #1E4E8C;
+      --gold-accent: #D4A64A;
+      --gold-hover: #b88d35;
+      --bg-light: #F5F7FA;
+      --bg-white: #FFFFFF;
+      --text-dark: #202B3C;
+      --text-muted: #697586;
+      --border-color: #E2E8F0;
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+      --shadow-md: 0 8px 24px rgba(0,0,0,0.08);
+      --shadow-lg: 0 16px 32px rgba(0,0,0,0.12);
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --radius-sm: 6px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+    }
+
+    /* Reset & Base Styles */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Playfair Display', Georgia, serif;
+      color: var(--primary-navy);
+      line-height: 1.25;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: var(--transition);
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* ==========================================================================
+       ANNOUNCEMENT BAR & NAVIGATION
+       ========================================================================== */
+    .top-bar {
+      background-color: var(--primary-navy);
+      color: #D1D5DB;
+      font-size: 0.85rem;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .top-bar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .top-bar-info span {
+      margin-right: 1.25rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .top-bar-info i {
+      color: var(--gold-accent);
+    }
+
+    .header-main {
+      background-color: var(--bg-white);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.1rem 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      font-family: 'Playfair Display', serif;
+    }
+
+    .logo-icon {
+      background: linear-gradient(135deg, var(--royal-blue), var(--primary-navy));
+      color: var(--gold-accent);
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius-sm);
+      font-size: 1.1rem;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+      list-style: none;
+    }
+
+    .nav-link {
+      font-weight: 500;
+      color: var(--text-dark);
+      font-size: 0.95rem;
+      position: relative;
+      padding: 0.25rem 0;
+    }
+
+    .nav-link:hover, .nav-link.active {
+      color: var(--royal-blue);
+    }
+
+    .nav-link.active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: var(--gold-accent);
+      border-radius: 2px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: var(--transition);
+      border: none;
+    }
+
+    .btn-gold {
+      background-color: var(--gold-accent);
+      color: var(--primary-navy);
+    }
+
+    .btn-gold:hover {
+      background-color: var(--gold-hover);
+      transform: translateY(-2px);
+    }
+
+    .btn-navy {
+      background-color: var(--primary-navy);
+      color: var(--bg-white);
+    }
+
+    .btn-navy:hover {
+      background-color: var(--royal-blue);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border: 2px solid var(--primary-navy);
+      color: var(--primary-navy);
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      background-color: var(--primary-navy);
+      color: var(--bg-white);
+    }
+
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--primary-navy);
+      cursor: pointer;
+    }
+
+    /* ==========================================================================
+       HERO / PAGE HEADER
+       ========================================================================== */
+    .page-header {
+      background: linear-gradient(135deg, rgba(16, 35, 63, 0.92), rgba(30, 78, 140, 0.88)), url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      color: var(--bg-white);
+      padding: 4.5rem 0 3.5rem;
+      text-align: center;
+    }
+
+    .page-header h1 {
+      color: var(--bg-white);
+      font-size: 2.8rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .breadcrumb {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    .breadcrumb a {
+      color: var(--gold-accent);
+    }
+
+    /* ==========================================================================
+       DEMO BANNER DISCLAIMER
+       ========================================================================== */
+    .demo-notice {
+      background-color: #FEF3C7;
+      border-left: 4px solid #D97706;
+      color: #92400E;
+      padding: 0.85rem 1.25rem;
+      font-size: 0.88rem;
+      margin: 1.5rem auto 0;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      max-width: 1280px;
+    }
+
+    .demo-notice i {
+      font-size: 1.2rem;
+    }
+
+    /* ==========================================================================
+       QUICK CONTACT CARDS
+       ========================================================================== */
+    .contact-cards-section {
+      padding: 3.5rem 0 2rem;
+    }
+
+    .contact-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .contact-card {
+      background-color: var(--bg-white);
+      padding: 2rem 1.5rem;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-color);
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .contact-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--gold-accent);
+    }
+
+    .card-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: rgba(212, 166, 74, 0.12);
+      color: var(--gold-accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin: 0 auto 1.25rem;
+    }
+
+    .contact-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-card p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .contact-card-link {
+      font-weight: 600;
+      color: var(--royal-blue);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .contact-card-link:hover {
+      color: var(--gold-accent);
+    }
+
+    /* ==========================================================================
+       MAIN SECTION: FORM & OFFICE DETAILS
+       ========================================================================== */
+    .main-contact-section {
+      padding: 2rem 0 4rem;
+    }
+
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 2.5rem;
+      background: var(--bg-white);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+    }
+
+    /* Form Container */
+    .form-container {
+      padding: 3rem;
+    }
+
+    .section-title-sm {
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 1.5px;
+      color: var(--gold-accent);
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .form-container h2 {
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .form-subtitle {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+    }
+
+    .contact-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-group.full-width {
+      grid-column: span 2;
+    }
+
+    .form-group label {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--primary-navy);
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-size: 0.95rem;
+      color: var(--text-dark);
+      background-color: #FAFAFA;
+      transition: var(--transition);
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--royal-blue);
+      background-color: var(--bg-white);
+      box-shadow: 0 0 0 3px rgba(30, 78, 140, 0.15);
+    }
+
+    textarea.form-control {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .form-error-msg {
+      color: #DC2626;
+      font-size: 0.78rem;
+      display: none;
+    }
+
+    .form-group.error .form-control {
+      border-color: #DC2626;
+      background-color: #FEF2F2;
+    }
+
+    .form-group.error .form-error-msg {
+      display: block;
+    }
+
+    /* Sidebar / Offices Info */
+    .info-sidebar {
+      background: var(--primary-navy);
+      color: var(--bg-white);
+      padding: 3rem 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    .info-sidebar h3 {
+      color: var(--bg-white);
+      font-size: 1.6rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 2px solid rgba(212, 166, 74, 0.3);
+      padding-bottom: 0.75rem;
+    }
+
+    .office-block {
+      margin-bottom: 1.75rem;
+    }
+
+    .office-block h4 {
+      color: var(--gold-accent);
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .office-detail-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.9rem;
+      color: #D1D5DB;
+      margin-bottom: 0.4rem;
+    }
+
+    .office-detail-item i {
+      color: var(--gold-accent);
+      margin-top: 0.25rem;
+      font-size: 0.9rem;
+    }
+
+    .social-connect {
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .social-connect p {
+      font-size: 0.9rem;
+      margin-bottom: 0.8rem;
+      color: var(--gold-accent);
+      font-weight: 600;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .social-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--bg-white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+
+    .social-icon:hover {
+      background: var(--gold-accent);
+      color: var(--primary-navy);
+      transform: translateY(-3px);
+    }
+
+    /* ==========================================================================
+       REGIONAL BRANCHES SWITCHER & MAP
+       ========================================================================== */
+    .branches-section {
+      padding: 3rem 0;
+      background-color: var(--bg-white);
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .section-header-center {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .section-header-center h2 {
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .branch-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    .branch-tab-btn {
+      padding: 0.6rem 1.4rem;
+      border-radius: 30px;
+      border: 1px solid var(--border-color);
+      background: var(--bg-light);
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--text-dark);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .branch-tab-btn.active, .branch-tab-btn:hover {
+      background: var(--royal-blue);
+      color: var(--bg-white);
+      border-color: var(--royal-blue);
+    }
+
+    .map-display-box {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      height: 420px;
+      background: #E5E7EB;
+      position: relative;
+    }
+
+    .map-placeholder-bg {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.95);
+    }
+
+    .map-overlay-card {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      background: rgba(16, 35, 63, 0.92);
+      backdrop-filter: blur(8px);
+      color: var(--bg-white);
+      padding: 1.25rem;
+      border-radius: var(--radius-md);
+      max-width: 320px;
+      border: 1px solid rgba(212, 166, 74, 0.4);
+    }
+
+    .map-overlay-card h4 {
+      color: var(--gold-accent);
+      margin-bottom: 0.4rem;
+      font-size: 1.1rem;
+    }
+
+    .map-overlay-card p {
+      font-size: 0.85rem;
+      color: #E5E7EB;
+      line-height: 1.4;
+    }
+
+    /* ==========================================================================
+       WHATSAPP QUICK CONNECT CTA BANNER
+       ========================================================================== */
+    .whatsapp-cta-section {
+      padding: 3.5rem 0;
+      background: linear-gradient(135deg, #10233F 0%, #0F3A22 100%);
+      color: var(--bg-white);
+    }
+
+    .whatsapp-flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .whatsapp-info {
+      max-width: 600px;
+    }
+
+    .whatsapp-info h2 {
+      color: var(--bg-white);
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .btn-whatsapp {
+      background-color: #25D366;
+      color: #FFFFFF;
+      font-weight: 600;
+      padding: 0.9rem 2rem;
+      border-radius: var(--radius-sm);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 1rem;
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+    }
+
+    .btn-whatsapp:hover {
+      background-color: #1EBE5D;
+      transform: translateY(-2px);
+      color: #FFFFFF;
+    }
+
+    /* ==========================================================================
+       TOAST NOTIFICATION MODAL
+       ========================================================================== */
+    .toast-notification {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: var(--primary-navy);
+      color: var(--bg-white);
+      padding: 1rem 1.5rem;
+      border-radius: var(--radius-md);
+      border-left: 5px solid var(--gold-accent);
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      z-index: 2000;
+      transform: translateY(120%);
+      transition: transform 0.4s ease-out;
+    }
+
+    .toast-notification.show {
+      transform: translateY(0);
+    }
+
+    .toast-icon {
+      color: var(--gold-accent);
+      font-size: 1.4rem;
+    }
+
+    .toast-close {
+      background: none;
+      border: none;
+      color: rgba(255,255,255,0.6);
+      cursor: pointer;
+      font-size: 1.1rem;
+      margin-left: 0.5rem;
+    }
+
+    .toast-close:hover {
+      color: var(--bg-white);
+    }
+
+    /* ==========================================================================
+       FOOTER
+       ========================================================================== */
+    .footer {
+      background-color: var(--primary-navy);
+      color: #D1D5DB;
+      padding: 4rem 0 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 2.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-col h4 {
+      color: var(--bg-white);
+      font-size: 1.1rem;
+      margin-bottom: 1.25rem;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+
+    .footer-col h4::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 35px;
+      height: 2px;
+      background-color: var(--gold-accent);
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.6rem;
+    }
+
+    .footer-links a {
+      color: #9CA3AF;
+      font-size: 0.9rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold-accent);
+      padding-left: 4px;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.85rem;
+      color: #9CA3AF;
+    }
+
+    /* ==========================================================================
+       RESPONSIVE BREAKPOINTS
+       ========================================================================== */
+    @media (max-width: 992px) {
+      .contact-wrapper {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background-color: var(--bg-white);
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 2.5rem 1.5rem;
+        transition: 0.3s ease;
+        box-shadow: var(--shadow-md);
+      }
+
+      .nav-menu.active {
+        left: 0;
+      }
+
+      .mobile-toggle {
+        display: block;
+      }
+
+      .contact-form {
+        grid-template-columns: 1fr;
+      }
+
+      .form-group.full-width {
+        grid-column: span 1;
+      }
+
+      .form-container {
+        padding: 1.75rem;
+      }
+
+      .page-header h1 {
+        font-size: 2.1rem;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .whatsapp-flex {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-info">
+        <span><i class="fa-solid fa-phone"></i> +234 (0) 800 792 6777</span>
+        <span><i class="fa-solid fa-envelope"></i> info@pwanproperties.ng</span>
+        <span><i class="fa-solid fa-location-dot"></i> Lekki Phase 1, Lagos, Nigeria</span>
+      </div>
+      <div>
+        <span><i class="fa-regular fa-clock"></i> Mon - Sat: 8:00 AM - 6:00 PM</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation Header -->
+  <header class="header-main">
+    <div class="container">
+      <nav class="navbar">
+        <a href="index.html" class="logo">
+          <div class="logo-icon"><i class="fa-solid fa-building"></i></div>
+          <span>PWAN PROPERTIES</span>
+        </a>
+
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="properties.html" class="nav-link">Properties</a></li>
+          <li><a href="buy.html" class="nav-link">Buy</a></li>
+          <li><a href="rent.html" class="nav-link">Rent</a></li>
+          <li><a href="land.html" class="nav-link">Land</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="about.html" class="nav-link">About Us</a></li>
+          <li><a href="contact.html" class="nav-link active">Contact</a></li>
+          <li><a href="favourites.html" class="nav-link"><i class="fa-regular fa-heart"></i> Saved</a></li>
+          <li><a href="list-property.html" class="btn btn-gold">List a Property</a></li>
+        </ul>
+
+        <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Banner Notice -->
+  <div class="container">
+    <div class="demo-notice">
+      <i class="fa-solid fa-triangle-exclamation"></i>
+      <div>
+        <strong>Demonstration Website Notice:</strong> This is a frontend demonstration template for PWAN Properties. Form submissions will display local confirmation feedback and do not transmit messages to external production systems without backend integration.
+      </div>
+    </div>
+  </div>
+
+  <!-- Page Header / Hero -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Contact Our Property Experts</h1>
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <i class="fa-solid fa-chevron-right" style="font-size: 0.75rem;"></i>
+        <span>Contact Us</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Action Contact Cards -->
+  <section class="contact-cards-section">
+    <div class="container">
+      <div class="contact-cards-grid">
+        <div class="contact-card">
+          <div class="card-icon"><i class="fa-solid fa-phone-volume"></i></div>
+          <h3>Speak to an Agent</h3>
+          <p>Direct lines for immediate enquiries on listings, pricing, and viewings.</p>
+          <a href="tel:+2348007926777" class="contact-card-link">+234 (0) 800 792 6777 <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <div class="contact-card">
+          <div class="card-icon"><i class="fa-solid fa-calendar-check"></i></div>
+          <h3>Schedule Inspection</h3>
+          <p>Book physical or virtual site tours with our regional consultants.</p>
+          <a href="#contactForm" onclick="prefillSubject('Site Inspection Request')" class="contact-card-link">Book Inspection <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <div class="contact-card">
+          <div class="card-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+          <h3>Land & Investments</h3>
+          <p>Explore high-yielding land acquisition opportunities across Nigeria.</p>
+          <a href="land.html" class="contact-card-link">View Estates <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <div class="contact-card">
+          <div class="card-icon"><i class="fa-solid fa-circle-question"></i></div>
+          <h3>Frequently Asked Questions</h3>
+          <p>Find quick answers regarding payment plans, titles, and documentation.</p>
+          <a href="faq.html" class="contact-card-link">Read FAQs <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Section: Form & Office Locations -->
+  <section class="main-contact-section">
+    <div class="container">
+      <div class="contact-wrapper">
+        
+        <!-- Interactive Form -->
+        <div class="form-container">
+          <span class="section-title-sm">Get In Touch</span>
+          <h2>Send Us a Message</h2>
+          <p class="form-subtitle">Fill out the form below and one of our client relationship managers will respond within 24 hours.</p>
+
+          <form id="contactForm" class="contact-form" novalidate>
+            <div class="form-group" id="groupFullName">
+              <label for="fullName">Full Name *</label>
+              <input type="text" id="fullName" class="form-control" placeholder="e.g. Babatunde Adeleke" required>
+              <span class="form-error-msg">Please enter your full name.</span>
+            </div>
+
+            <div class="form-group" id="groupEmail">
+              <label for="emailAddress">Email Address *</label>
+              <input type="email" id="emailAddress" class="form-control" placeholder="name@example.com" required>
+              <span class="form-error-msg">Please enter a valid email address.</span>
+            </div>
+
+            <div class="form-group" id="groupPhone">
+              <label for="phoneNumber">Phone Number *</label>
+              <input type="tel" id="phoneNumber" class="form-control" placeholder="+234 801 234 5678" required>
+              <span class="form-error-msg">Please provide a phone number.</span>
+            </div>
+
+            <div class="form-group" id="groupCategory">
+              <label for="enquiryCategory">Enquiry Category *</label>
+              <select id="enquiryCategory" class="form-control" required>
+                <option value="">-- Select Purpose --</option>
+                <option value="property-purchase">Property Purchase (Buy)</option>
+                <option value="property-rent">Property Rental</option>
+                <option value="land-investment">Land Investment</option>
+                <option value="site-inspection">Schedule Site Inspection</option>
+                <option value="property-listing">Listing My Property</option>
+                <option value="general">General Enquiry</option>
+              </select>
+              <span class="form-error-msg">Please select an enquiry category.</span>
+            </div>
+
+            <div class="form-group full-width" id="groupSubject">
+              <label for="subject">Subject *</label>
+              <input type="text" id="subject" class="form-control" placeholder="e.g. Enquiry regarding 4 Bedroom Duplex in Lekki" required>
+              <span class="form-error-msg">Please enter a subject.</span>
+            </div>
+
+            <div class="form-group full-width" id="groupMessage">
+              <label for="message">Your Message *</label>
+              <textarea id="message" class="form-control" placeholder="Provide details about your budget, preferred locations, or specific questions..." required></textarea>
+              <span class="form-error-msg">Please enter your message.</span>
+            </div>
+
+            <div class="form-group full-width">
+              <button type="submit" class="btn btn-gold" style="width: 100%; padding: 1rem; font-size: 1rem;">
+                <i class="fa-solid fa-paper-plane"></i> Send Enquiry
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Sidebar Office Info -->
+        <div class="info-sidebar">
+          <div>
+            <h3>Headquarters & Offices</h3>
+
+            <div class="office-block">
+              <h4><i class="fa-solid fa-building-columns"></i> Corporate Headquarters</h4>
+              <div class="office-detail-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>PWAN Towers, Admiralty Way, Lekki Phase 1, Lagos State, Nigeria</span>
+              </div>
+              <div class="office-detail-item">
+                <i class="fa-solid fa-phone"></i>
+                <span>+234 (0) 800 792 6777</span>
+              </div>
+              <div class="office-detail-item">
+                <i class="fa-solid fa-envelope"></i>
+                <span>lagos@pwanproperties.ng</span>
+              </div>
+            </div>
+
+            <div class="office-block">
+              <h4><i class="fa-solid fa-clock"></i> Business Hours</h4>
+              <div class="office-detail-item">
+                <i class="fa-regular fa-calendar-days"></i>
+                <span>Monday – Friday: 8:00 AM – 6:00 PM</span>
+              </div>
+              <div class="office-detail-item">
+                <i class="fa-regular fa-calendar"></i>
+                <span>Saturday: 9:00 AM – 4:00 PM</span>
+              </div>
+              <div class="office-detail-item">
+                <i class="fa-solid fa-circle-xmark"></i>
+                <span>Sunday & Public Holidays: Closed (Emergency Hotline Active)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="social-connect">
+            <p>Connect With Us</p>
+            <div class="social-links">
+              <a href="#" class="social-icon" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#" class="social-icon" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#" class="social-icon" title="Twitter/X"><i class="fa-brands fa-x-twitter"></i></a>
+              <a href="#" class="social-icon" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="#" class="social-icon" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Regional Branches & Map Placeholder Section -->
+  <section class="branches-section">
+    <div class="container">
+      <div class="section-header-center">
+        <span class="section-title-sm">Nationwide Presence</span>
+        <h2>Our Regional Offices</h2>
+        <p style="color: var(--text-muted);">Select a region to view location details and interactive office preview.</p>
+      </div>
+
+      <div class="branch-tabs" id="branchTabs">
+        <button class="branch-tab-btn active" onclick="switchBranch('lagos', this)">Lagos HQ</button>
+        <button class="branch-tab-btn" onclick="switchBranch('abuja', this)">Abuja FCT</button>
+        <button class="branch-tab-btn" onclick="switchBranch('portharcourt', this)">Port Harcourt</button>
+        <button class="branch-tab-btn" onclick="switchBranch('ibadan', this)">Ibadan</button>
+      </div>
+
+      <div class="map-display-box" id="mapDisplayBox">
+        <img id="branchMapImg" class="map-placeholder-bg" src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=1200&q=80" alt="Lagos Office Map Preview">
+        <div class="map-overlay-card">
+          <h4 id="branchName">Lagos Regional Office</h4>
+          <p id="branchAddress"><i class="fa-solid fa-location-dot" style="color: var(--gold-accent);"></i> PWAN Towers, Admiralty Way, Lekki Phase 1, Lagos</p>
+          <p id="branchPhone" style="margin-top: 0.4rem;"><i class="fa-solid fa-phone" style="color: var(--gold-accent);"></i> +234 800 792 6777</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WhatsApp Quick Action Banner -->
+  <section class="whatsapp-cta-section">
+    <div class="container">
+      <div class="whatsapp-flex">
+        <div class="whatsapp-info">
+          <h2>Need Immediate Assistance?</h2>
+          <p style="color: #D1D5DB;">Chat directly with a client services advisor on WhatsApp for live responses, estate brochures, and site inspection schedules.</p>
+        </div>
+        <div>
+          <a href="https://wa.me/2348007926777?text=Hello%20PWAN%20Properties,%20I%20would%20like%20to%20enquire%20about%20your%20listings." target="_blank" class="btn btn-whatsapp">
+            <i class="fa-brands fa-whatsapp" style="font-size: 1.3rem;"></i> Chat on WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="logo" style="color: var(--bg-white); margin-bottom: 1rem; display: inline-flex;">
+            <div class="logo-icon"><i class="fa-solid fa-building"></i></div>
+            <span>PWAN PROPERTIES</span>
+          </a>
+          <p style="font-size: 0.9rem; line-height: 1.6; color: #9CA3AF; margin-bottom: 1.25rem;">
+            PWAN Properties is a premier Nigerian real estate firm dedicated to making land and home ownership smooth, accessible, and secure across primary urban growth centers.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="properties.html">All Properties</a></li>
+            <li><a href="buy.html">Buy Homes</a></li>
+            <li><a href="rent.html">Rent Apartments</a></li>
+            <li><a href="land.html">Land Investment</a></li>
+            <li><a href="services.html">Our Services</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company & Legal</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="faq.html">FAQs</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="list-property.html">List Your Property</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Newsletter</h4>
+          <p style="font-size: 0.88rem; color: #9CA3AF; margin-bottom: 1rem;">Subscribe to get market updates and new land releases.</p>
+          <form onsubmit="handleNewsletter(event)" style="display: flex; gap: 0.5rem;">
+            <input type="email" placeholder="Your email address" required style="padding: 0.6rem; border-radius: var(--radius-sm); border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: #FFF; width: 100%; font-size: 0.88rem;">
+            <button type="submit" class="btn btn-gold" style="padding: 0.6rem 1rem;"><i class="fa-solid fa-paper-plane"></i></button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 PWAN Properties Nigeria. All rights reserved. (Demonstration Frontend Website)</p>
+        <div>
+          <a href="privacy.html" style="margin-right: 1rem;">Privacy Policy</a>
+          <a href="terms.html">Terms & Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Notification Toast Container -->
+  <div class="toast-notification" id="toastNotification">
+    <div class="toast-icon"><i class="fa-solid fa-circle-check"></i></div>
+    <div>
+      <h5 id="toastTitle" style="color: var(--bg-white); font-size: 0.95rem;">Message Sent</h5>
+      <p id="toastMessage" style="font-size: 0.82rem; color: #D1D5DB;">Thank you. Your message has been received.</p>
+    </div>
+    <button class="toast-close" onclick="closeToast()"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+
+  <!-- JavaScript Logic -->
+  <script>
+    // Mobile Navigation Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navMenu = document.getElementById('navMenu');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      const icon = mobileMenuBtn.querySelector('i');
+      if (navMenu.classList.contains('active')) {
+        icon.className = 'fa-solid fa-xmark';
+      } else {
+        icon.className = 'fa-solid fa-bars';
+      }
+    });
+
+    // Form Client-side Validation & Handler
+    const contactForm = document.getElementById('contactForm');
+
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      let isValid = true;
+
+      // Reset errors
+      document.querySelectorAll('.form-group').forEach(group => group.classList.remove('error'));
+
+      // Full Name Validation
+      const name = document.getElementById('fullName');
+      if (!name.value.trim()) {
+        showFieldError('groupFullName');
+        isValid = false;
+      }
+
+      // Email Validation
+      const email = document.getElementById('emailAddress');
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email.value.trim())) {
+        showFieldError('groupEmail');
+        isValid = false;
+      }
+
+      // Phone Validation
+      const phone = document.getElementById('phoneNumber');
+      if (!phone.value.trim()) {
+        showFieldError('groupPhone');
+        isValid = false;
+      }
+
+      // Category Validation
+      const category = document.getElementById('enquiryCategory');
+      if (!category.value) {
+        showFieldError('groupCategory');
+        isValid = false;
+      }
+
+      // Subject Validation
+      const subject = document.getElementById('subject');
+      if (!subject.value.trim()) {
+        showFieldError('groupSubject');
+        isValid = false;
+      }
+
+      // Message Validation
+      const message = document.getElementById('message');
+      if (!message.value.trim()) {
+        showFieldError('groupMessage');
+        isValid = false;
+      }
+
+      if (isValid) {
+        // Show Toast Feedback
+        triggerToast('Enquiry Received!', 'Thank you ' + name.value.trim() + '. Your message has been recorded (Demo interaction).');
+        contactForm.reset();
+      }
+    });
+
+    function showFieldError(groupId) {
+      document.getElementById(groupId).classList.add('error');
+    }
+
+    // Prefill subject helper from Quick Action cards
+    function prefillSubject(subjectText) {
+      const subjectInput = document.getElementById('subject');
+      const categoryInput = document.getElementById('enquiryCategory');
+      subjectInput.value = subjectText;
+      categoryInput.value = 'site-inspection';
+      subjectInput.focus();
+    }
+
+    // Branch Location Switcher
+    const branchData = {
+      lagos: {
+        title: "Lagos Regional Office (HQ)",
+        address: "PWAN Towers, Admiralty Way, Lekki Phase 1, Lagos",
+        phone: "+234 (0) 800 792 6777",
+        img: "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=1200&q=80"
+      },
+      abuja: {
+        title: "Abuja Executive Office",
+        address: "Plot 412, Constitutional Avenue, Central Business District, Abuja",
+        phone: "+234 (0) 902 334 1122",
+        img: "https://images.unsplash.com/photo-1577086664693-894d8405334a?auto=format&fit=crop&w=1200&q=80"
+      },
+      portharcourt: {
+        title: "Port Harcourt Office",
+        address: "14 Olu Obasanjo Road, GRA Phase 2, Port Harcourt, Rivers State",
+        phone: "+234 (0) 811 554 9900",
+        img: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80"
+      },
+      ibadan: {
+        title: "Ibadan Regional Office",
+        address: "Ring Road Interchange, Opposite Palms Mall, Ibadan, Oyo State",
+        phone: "+234 (0) 803 112 4455",
+        img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
+      }
+    };
+
+    function switchBranch(key, element) {
+      document.querySelectorAll('.branch-tab-btn').forEach(btn => btn.classList.remove('active'));
+      element.classList.add('active');
+
+      const data = branchData[key];
+      if (data) {
+        document.getElementById('branchName').textContent = data.title;
+        document.getElementById('branchAddress').innerHTML = `<i class="fa-solid fa-location-dot" style="color: var(--gold-accent);"></i> ${data.address}`;
+        document.getElementById('branchPhone').innerHTML = `<i class="fa-solid fa-phone" style="color: var(--gold-accent);"></i> ${data.phone}`;
+        document.getElementById('branchMapImg').src = data.img;
+      }
+    }
+
+    // Newsletter Handler
+    function handleNewsletter(e) {
+      e.preventDefault();
+      triggerToast('Subscribed!', 'Thank you for subscribing to PWAN Properties updates.');
+      e.target.reset();
+    }
+
+    // Toast Notification Display
+    function triggerToast(title, msg) {
+      const toast = document.getElementById('toastNotification');
+      document.getElementById('toastTitle').textContent = title;
+      document.getElementById('toastMessage').textContent = msg;
+      
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 5000);
+    }
+
+    function closeToast() {
+      document.getElementById('toastNotification').classList.remove('show');
+    }
+  </script>
+</body>
+</html>

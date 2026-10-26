@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn about PWAN Properties Nigeria. Discover our mission, core values, leadership vision, and commitment to making real estate and land ownership accessible across Nigeria.">
+  <title>About Us | PWAN Properties Nigeria</title>
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* ==========================================================================
+       DESIGN SYSTEM & VARIABLES
+       ========================================================================== */
+    :root {
+      --primary-navy: #10233F;
+      --royal-blue: #1E4E8C;
+      --gold-accent: #D4A64A;
+      --gold-hover: #b88d35;
+      --bg-light: #F5F7FA;
+      --bg-white: #FFFFFF;
+      --text-dark: #202B3C;
+      --text-muted: #697586;
+      --border-color: #E2E8F0;
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+      --shadow-md: 0 8px 24px rgba(0,0,0,0.08);
+      --shadow-lg: 0 16px 32px rgba(0,0,0,0.12);
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --radius-sm: 6px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+    }
+
+    /* Reset & Base Styles */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Playfair Display', Georgia, serif;
+      color: var(--primary-navy);
+      line-height: 1.25;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: var(--transition);
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* ==========================================================================
+       TOP ANNOUNCEMENT BAR & NAVIGATION
+       ========================================================================== */
+    .top-bar {
+      background-color: var(--primary-navy);
+      color: #D1D5DB;
+      font-size: 0.85rem;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .top-bar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .top-bar-info span {
+      margin-right: 1.25rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .top-bar-info i {
+      color: var(--gold-accent);
+    }
+
+    .header-main {
+      background-color: var(--bg-white);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.1rem 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      font-family: 'Playfair Display', serif;
+    }
+
+    .logo-icon {
+      background: linear-gradient(135deg, var(--royal-blue), var(--primary-navy));
+      color: var(--gold-accent);
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius-sm);
+      font-size: 1.1rem;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+      list-style: none;
+    }
+
+    .nav-link {
+      font-weight: 500;
+      color: var(--text-dark);
+      font-size: 0.95rem;
+      position: relative;
+      padding: 0.25rem 0;
+    }
+
+    .nav-link:hover, .nav-link.active {
+      color: var(--royal-blue);
+    }
+
+    .nav-link.active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: var(--gold-accent);
+      border-radius: 2px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: var(--transition);
+      border: none;
+    }
+
+    .btn-gold {
+      background-color: var(--gold-accent);
+      color: var(--primary-navy);
+    }
+
+    .btn-gold:hover {
+      background-color: var(--gold-hover);
+      transform: translateY(-2px);
+    }
+
+    .btn-navy {
+      background-color: var(--primary-navy);
+      color: var(--bg-white);
+    }
+
+    .btn-navy:hover {
+      background-color: var(--royal-blue);
+      transform: translateY(-2px);
+    }
+
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--primary-navy);
+      cursor: pointer;
+    }
+
+    /* ==========================================================================
+       PAGE HEADER / HERO
+       ========================================================================== */
+    .page-header {
+      background: linear-gradient(135deg, rgba(16, 35, 63, 0.92), rgba(30, 78, 140, 0.88)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      color: var(--bg-white);
+      padding: 4.5rem 0 3.5rem;
+      text-align: center;
+    }
+
+    .page-header h1 {
+      color: var(--bg-white);
+      font-size: 2.8rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .breadcrumb {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    .breadcrumb a {
+      color: var(--gold-accent);
+    }
+
+    /* Demo Notice Disclaimer */
+    .demo-notice {
+      background-color: #FEF3C7;
+      border-left: 4px solid #D97706;
+      color: #92400E;
+      padding: 0.85rem 1.25rem;
+      font-size: 0.88rem;
+      margin: 1.5rem auto 0;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      max-width: 1280px;
+    }
+
+    /* ==========================================================================
+       ABOUT STORY SECTION
+       ========================================================================== */
+    .about-story-section {
+      padding: 4rem 0;
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    .story-img-wrapper {
+      position: relative;
+    }
+
+    .story-main-img {
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-lg);
+      width: 100%;
+      height: 440px;
+      object-fit: cover;
+    }
+
+    .story-badge-card {
+      position: absolute;
+      bottom: -25px;
+      right: -25px;
+      background: var(--primary-navy);
+      color: var(--bg-white);
+      padding: 1.5rem;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-md);
+      border: 2px solid var(--gold-accent);
+      max-width: 220px;
+      text-align: center;
+    }
+
+    .story-badge-card .num {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--gold-accent);
+      font-family: 'Playfair Display', serif;
+      line-height: 1;
+    }
+
+    .story-badge-card .txt {
+      font-size: 0.82rem;
+      color: #D1D5DB;
+      margin-top: 0.3rem;
+    }
+
+    .section-tag {
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 1.5px;
+      color: var(--gold-accent);
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .story-content h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .story-content p {
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      font-size: 0.98rem;
+    }
+
+    /* ==========================================================================
+       MISSION, VISION & CORE VALUES
+       ========================================================================== */
+    .mission-vision-section {
+      padding: 4rem 0;
+      background-color: var(--bg-white);
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .mv-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .mv-card {
+      background: var(--bg-light);
+      padding: 2.5rem;
+      border-radius: var(--radius-md);
+      border-left: 4px solid var(--gold-accent);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .mv-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .mv-card h3 i {
+      color: var(--gold-accent);
+    }
+
+    .mv-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* Values Grid */
+    .values-header {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .values-header h2 {
+      font-size: 2.2rem;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .value-card {
+      background: var(--bg-light);
+      padding: 2rem 1.5rem;
+      border-radius: var(--radius-md);
+      text-align: center;
+      border: 1px solid var(--border-color);
+      transition: var(--transition);
+    }
+
+    .value-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--gold-accent);
+      background: var(--bg-white);
+    }
+
+    .value-icon {
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      background: rgba(30, 78, 140, 0.1);
+      color: var(--royal-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      margin: 0 auto 1rem;
+    }
+
+    .value-card h4 {
+      font-size: 1.15rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .value-card p {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+    }
+
+    /* ==========================================================================
+       MILESTONES & HISTORY TIMELINE
+       ========================================================================== */
+    .history-section {
+      padding: 4rem 0;
+    }
+
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 2.5rem auto 0;
+    }
+
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 3px;
+      background-color: var(--border-color);
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -1.5px;
+    }
+
+    .timeline-item {
+      padding: 10px 40px;
+      position: relative;
+      width: 50%;
+      box-sizing: border-box;
+    }
+
+    .timeline-item.left {
+      left: 0;
+      text-align: right;
+    }
+
+    .timeline-item.right {
+      left: 50%;
+      text-align: left;
+    }
+
+    .timeline-item::after {
+      content: '';
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      right: -8px;
+      background-color: var(--gold-accent);
+      border: 3px solid var(--bg-white);
+      top: 20px;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .timeline-item.right::after {
+      left: -8px;
+    }
+
+    .timeline-content {
+      padding: 1.5rem;
+      background: var(--bg-white);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-color);
+    }
+
+    .timeline-year {
+      font-weight: 700;
+      color: var(--royal-blue);
+      font-size: 1rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .timeline-content h4 {
+      font-size: 1.1rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .timeline-content p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    /* ==========================================================================
+       LEADERSHIP TEAM (DEMO PLACEHOLDERS)
+       ========================================================================== */
+    .team-section {
+      padding: 4rem 0;
+      background-color: var(--bg-white);
+      border-top: 1px solid var(--border-color);
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+      margin-top: 2.5rem;
+    }
+
+    .team-card {
+      background: var(--bg-light);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-color);
+      transition: var(--transition);
+      text-align: center;
+    }
+
+    .team-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .team-img-box {
+      height: 260px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .team-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .team-card-body {
+      padding: 1.5rem;
+    }
+
+    .team-card-body h4 {
+      font-size: 1.2rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .team-role {
+      color: var(--gold-accent);
+      font-weight: 600;
+      font-size: 0.85rem;
+      margin-bottom: 0.8rem;
+      display: block;
+    }
+
+    .team-card-body p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* ==========================================================================
+       CTA BANNER
+       ========================================================================== */
+    .cta-banner {
+      padding: 4rem 0;
+      background: linear-gradient(135deg, var(--primary-navy), var(--royal-blue));
+      color: var(--bg-white);
+      text-align: center;
+    }
+
+    .cta-banner h2 {
+      color: var(--bg-white);
+      font-size: 2.3rem;
+      margin-bottom: 1rem;
+    }
+
+    .cta-banner p {
+      color: #D1D5DB;
+      max-width: 650px;
+      margin: 0 auto 2rem;
+      font-size: 1rem;
+    }
+
+    .cta-btns {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* ==========================================================================
+       FOOTER
+       ========================================================================== */
+    .footer {
+      background-color: var(--primary-navy);
+      color: #D1D5DB;
+      padding: 4rem 0 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 2.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-col h4 {
+      color: var(--bg-white);
+      font-size: 1.1rem;
+      margin-bottom: 1.25rem;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+
+    .footer-col h4::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 35px;
+      height: 2px;
+      background-color: var(--gold-accent);
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.6rem;
+    }
+
+    .footer-links a {
+      color: #9CA3AF;
+      font-size: 0.9rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold-accent);
+      padding-left: 4px;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.85rem;
+      color: #9CA3AF;
+    }
+
+    /* Toast Notification */
+    .toast-notification {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: var(--primary-navy);
+      color: var(--bg-white);
+      padding: 1rem 1.5rem;
+      border-radius: var(--radius-md);
+      border-left: 5px solid var(--gold-accent);
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      z-index: 2000;
+      transform: translateY(120%);
+      transition: transform 0.4s ease-out;
+    }
+
+    .toast-notification.show {
+      transform: translateY(0);
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .story-grid, .mv-grid {
+        grid-template-columns: 1fr;
+      }
+      .story-badge-card {
+        right: 10px;
+        bottom: -15px;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background-color: var(--bg-white);
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 2.5rem 1.5rem;
+        transition: 0.3s ease;
+        box-shadow: var(--shadow-md);
+      }
+      .nav-menu.active {
+        left: 0;
+      }
+      .mobile-toggle {
+        display: block;
+      }
+      .timeline::after {
+        left: 31px;
+      }
+      .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+      }
+      .timeline-item.right {
+        left: 0%;
+      }
+      .timeline-item.left {
+        text-align: left;
+      }
+      .timeline-item::after {
+        left: 23px;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-info">
+        <span><i class="fa-solid fa-phone"></i> +234 (0) 800 792 6777</span>
+        <span><i class="fa-solid fa-envelope"></i> info@pwanproperties.ng</span>
+        <span><i class="fa-solid fa-location-dot"></i> Lekki Phase 1, Lagos, Nigeria</span>
+      </div>
+      <div>
+        <span><i class="fa-regular fa-clock"></i> Mon - Sat: 8:00 AM - 6:00 PM</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation Header -->
+  <header class="header-main">
+    <div class="container">
+      <nav class="navbar">
+        <a href="index.html" class="logo">
+          <div class="logo-icon"><i class="fa-solid fa-building"></i></div>
+          <span>PWAN PROPERTIES</span>
+        </a>
+
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="properties.html" class="nav-link">Properties</a></li>
+          <li><a href="buy.html" class="nav-link">Buy</a></li>
+          <li><a href="rent.html" class="nav-link">Rent</a></li>
+          <li><a href="land.html" class="nav-link">Land</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="about.html" class="nav-link active">About Us</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <li><a href="favourites.html" class="nav-link"><i class="fa-regular fa-heart"></i> Saved</a></li>
+          <li><a href="list-property.html" class="btn btn-gold">List a Property</a></li>
+        </ul>
+
+        <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Demo Disclaimer Bar -->
+  <div class="container">
+    <div class="demo-notice">
+      <i class="fa-solid fa-circle-info"></i>
+      <div>
+        <strong>Demonstration Content Notice:</strong> Corporate history milestones, metrics, and staff profile cards displayed on this page serve as frontend visual placeholders for PWAN Properties demonstration purposes.
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>About PWAN Properties</h1>
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <i class="fa-solid fa-chevron-right" style="font-size: 0.75rem;"></i>
+        <span>About Us</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Brand Story & Overview -->
+  <section class="about-story-section">
+    <div class="container">
+      <div class="story-grid">
+        <div class="story-img-wrapper">
+          <img class="story-main-img" src="https://images.unsplash.com/photo-1577086664693-894d8405334a?auto=format&fit=crop&w=1000&q=80" alt="Modern commercial building representation">
+          <div class="story-badge-card">
+            <div class="num">12+</div>
+            <div class="txt">Years of Excellence in Nigerian Real Estate</div>
+          </div>
+        </div>
+
+        <div class="story-content">
+          <span class="section-tag">Our History & Legacy</span>
+          <h2>Redefining Property Ownership Across Nigeria</h2>
+          <p>PWAN Properties was established with a singular vision: to make land and property ownership transparent, accessible, and rewarding for everyday Nigerians, investors, and diaspora clients.</p>
+          <p>Over the past decade, we have expanded from prime locations in Lagos into major commercial and residential hubs including Abuja, Port Harcourt, and Ibadan. Our approach combines rigorous legal due diligence with flexible payment structures.</p>
+          <p>Whether helping first-time buyers acquire their dream residential apartment or guiding institutional investors towards strategic land banks, we uphold an unyielding commitment to security, value appreciation, and professional ethics.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission, Vision & Core Values -->
+  <section class="mission-vision-section">
+    <div class="container">
+      <div class="mv-grid">
+        <div class="mv-card">
+          <h3><i class="fa-solid fa-bullseye"></i> Our Mission</h3>
+          <p>To empower individuals, families, and businesses by making genuine real estate investments accessible through strategic land development, transparent processes, and customer-centric service across Nigeria.</p>
+        </div>
+
+        <div class="mv-card">
+          <h3><i class="fa-solid fa-eye"></i> Our Vision</h3>
+          <p>To remain Nigeria's most trusted real estate and property development firm, setting industry benchmarks for integrity, neighborhood innovation, and sustainable capital growth for our clients.</p>
+        </div>
+      </div>
+
+      <div class="values-header">
+        <span class="section-tag">Guiding Principles</span>
+        <h2>Our Core Values</h2>
+        <p style="color: var(--text-muted);">These core tenets define how we operate, build client trust, and evaluate every real estate venture.</p>
+      </div>
+
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <h4>Integrity & Trust</h4>
+          <p>We perform full legal background checks on all land titles to protect every customer's financial commitment.</p>
+        </div>
+
+        <div class="value-card">
+          <div class="value-icon"><i class="fa-solid fa-handshake"></i></div>
+          <h4>Client-Centricity</h4>
+          <p>We tailor property options and payment schedules to match unique financial timelines and homeownership goals.</p>
+        </div>
+
+        <div class="value-card">
+          <div class="value-icon"><i class="fa-solid fa-chart-line"></i></div>
+          <h4>Value Appreciation</h4>
+          <p>We acquire properties in high-growth corridors ensuring rapid asset appreciation for investors.</p>
+        </div>
+
+        <div class="value-card">
+          <div class="value-icon"><i class="fa-solid fa-award"></i></div>
+          <h4>Professional Service</h4>
+          <p>Our network of dedicated consultants provides clear advice through initial enquiry to final title delivery.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Historical Milestones Timeline -->
+  <section class="history-section">
+    <div class="container">
+      <div class="values-header">
+        <span class="section-tag">Corporate Timeline</span>
+        <h2>Key Historical Milestones</h2>
+        <p style="color: var(--text-muted);">Sample timeline placeholders representing our multi-city expansion across Nigeria.</p>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item left">
+          <div class="timeline-content">
+            <div class="timeline-year">2014</div>
+            <h4>Foundation in Lagos</h4>
+            <p>PWAN Properties commenced operations with its inaugural residential land estate project in Lekki Axis, Lagos.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item right">
+          <div class="timeline-content">
+            <div class="timeline-year">2017</div>
+            <h4>Expansion to Abuja FCT</h4>
+            <p>Opened regional operations in the Federal Capital Territory, releasing master-planned estate developments in Gwarinpa and Katampe.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item left">
+          <div class="timeline-content">
+            <div class="timeline-year">2020</div>
+            <h4>Commercial & Luxury Division</h4>
+            <p>Launched high-density luxury residential duplexes and commercial plaza acquisitions in Victoria Island and Ikeja.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item right">
+          <div class="timeline-content">
+            <div class="timeline-year">2024 - 2026</div>
+            <h4>Digital Platform & Nationwide Reach</h4>
+            <p>Expanded client services to Port Harcourt and Ibadan while launching interactive digital inspection and reservation portals.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sample Leadership Team Section -->
+  <section class="team-section">
+    <div class="container">
+      <div class="values-header">
+        <span class="section-tag">Demonstration Team</span>
+        <h2>Executive Leadership</h2>
+        <p style="color: var(--text-muted);">Sample organizational profiles clearly identified as demonstration content.</p>
+      </div>
+
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-img-box">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80" alt="Executive Leadership Demo Profile">
+          </div>
+          <div class="team-card-body">
+            <h4>Chidi Okafor</h4>
+            <span class="team-role">Managing Director / CEO</span>
+            <p>15+ years of experience in strategic real estate advisory, land acquisition, and urban development in West Africa.</p>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-img-box">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80" alt="Executive Leadership Demo Profile">
+          </div>
+          <div class="team-card-body">
+            <h4>Amina Bello</h4>
+            <span class="team-role">Head of Legal & Compliance</span>
+            <p>Specializes in land titles verification, C of O legal processing, and corporate governance compliance.</p>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-img-box">
+            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80" alt="Executive Leadership Demo Profile">
+          </div>
+          <div class="team-card-body">
+            <h4>Tunde Bakare</h4>
+            <span class="team-role">Chief Technical Officer</span>
+            <p>Oversees site inspections, estate infrastructural design, master planning, and civil engineering compliance.</p>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-img-box">
+            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=80" alt="Executive Leadership Demo Profile">
+          </div>
+          <div class="team-card-body">
+            <h4>Ngozi Adeleke</h4>
+            <span class="team-role">Director of Client Relations</span>
+            <p>Leads customer experience teams, investor advisory services, and diaspora client engagement portfolios.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action Banner -->
+  <section class="cta-banner">
+    <div class="container">
+      <h2>Ready to Start Your Real Estate Journey?</h2>
+      <p>Explore our latest listings for sale, rental properties, or strategic land investments across Nigeria.</p>
+      <div class="cta-btns">
+        <a href="properties.html" class="btn btn-gold"><i class="fa-solid fa-magnifying-glass"></i> Browse Listings</a>
+        <a href="contact.html" class="btn btn-navy" style="background: rgba(255,255,255,0.15); border: 1px solid var(--gold-accent);"><i class="fa-solid fa-headset"></i> Contact An Advisor</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="logo" style="color: var(--bg-white); margin-bottom: 1rem; display: inline-flex;">
+            <div class="logo-icon"><i class="fa-solid fa-building"></i></div>
+            <span>PWAN PROPERTIES</span>
+          </a>
+          <p style="font-size: 0.9rem; line-height: 1.6; color: #9CA3AF; margin-bottom: 1.25rem;">
+            PWAN Properties is a premier Nigerian real estate firm dedicated to making land and home ownership smooth, accessible, and secure across primary urban growth centers.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="properties.html">All Properties</a></li>
+            <li><a href="buy.html">Buy Homes</a></li>
+            <li><a href="rent.html">Rent Apartments</a></li>
+            <li><a href="land.html">Land Investment</a></li>
+            <li><a href="services.html">Our Services</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company & Legal</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="faq.html">FAQs</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="list-property.html">List Your Property</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Newsletter</h4>
+          <p style="font-size: 0.88rem; color: #9CA3AF; margin-bottom: 1rem;">Subscribe to get market updates and new land releases.</p>
+          <form onsubmit="handleNewsletter(event)" style="display: flex; gap: 0.5rem;">
+            <input type="email" placeholder="Your email address" required style="padding: 0.6rem; border-radius: var(--radius-sm); border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: #FFF; width: 100%; font-size: 0.88rem;">
+            <button type="submit" class="btn btn-gold" style="padding: 0.6rem 1rem;"><i class="fa-solid fa-paper-plane"></i></button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 PWAN Properties Nigeria. All rights reserved. (Demonstration Frontend Website)</p>
+        <div>
+          <a href="privacy.html" style="margin-right: 1rem;">Privacy Policy</a>
+          <a href="terms.html">Terms & Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-notification" id="toastNotification">
+    <div class="toast-icon"><i class="fa-solid fa-circle-check" style="color: var(--gold-accent);"></i></div>
+    <div>
+      <h5 id="toastTitle" style="color: var(--bg-white); font-size: 0.95rem;">Subscribed</h5>
+      <p id="toastMessage" style="font-size: 0.82rem; color: #D1D5DB;">Thank you for subscribing to PWAN Properties.</p>
+    </div>
+  </div>
+
+  <script>
+    // Mobile Navigation Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navMenu = document.getElementById('navMenu');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      const icon = mobileMenuBtn.querySelector('i');
+      if (navMenu.classList.contains('active')) {
+        icon.className = 'fa-solid fa-xmark';
+      } else {
+        icon.className = 'fa-solid fa-bars';
+      }
+    });
+
+    // Newsletter Handler
+    function handleNewsletter(e) {
+      e.preventDefault();
+      const toast = document.getElementById('toastNotification');
+      toast.classList.add('show');
+      e.target.reset();
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 4000);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover real estate services offered by PWAN Properties Nigeria: land acquisition, residential & commercial property sales, property management, and investment advisory.">
+  <title>Our Real Estate Services | PWAN Properties Nigeria</title>
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* ==========================================================================
+       DESIGN SYSTEM & VARIABLES
+       ========================================================================== */
+    :root {
+      --primary-navy: #10233F;
+      --royal-blue: #1E4E8C;
+      --gold-accent: #D4A64A;
+      --gold-hover: #b88d35;
+      --bg-light: #F5F7FA;
+      --bg-white: #FFFFFF;
+      --text-dark: #202B3C;
+      --text-muted: #697586;
+      --border-color: #E2E8F0;
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+      --shadow-md: 0 8px 24px rgba(0,0,0,0.08);
+      --shadow-lg: 0 16px 32px rgba(0,0,0,0.12);
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --radius-sm: 6px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+    }
+
+    /* Reset & Base Styles */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Playfair Display', Georgia, serif;
+      color: var(--primary-navy);
+      line-height: 1.25;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: var(--transition);
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* ==========================================================================
+       TOP ANNOUNCEMENT BAR & NAVIGATION
+       ========================================================================== */
+    .top-bar {
+      background-color: var(--primary-navy);
+      color: #D1D5DB;
+      font-size: 0.85rem;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .top-bar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .top-bar-info span {
+      margin-right: 1.25rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .top-bar-info i {
+      color: var(--gold-accent);
+    }
+
+    .header-main {
+      background-color: var(--bg-white);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.1rem 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      font-family: 'Playfair Display', serif;
+    }
+
+    .logo-icon {
+      background: linear-gradient(135deg, var(--royal-blue), var(--primary-navy));
+      color: var(--gold-accent);
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius-sm);
+      font-size: 1.1rem;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+      list-style: none;
+    }
+
+    .nav-link {
+      font-weight: 500;
+      color: var(--text-dark);
+      font-size: 0.95rem;
+      position: relative;
+      padding: 0.25rem 0;
+    }
+
+    .nav-link:hover, .nav-link.active {
+      color: var(--royal-blue);
+    }
+
+    .nav-link.active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: var(--gold-accent);
+      border-radius: 2px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: var(--transition);
+      border: none;
+    }
+
+    .btn-gold {
+      background-color: var(--gold-accent);
+      color: var(--primary-navy);
+    }
+
+    .btn-gold:hover {
+      background-color: var(--gold-hover);
+      transform: translateY(-2px);
+    }
+
+    .btn-navy {
+      background-color: var(--primary-navy);
+      color: var(--bg-white);
+    }
+
+    .btn-navy:hover {
+      background-color: var(--royal-blue);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border: 2px solid var(--primary-navy);
+      color: var(--primary-navy);
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      background-color: var(--primary-navy);
+      color: var(--bg-white);
+    }
+
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--primary-navy);
+      cursor: pointer;
+    }
+
+    /* ==========================================================================
+       PAGE HEADER / HERO
+       ========================================================================== */
+    .page-header {
+      background: linear-gradient(135deg, rgba(16, 35, 63, 0.92), rgba(30, 78, 140, 0.88)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      color: var(--bg-white);
+      padding: 4.5rem 0 3.5rem;
+      text-align: center;
+    }
+
+    .page-header h1 {
+      color: var(--bg-white);
+      font-size: 2.8rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .breadcrumb {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    .breadcrumb a {
+      color: var(--gold-accent);
+    }
+
+    /* Demo Notice */
+    .demo-notice {
+      background-color: #FEF3C7;
+      border-left: 4px solid #D97706;
+      color: #92400E;
+      padding: 0.85rem 1.25rem;
+      font-size: 0.88rem;
+      margin: 1.5rem auto 0;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      max-width: 1280px;
+    }
+
+    /* ==========================================================================
+       SERVICES SECTION
+       ========================================================================== */
+    .services-section {
+      padding: 4rem 0;
+    }
+
+    .section-header-center {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 3rem;
+    }
+
+    .section-tag {
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 1.5px;
+      color: var(--gold-accent);
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .section-header-center h2 {
+      font-size: 2.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 2rem;
+    }
+
+    .service-card {
+      background: var(--bg-white);
+      border-radius: var(--radius-md);
+      padding: 2.25rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--gold-accent);
+    }
+
+    .service-card-top {
+      margin-bottom: 1.5rem;
+    }
+
+    .service-icon-box {
+      width: 65px;
+      height: 65px;
+      border-radius: 14px;
+      background: rgba(30, 78, 140, 0.1);
+      color: var(--royal-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      margin-bottom: 1.25rem;
+      transition: var(--transition);
+    }
+
+    .service-card:hover .service-icon-box {
+      background: var(--primary-navy);
+      color: var(--gold-accent);
+    }
+
+    .service-card h3 {
+      font-size: 1.35rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .service-card p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+
+    .benefits-list {
+      list-style: none;
+      margin-bottom: 1.5rem;
+      border-top: 1px dashed var(--border-color);
+      padding-top: 1rem;
+    }
+
+    .benefits-list li {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      font-size: 0.88rem;
+      color: var(--text-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .benefits-list li i {
+      color: var(--gold-accent);
+      font-size: 0.85rem;
+    }
+
+    /* ==========================================================================
+       SERVICE CONSULTATION BANNER
+       ========================================================================== */
+    .consultation-cta-section {
+      padding: 4rem 0;
+      background: linear-gradient(135deg, var(--primary-navy) 0%, var(--royal-blue) 100%);
+      color: var(--bg-white);
+    }
+
+    .consultation-flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .consultation-info {
+      max-width: 650px;
+    }
+
+    .consultation-info h2 {
+      color: var(--bg-white);
+      font-size: 2.2rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .consultation-info p {
+      color: #D1D5DB;
+      font-size: 1rem;
+    }
+
+    /* ==========================================================================
+       FOOTER
+       ========================================================================== */
+    .footer {
+      background-color: var(--primary-navy);
+      color: #D1D5DB;
+      padding: 4rem 0 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 2.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-col h4 {
+      color: var(--bg-white);
+      font-size: 1.1rem;
+      margin-bottom: 1.25rem;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+
+    .footer-col h4::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 35px;
+      height: 2px;
+      background-color: var(--gold-accent);
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.6rem;
+    }
+
+    .footer-links a {
+      color: #9CA3AF;
+      font-size: 0.9rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold-accent);
+      padding-left: 4px;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.85rem;
+      color: #9CA3AF;
+    }
+
+    /* Toast Notification */
+    .toast-notification {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: var(--primary-navy);
+      color: var(--bg-white);
+      padding: 1rem 1.5rem;
+      border-radius: var(--radius-md);
+      border-left: 5px solid var(--gold-accent);
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      z-index: 2000;
+      transform: translateY(120%);
+      transition: transform 0.4s ease-out;
+    }
+
+    .toast-notification.show {
+      transform: translateY(0);
+    }
+
+    /* Responsive Breakpoints */
+    @media (max-width: 992px) {
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background-color: var(--bg-white);
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 2.5rem 1.5rem;
+        transition: 0.3s ease;
+        box-shadow: var(--shadow-md);
+      }
+
+      .nav-menu.active {
+        left: 0;
+      }
+
+      .mobile-toggle {
+        display: block;
+      }
+
+      .consultation-flex {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-info">
+        <span><i class="fa-solid fa-phone"></i> +234 (0) 800 792 6777</span>
+        <span><i class="fa-solid fa-envelope"></i> info@pwanproperties.ng</span>
+        <span><i class="fa-solid fa-location-dot"></i> Lekki Phase 1, Lagos, Nigeria</span>
+      </div>
+      <div>
+        <span><i class="fa-regular fa-clock"></i> Mon - Sat: 8:00 AM - 6:00 PM</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <header class="header-main">
+    <div class="container">
+      <nav class="navbar">
+        <a href="index.html" class="logo">
+          <div class="logo-icon"><i class="fa-solid fa-building"></i></div>
+          <span>PWAN PROPERTIES</span>
+        </a>
+
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="properties.html" class="nav-link">Properties</a></li>
+          <li><a href="buy.html" class="nav-link">Buy</a></li>
+          <li><a href="rent.html" class="nav-link">Rent</a></li>
+          <li><a href="land.html" class="nav-link">Land</a></li>
+          <li><a href="services.html" class="nav-link active">Services</a></li>
+          <li><a href="about.html" class="nav-link">About Us</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <li><a href="favourites.html" class="nav-link"><i class="fa-regular fa-heart"></i> Saved</a></li>
+          <li><a href="list-property.html" class="btn btn-gold">List a Property</a></li>
+        </ul>
+
+        <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Demo Notice Disclaimer -->
+  <div class="container">
+    <div class="demo-notice">
+      <i class="fa-solid fa-circle-info"></i>
+      <div>
+        <strong>Demonstration Content Notice:</strong> The services and corporate capabilities described on this page represent proposed website offerings for PWAN Properties demonstration purposes.
+      </div>
+    </div>
+  </div>
+
+  <!-- Page Header / Hero -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Our Real Estate Services</h1>
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <i class="fa-solid fa-chevron-right" style="font-size: 0.75rem;"></i>
+        <span>Services</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Grid Section -->
+  <section class="services-section">
+    <div class="container">
+      <div class="section-header-center">
+        <span class="section-tag">Comprehensive Expertise</span>
+        <h2>End-to-End Property Solutions</h2>
+        <p style="color: var(--text-muted);">From legal land title verification to full estate management, we deliver transparent and professional service across Nigeria.</p>
+      </div>
+
+      <div class="services-grid">
+        
+        <!-- Service 1: Property Sales & Acquisition -->
+        <div class="service-card">
+          <div class="service-card-top">
+            <div class="service-icon-box"><i class="fa-solid fa-house-circle-check"></i></div>
+            <h3>Property Sales & Acquisition</h3>
+            <p>Guiding individual buyers, corporate entities, and diaspora clients to acquire premium residential duplexes, luxury villas, and commercial assets.</p>
+            <ul class="benefits-list">
+              <li><i class="fa-solid fa-circle-check"></i> Rigorous legal land title verification</li>
+              <li><i class="fa-solid fa-circle-check"></i> Tailored payment plan structuring</li>
+              <li><i class="fa-solid fa-circle-check"></i> Post-purchase documentation transfer</li>
+            </ul>
+          </div>
+          <a href="contact.html" class="btn btn-outline" style="width: 100%;"><i class="fa-solid fa-headset"></i> Request Service</a>
+        </div>
+
+        <!-- Service 2: Rental Property Assistance -->
+        <div class="service-card">
+          <div class="service-card-top">
+            <div class="service-icon-box"><i class="fa-solid fa-key"></i></div>
+            <h3>Property Rental Assistance</h3>
+            <p>Connecting tenants with high-quality serviced apartments, corporate suites, and residential flats across prime Nigerian city hubs.</p>
+            <ul class="benefits-list">
+              <li><i class="fa-solid fa-circle-check"></i> Verified landlord credentials</li>
+              <li><i class="fa-solid fa-circle-check"></i> Transparent tenancy agreements</li>
+              <li><i class="fa-solid fa-circle-check"></i> Guided viewing & walkthroughs</li>
+            </ul>
+          </div>
+          <a href="rent.html" class="btn btn-outline" style="width: 100%;"><i class="fa-solid fa-magnifying-glass"></i> Find Rentals</a>
+        </div>
+
+        <!-- Service 3: Land Sales & Banking -->
+        <div class="service-card">
+          <div class="service-card-top">
+            <div class="service-icon-box"><i class="fa-solid fa-map-location-dot"></i></div>
+            <h3>Land Sales & Estate Banking</h3>
+            <p>Providing verified plots in rapidly appreciating growth corridors suitable for immediate residential development or long-term land banking.</p>
+            <ul class="benefits-list">
+              <li><i class="fa-solid fa-circle-check"></i> C of O & Gazette legal titles</li>
+              <li><i class="fa-solid fa-circle-check"></i> Immediate physical plot allocation</li>
+              <li><i class="fa-solid fa-circle-check"></i> Estate infrastructure guarantees</li>
+            </ul>
+          </div>
+          <a href="land.html" class="btn btn-outline" style="width: 100%;"><i class="fa-solid fa-vector-square"></i> View Land Plots</a>
+        </div>
+
+        <!-- Service 4: Property Management -->
+        <div class="service-card">
+          <div class="service-card-top">
+            <div class="service-icon-box"><i class="fa-solid fa-building-user"></i></div>
+            <h3>Property & Facility Management</h3>
+            <p>Preserving property value for estate owners and landlords through proactive maintenance, tenant vetting, and rent collection services.</p>
+            <ul class="benefits-list">
+              <li><i class="fa-solid fa-circle-check"></i> 24/7 facility operations oversight</li>
+              <li><i class="fa-solid fa-circle-check"></i> Tenant screening & rent collection</li>
+              <li><i class="fa-solid fa-circle-check"></i> Routine structural maintenance</li>
+            </ul>
+          </div>
+          <a href="contact.html" class="btn btn-outline" style="width: 100%;"><i class="fa-solid fa-envelope"></i> Manage My Asset</a>
+        </div>
+
+        <!-- Service 5: Investment Consultancy -->
+        <div class="service-card">
+          <div class="service-card-top">
+            <div class="service-icon-box"><i class="fa-solid fa-chart-pie"></i></div>
+            <h3>Real Estate Investment Guidance</h3>
+            <p>Providing market intelligence, yield projections, and portfolio diversification strategies tailored to individual investor risk profiles.</p>
+            <ul class="benefits-list">
+              <li><i class="fa-solid fa-circle-check"></i> Comparative market analysis (CMA)</li>
+              <li><i class="fa-solid fa-circle-check"></i> High-ROI growth corridor advice</li>
+              <li><i class="fa-solid fa-circle-check"></i> Risk mitigation & legal checks</li>
+            </ul>
+          </div>
+          <a href="contact.html" class="btn btn-outline" style="width: 100%;"><i class="fa-solid fa-handshake"></i> Book Advisory</a>
+        </div>
+
+        <!-- Service 6: Property Marketing & Listing -->
+        <div class="service-card">
+          <div class="service-card-top">
+            <div class="service-icon-box"><i class="fa-solid fa-bullhorn"></i></div>
+            <h3>Property Marketing & Listing</h3>
+            <p>Helping property developers, land owners, and individual sellers showcase listings to thousands of qualified real estate buyers.</p>
+            <ul class="benefits-list">
+              <li><i class="fa-solid fa-circle-check"></i> Professional photography & media</li>
+              <li><i class="fa-solid fa-circle-check"></i> Multi-channel digital campaigns</li>
+              <li><i class="fa-solid fa-circle-check"></i> Buyer screening & negotiations</li>
+            </ul>
+          </div>
+          <a href="list-property.html" class="btn btn-outline" style="width: 100%;"><i class="fa-solid fa-plus-circle"></i> List Property</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Consultation Banner -->
+  <section class="consultation-cta-section">
+    <div class="container">
+      <div class="consultation-flex">
+        <div class="consultation-info">
+          <h2>Need Custom Real Estate Advice?</h2>
+          <p>Speak with our dedicated property advisory team to discuss bespoke estate investments, site inspection schedules, or portfolio management.</p>
+        </div>
+        <div>
+          <a href="contact.html" class="btn btn-gold" style="padding: 1rem 2rem; font-size: 1rem;"><i class="fa-solid fa-comments"></i> Contact an Expert</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="logo" style="color: var(--bg-white); margin-bottom: 1rem; display: inline-flex;">
+            <div class="logo-icon"><i class="fa-solid fa-building"></i></div>
+            <span>PWAN PROPERTIES</span>
+          </a>
+          <p style="font-size: 0.9rem; line-height: 1.6; color: #9CA3AF; margin-bottom: 1.25rem;">
+            PWAN Properties is a premier Nigerian real estate firm dedicated to making land and home ownership smooth, accessible, and secure across primary urban growth centers.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="properties.html">All Properties</a></li>
+            <li><a href="buy.html">Buy Homes</a></li>
+            <li><a href="rent.html">Rent Apartments</a></li>
+            <li><a href="land.html">Land Investment</a></li>
+            <li><a href="services.html">Our Services</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company & Legal</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="faq.html">FAQs</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="list-property.html">List Your Property</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Newsletter</h4>
+          <p style="font-size: 0.88rem; color: #9CA3AF; margin-bottom: 1rem;">Subscribe to get market updates and new land releases.</p>
+          <form onsubmit="handleNewsletter(event)" style="display: flex; gap: 0.5rem;">
+            <input type="email" placeholder="Your email address" required style="padding: 0.6rem; border-radius: var(--radius-sm); border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: #FFF; width: 100%; font-size: 0.88rem;">
+            <button type="submit" class="btn btn-gold" style="padding: 0.6rem 1rem;"><i class="fa-solid fa-paper-plane"></i></button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 PWAN Properties Nigeria. All rights reserved. (Demonstration Frontend Website)</p>
+        <div>
+          <a href="privacy.html" style="margin-right: 1rem;">Privacy Policy</a>
+          <a href="terms.html">Terms & Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div class="toast-notification" id="toastNotification">
+    <div class="toast-icon"><i class="fa-solid fa-circle-check" style="color: var(--gold-accent);"></i></div>
+    <div>
+      <h5 id="toastTitle" style="color: var(--bg-white); font-size: 0.95rem;">Subscribed</h5>
+      <p id="toastMessage" style="font-size: 0.82rem; color: #D1D5DB;">Thank you for subscribing to PWAN Properties updates.</p>
+    </div>
+  </div>
+
+  <script>
+    // Mobile Navigation Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navMenu = document.getElementById('navMenu');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      const icon = mobileMenuBtn.querySelector('i');
+      if (navMenu.classList.contains('active')) {
+        icon.className = 'fa-solid fa-xmark';
+      } else {
+        icon.className = 'fa-solid fa-bars';
+      }
+    });
+
+    // Newsletter Handler
+    function handleNewsletter(e) {
+      e.preventDefault();
+      const toast = document.getElementById('toastNotification');
+      toast.classList.add('show');
+      e.target.reset();
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 4000);
+    }
+  </script>
+</body>
+</html>

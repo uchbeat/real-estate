@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="List your property for sale, rent, or land investment with PWAN Properties Nigeria. Reach thousands of verified home buyers and real estate investors across Nigeria.">
+  <title>List Your Property | PWAN Properties Nigeria</title>
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* ==========================================================================
+       DESIGN SYSTEM & VARIABLES
+       ========================================================================== */
+    :root {
+      --primary-navy: #10233F;
+      --royal-blue: #1E4E8C;
+      --gold-accent: #D4A64A;
+      --gold-hover: #b88d35;
+      --bg-light: #F5F7FA;
+      --bg-white: #FFFFFF;
+      --text-dark: #202B3C;
+      --text-muted: #697586;
+      --border-color: #E2E8F0;
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+      --shadow-md: 0 8px 24px rgba(0,0,0,0.08);
+      --shadow-lg: 0 16px 32px rgba(0,0,0,0.12);
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --radius-sm: 6px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+    }
+
+    /* Reset & Base Styles */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Playfair Display', Georgia, serif;
+      color: var(--primary-navy);
+      line-height: 1.25;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: var(--transition);
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .container-wide {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* ==========================================================================
+       TOP ANNOUNCEMENT BAR & NAVIGATION
+       ========================================================================== */
+    .top-bar {
+      background-color: var(--primary-navy);
+      color: #D1D5DB;
+      font-size: 0.85rem;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .top-bar .container-wide {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .top-bar-info span {
+      margin-right: 1.25rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .top-bar-info i {
+      color: var(--gold-accent);
+    }
+
+    .header-main {
+      background-color: var(--bg-white);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.1rem 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      font-family: 'Playfair Display', serif;
+    }
+
+    .logo-icon {
+      background: linear-gradient(135deg, var(--royal-blue), var(--primary-navy));
+      color: var(--gold-accent);
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius-sm);
+      font-size: 1.1rem;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+      list-style: none;
+    }
+
+    .nav-link {
+      font-weight: 500;
+      color: var(--text-dark);
+      font-size: 0.95rem;
+      position: relative;
+      padding: 0.25rem 0;
+    }
+
+    .nav-link:hover, .nav-link.active {
+      color: var(--royal-blue);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: var(--transition);
+      border: none;
+    }
+
+    .btn-gold {
+      background-color: var(--gold-accent);
+      color: var(--primary-navy);
+    }
+
+    .btn-gold:hover {
+      background-color: var(--gold-hover);
+      transform: translateY(-2px);
+    }
+
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--primary-navy);
+      cursor: pointer;
+    }
+
+    /* ==========================================================================
+       PAGE HEADER / HERO
+       ========================================================================== */
+    .page-header {
+      background: linear-gradient(135deg, rgba(16, 35, 63, 0.92), rgba(30, 78, 140, 0.88)), url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      color: var(--bg-white);
+      padding: 4.5rem 0 3.5rem;
+      text-align: center;
+    }
+
+    .page-header h1 {
+      color: var(--bg-white);
+      font-size: 2.8rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .breadcrumb {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    .breadcrumb a {
+      color: var(--gold-accent);
+    }
+
+    /* Demo Notice */
+    .demo-notice {
+      background-color: #FEF3C7;
+      border-left: 4px solid #D97706;
+      color: #92400E;
+      padding: 0.85rem 1.25rem;
+      font-size: 0.88rem;
+      margin: 1.5rem auto 0;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      max-width: 1000px;
+    }
+
+    /* ==========================================================================
+       PROPERTY SUBMISSION FORM SECTION
+       ========================================================================== */
+    .submission-section {
+      padding: 3.5rem 0 5rem;
+    }
+
+    .submission-card {
+      background: var(--bg-white);
+      padding: 3rem;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border-color);
+    }
+
+    .form-section-title {
+      font-size: 1.3rem;
+      color: var(--primary-navy);
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .form-section-title i {
+      color: var(--gold-accent);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-group.full-width {
+      grid-column: span 2;
+    }
+
+    .form-group label {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--primary-navy);
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-size: 0.95rem;
+      color: var(--text-dark);
+      background-color: #FAFAFA;
+      transition: var(--transition);
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--royal-blue);
+      background-color: var(--bg-white);
+      box-shadow: 0 0 0 3px rgba(30, 78, 140, 0.15);
+    }
+
+    textarea.form-control {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .form-error-msg {
+      color: #DC2626;
+      font-size: 0.78rem;
+      display: none;
+    }
+
+    .form-group.error .form-control {
+      border-color: #DC2626;
+      background-color: #FEF2F2;
+    }
+
+    .form-group.error .form-error-msg {
+      display: block;
+    }
+
+    /* Amenities Checklist */
+    .amenities-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 0.75rem;
+      margin-top: 0.5rem;
+    }
+
+    .amenity-checkbox {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      color: var(--text-dark);
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .amenity-checkbox input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      accent-color: var(--royal-blue);
+      cursor: pointer;
+    }
+
+    /* Image Upload Box & Preview Grid */
+    .upload-dropzone {
+      border: 2px dashed var(--royal-blue);
+      border-radius: var(--radius-md);
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      background: rgba(30, 78, 140, 0.03);
+      cursor: pointer;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .upload-dropzone:hover {
+      background: rgba(30, 78, 140, 0.08);
+      border-color: var(--gold-accent);
+    }
+
+    .upload-dropzone i {
+      font-size: 2.5rem;
+      color: var(--royal-blue);
+      margin-bottom: 0.75rem;
+    }
+
+    .file-input-hidden {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    .image-preview-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    .preview-thumb-box {
+      position: relative;
+      height: 90px;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-color);
+    }
+
+    .preview-thumb-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .remove-thumb-btn {
+      position: absolute;
+      top: 4px;
+      right: 4px;
+      background: rgba(220, 38, 38, 0.85);
+      color: #FFF;
+      border: none;
+      border-radius: 50%;
+      width: 22px;
+      height: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 0.7rem;
+    }
+
+    /* ==========================================================================
+       FOOTER
+       ========================================================================== */
+    .footer {
+      background-color: var(--primary-navy);
+      color: #D1D5DB;
+      padding: 4rem 0 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 2.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-col h4 {
+      color: var(--bg-white);
+      font-size: 1.1rem;
+      margin-bottom: 1.25rem;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+
+    .footer-col h4::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 35px;
+      height: 2px;
+      background-color: var(--gold-accent);
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.6rem;
+    }
+
+    .footer-links a {
+      color: #9CA3AF;
+      font-size: 0.9rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold-accent);
+      padding-left: 4px;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.85rem;
+      color: #9CA3AF;
+    }
+
+    /* Toast Notification Container */
+    .toast-notification {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: var(--primary-navy);
+      color: var(--bg-white);
+      padding: 1rem 1.5rem;
+      border-radius: var(--radius-md);
+      border-left: 5px solid var(--gold-accent);
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      z-index: 2000;
+      transform: translateY(120%);
+      transition: transform 0.4s ease-out;
+    }
+
+    .toast-notification.show {
+      transform: translateY(0);
+    }
+
+    .toast-icon {
+      color: var(--gold-accent);
+      font-size: 1.4rem;
+    }
+
+    .toast-close {
+      background: none;
+      border: none;
+      color: rgba(255,255,255,0.6);
+      cursor: pointer;
+      font-size: 1.1rem;
+      margin-left: 0.5rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background-color: var(--bg-white);
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 2.5rem 1.5rem;
+        transition: 0.3s ease;
+        box-shadow: var(--shadow-md);
+      }
+
+      .nav-menu.active {
+        left: 0;
+      }
+
+      .mobile-toggle {
+        display: block;
+      }
+
+      .submission-card {
+        padding: 1.5rem;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-group.full-width {
+        grid-column: span 1;
+      }
+
+      .page-header h1 {
+        font-size: 2.1rem;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <div class="container-wide">
+      <div class="top-bar-info">
+        <span><i class="fa-solid fa-phone"></i> +234 (0) 800 792 6777</span>
+        <span><i class="fa-solid fa-envelope"></i> info@pwanproperties.ng</span>
+        <span><i class="fa-solid fa-location-dot"></i> Lekki Phase 1, Lagos, Nigeria</span>
+      </div>
+      <div>
+        <span><i class="fa-regular fa-clock"></i> Mon - Sat: 8:00 AM - 6:00 PM</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <header class="header-main">
+    <div class="container-wide">
+      <nav class="navbar">
+        <a href="index.html" class="logo">
+          <div class="logo-icon"><i class="fa-solid fa-building"></i></div>
+          <span>PWAN PROPERTIES</span>
+        </a>
+
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="properties.html" class="nav-link">Properties</a></li>
+          <li><a href="buy.html" class="nav-link">Buy</a></li>
+          <li><a href="rent.html" class="nav-link">Rent</a></li>
+          <li><a href="land.html" class="nav-link">Land</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="about.html" class="nav-link">About Us</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <li><a href="favourites.html" class="nav-link"><i class="fa-regular fa-heart"></i> Saved</a></li>
+          <li><a href="list-property.html" class="btn btn-gold">List a Property</a></li>
+        </ul>
+
+        <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Demo Notice Disclaimer -->
+  <div class="container">
+    <div class="demo-notice">
+      <i class="fa-solid fa-triangle-exclamation"></i>
+      <div>
+        <strong>Demonstration Submission Notice:</strong> Submitting this form displays local confirmation feedback and client-side image previews. Properties are not published to a live production database without backend verification.
+      </div>
+    </div>
+  </div>
+
+  <!-- Page Header / Hero -->
+  <section class="page-header">
+    <div class="container-wide">
+      <h1>List Your Property</h1>
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <i class="fa-solid fa-chevron-right" style="font-size: 0.75rem;"></i>
+        <span>List a Property</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Submission Form Section -->
+  <section class="submission-section">
+    <div class="container">
+      <div class="submission-card">
+        
+        <form id="listPropertyForm" novalidate>
+          
+          <!-- Section 1: Basic Property Information -->
+          <h3 class="form-section-title"><i class="fa-solid fa-house-chimney"></i> 1. Basic Property Details</h3>
+          <div class="form-grid">
+            <div class="form-group full-width" id="groupTitle">
+              <label for="propTitle">Property Title *</label>
+              <input type="text" id="propTitle" class="form-control" placeholder="e.g. Executive 4 Bedroom Duplex with Swimming Pool" required>
+              <span class="form-error-msg">Please enter a property title.</span>
+            </div>
+
+            <div class="form-group" id="groupPurpose">
+              <label for="propPurpose">Listing Purpose *</label>
+              <select id="propPurpose" class="form-control" required>
+                <option value="">-- Select Purpose --</option>
+                <option value="sale">For Sale</option>
+                <option value="rent">For Rent</option>
+                <option value="land">Land Sales</option>
+              </select>
+              <span class="form-error-msg">Please select listing purpose.</span>
+            </div>
+
+            <div class="form-group" id="groupType">
+              <label for="propType">Property Type *</label>
+              <select id="propType" class="form-control" required>
+                <option value="">-- Select Type --</option>
+                <option value="Apartment">Apartment / Flat</option>
+                <option value="Duplex">Duplex / Terrace</option>
+                <option value="Villa">Luxury Villa</option>
+                <option value="Land">Residential Plot / Land</option>
+                <option value="Commercial">Commercial Office / Retail</option>
+              </select>
+              <span class="form-error-msg">Please select property type.</span>
+            </div>
+
+            <div class="form-group" id="groupLocation">
+              <label for="propLocation">Location / Address *</label>
+              <input type="text" id="propLocation" class="form-control" placeholder="e.g. Admiralty Way, Lekki Phase 1, Lagos" required>
+              <span class="form-error-msg">Please enter location details.</span>
+            </div>
+
+            <div class="form-group" id="groupPrice">
+              <label for="propPrice">Asking Price (₦) *</label>
+              <input type="number" id="propPrice" class="form-control" placeholder="e.g. 150000000" min="0" required>
+              <span class="form-error-msg">Please enter a valid asking price.</span>
+            </div>
+          </div>
+
+          <!-- Section 2: Property Specifications & Amenities -->
+          <h3 class="form-section-title"><i class="fa-solid fa-list-check"></i> 2. Specifications & Features</h3>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="propBedrooms">Number of Bedrooms</label>
+              <input type="number" id="propBedrooms" class="form-control" placeholder="0" min="0" value="3">
+            </div>
+
+            <div class="form-group">
+              <label for="propBathrooms">Number of Bathrooms</label>
+              <input type="number" id="propBathrooms" class="form-control" placeholder="0" min="0" value="3">
+            </div>
+
+            <div class="form-group" id="groupArea">
+              <label for="propArea">Total Area (SQM) *</label>
+              <input type="number" id="propArea" class="form-control" placeholder="e.g. 450" min="1" required>
+              <span class="form-error-msg">Please provide total square meters.</span>
+            </div>
+
+            <div class="form-group">
+              <label for="propParking">Parking Spaces</label>
+              <input type="number" id="propParking" class="form-control" placeholder="0" min="0" value="2">
+            </div>
+
+            <div class="form-group full-width">
+              <label>Select Amenities</label>
+              <div class="amenities-grid">
+                <label class="amenity-checkbox"><input type="checkbox" value="Swimming Pool"> Swimming Pool</label>
+                <label class="amenity-checkbox"><input type="checkbox" value="24/7 Power"> 24/7 Solar / Power</label>
+                <label class="amenity-checkbox"><input type="checkbox" value="Security Network"> Gated Security</label>
+                <label class="amenity-checkbox"><input type="checkbox" value="CCTV Systems"> CCTV Surveillance</label>
+                <label class="amenity-checkbox"><input type="checkbox" value="Boys Quarter"> Boys Quarter (BQ)</label>
+                <label class="amenity-checkbox"><input type="checkbox" value="Water Treatment"> Water Treatment</label>
+                <label class="amenity-checkbox"><input type="checkbox" value="Smart Home Technology"> Smart Automation</label>
+              </div>
+            </div>
+
+            <div class="form-group full-width" id="groupDescription">
+              <label for="propDescription">Detailed Property Description *</label>
+              <textarea id="propDescription" class="form-control" placeholder="Describe the condition, neighborhood landmarks, title status (C of O, Gazette, etc.)..." required></textarea>
+              <span class="form-error-msg">Please provide a property description.</span>
+            </div>
+          </div>
+
+          <!-- Section 3: Image Upload Preview -->
+          <h3 class="form-section-title"><i class="fa-solid fa-camera"></i> 3. Property Photos</h3>
+          <div class="form-group full-width" style="margin-bottom: 2.5rem;">
+            <div class="upload-dropzone">
+              <i class="fa-solid fa-cloud-arrow-up"></i>
+              <h4 style="font-size: 1.1rem; margin-bottom: 0.3rem;">Click or Drag Photos Here</h4>
+              <p style="font-size: 0.85rem; color: var(--text-muted);">Supports JPG, PNG, WEBP images (Client-side preview)</p>
+              <input type="file" id="imageInput" class="file-input-hidden" accept="image/*" multiple onchange="handleImagePreview(event)">
+            </div>
+            <div class="image-preview-grid" id="imagePreviewGrid"></div>
+          </div>
+
+          <!-- Section 4: Contact Information -->
+          <h3 class="form-section-title"><i class="fa-solid fa-user-gear"></i> 4. Owner / Representative Contact</h3>
+          <div class="form-grid">
+            <div class="form-group" id="groupContactName">
+              <label for="contactName">Full Name *</label>
+              <input type="text" id="contactName" class="form-control" placeholder="e.g. Chief Adeleke Johnson" required>
+              <span class="form-error-msg">Please enter your name.</span>
+            </div>
+
+            <div class="form-group" id="groupContactEmail">
+              <label for="contactEmail">Email Address *</label>
+              <input type="email" id="contactEmail" class="form-control" placeholder="name@example.com" required>
+              <span class="form-error-msg">Please enter a valid email.</span>
+            </div>
+
+            <div class="form-group full-width" id="groupContactPhone">
+              <label for="contactPhone">Phone / WhatsApp Number *</label>
+              <input type="tel" id="contactPhone" class="form-control" placeholder="+234 801 234 5678" required>
+              <span class="form-error-msg">Please provide your phone number.</span>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-gold" style="width: 100%; padding: 1.1rem; font-size: 1.05rem;">
+            <i class="fa-solid fa-paper-plane"></i> Submit Listing For Review
+          </button>
+
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container-wide">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="logo" style="color: var(--bg-white); margin-bottom: 1rem; display: inline-flex;">
+            <div class="logo-icon"><i class="fa-solid fa-building"></i></div>
+            <span>PWAN PROPERTIES</span>
+          </a>
+          <p style="font-size: 0.9rem; line-height: 1.6; color: #9CA3AF; margin-bottom: 1.25rem;">
+            PWAN Properties is a premier Nigerian real estate firm dedicated to making land and home ownership smooth, accessible, and secure across primary urban growth centers.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="properties.html">All Properties</a></li>
+            <li><a href="buy.html">Buy Homes</a></li>
+            <li><a href="rent.html">Rent Apartments</a></li>
+            <li><a href="land.html">Land Investment</a></li>
+            <li><a href="services.html">Our Services</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company & Legal</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="faq.html">FAQs</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="list-property.html">List Your Property</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Newsletter</h4>
+          <p style="font-size: 0.88rem; color: #9CA3AF; margin-bottom: 1rem;">Subscribe to get market updates and new land releases.</p>
+          <form onsubmit="handleNewsletter(event)" style="display: flex; gap: 0.5rem;">
+            <input type="email" placeholder="Your email address" required style="padding: 0.6rem; border-radius: var(--radius-sm); border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: #FFF; width: 100%; font-size: 0.88rem;">
+            <button type="submit" class="btn btn-gold" style="padding: 0.6rem 1rem;"><i class="fa-solid fa-paper-plane"></i></button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 PWAN Properties Nigeria. All rights reserved. (Demonstration Frontend Website)</p>
+        <div>
+          <a href="privacy.html" style="margin-right: 1rem;">Privacy Policy</a>
+          <a href="terms.html">Terms & Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-notification" id="toastNotification">
+    <div class="toast-icon"><i class="fa-solid fa-circle-check"></i></div>
+    <div>
+      <h5 id="toastTitle" style="color: var(--bg-white); font-size: 0.95rem;">Property Submitted</h5>
+      <p id="toastMessage" style="font-size: 0.82rem; color: #D1D5DB;">Your property has been submitted for frontend demonstration evaluation.</p>
+    </div>
+    <button class="toast-close" onclick="closeToast()"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+
+  <script>
+    let uploadedFiles = [];
+
+    // Mobile Navigation Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navMenu = document.getElementById('navMenu');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      const icon = mobileMenuBtn.querySelector('i');
+      if (navMenu.classList.contains('active')) {
+        icon.className = 'fa-solid fa-xmark';
+      } else {
+        icon.className = 'fa-solid fa-bars';
+      }
+    });
+
+    // Image Upload & Previewer
+    function handleImagePreview(e) {
+      const files = Array.from(e.target.files);
+      const grid = document.getElementById('imagePreviewGrid');
+
+      files.forEach(file => {
+        if (file.type.startsWith('image/')) {
+          uploadedFiles.push(file);
+          const reader = new FileReader();
+
+          reader.onload = function(evt) {
+            const index = uploadedFiles.length - 1;
+            const thumb = document.createElement('div');
+            thumb.className = 'preview-thumb-box';
+            thumb.setAttribute('data-index', index);
+            thumb.innerHTML = `
+              <img src="${evt.target.result}" alt="Property Preview">
+              <button type="button" class="remove-thumb-btn" onclick="removeImage(${index}, this)"><i class="fa-solid fa-xmark"></i></button>
+            `;
+            grid.appendChild(thumb);
+          };
+
+          reader.readAsDataURL(file);
+        }
+      });
+    }
+
+    function removeImage(index, btn) {
+      uploadedFiles.splice(index, 1);
+      btn.parentElement.remove();
+    }
+
+    // Form Client-side Validation & Submission
+    const listForm = document.getElementById('listPropertyForm');
+
+    listForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      let isValid = true;
+
+      // Reset previous error classes
+      document.querySelectorAll('.form-group').forEach(g => g.classList.remove('error'));
+
+      // Validate Title
+      const title = document.getElementById('propTitle');
+      if (!title.value.trim()) {
+        showFieldError('groupTitle');
+        isValid = false;
+      }
+
+      // Validate Purpose
+      const purpose = document.getElementById('propPurpose');
+      if (!purpose.value) {
+        showFieldError('groupPurpose');
+        isValid = false;
+      }
+
+      // Validate Type
+      const type = document.getElementById('propType');
+      if (!type.value) {
+        showFieldError('groupType');
+        isValid = false;
+      }
+
+      // Validate Location
+      const location = document.getElementById('propLocation');
+      if (!location.value.trim()) {
+        showFieldError('groupLocation');
+        isValid = false;
+      }
+
+      // Validate Price
+      const price = document.getElementById('propPrice');
+      if (!price.value || parseFloat(price.value) <= 0) {
+        showFieldError('groupPrice');
+        isValid = false;
+      }
+
+      // Validate Area
+      const area = document.getElementById('propArea');
+      if (!area.value || parseFloat(area.value) <= 0) {
+        showFieldError('groupArea');
+        isValid = false;
+      }
+
+      // Validate Description
+      const desc = document.getElementById('propDescription');
+      if (!desc.value.trim()) {
+        showFieldError('groupDescription');
+        isValid = false;
+      }
+
+      // Validate Contact Name
+      const cName = document.getElementById('contactName');
+      if (!cName.value.trim()) {
+        showFieldError('groupContactName');
+        isValid = false;
+      }
+
+      // Validate Contact Email
+      const cEmail = document.getElementById('contactEmail');
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(cEmail.value.trim())) {
+        showFieldError('groupContactEmail');
+        isValid = false;
+      }
+
+      // Validate Contact Phone
+      const cPhone = document.getElementById('contactPhone');
+      if (!cPhone.value.trim()) {
+        showFieldError('groupContactPhone');
+        isValid = false;
+      }
+
+      if (isValid) {
+        triggerToast('Submission Received!', 'Thank you ' + cName.value.trim() + '. Your property listing has been recorded (Demo interaction).');
+        listForm.reset();
+        document.getElementById('imagePreviewGrid').innerHTML = '';
+        uploadedFiles = [];
+      }
+    });
+
+    function showFieldError(groupId) {
+      document.getElementById(groupId).classList.add('error');
+    }
+
+    // Newsletter Handler
+    function handleNewsletter(e) {
+      e.preventDefault();
+      triggerToast('Subscribed!', 'Thank you for subscribing to PWAN Properties updates.');
+      e.target.reset();
+    }
+
+    // Toast Notification Display
+    function triggerToast(title, msg) {
+      const toast = document.getElementById('toastNotification');
+      document.getElementById('toastTitle').textContent = title;
+      document.getElementById('toastMessage').textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 5000);
+    }
+
+    function closeToast() {
+      document.getElementById('toastNotification').classList.remove('show');
+    }
+  </script>
+</body>
+</html>
